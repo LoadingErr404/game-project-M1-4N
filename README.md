@@ -1,6 +1,6 @@
 # maturitka-formalitka
 
-hráč bude útočit pomocí komb pismen 
+hráč bude útočit pomocí komb pismen /
 útočí proti bossovi jeho stylem - napodobuje nepritele
 jak tak bude používat utoky bose tak se bude snižovat na jeho úroveň -> klesá IQ a forma (klesá do formy slizáka/finálního bose?)
 grumpy teenager co žije ve sklepě svých rodičů a nechce uklízet a pracovat/ všechno ve světě je špatné
