@@ -1,9 +1,5 @@
-zjistit jak psát jedno písmeno po písmenu
+vyřešit amzání i při držení enteru ne jenom při stisku
 
-nebude to zas tak ez
+-> vytvořit funkci která to bude větvit na když se stiskne a drží nebo možná jenom na držení a pracovat s časem že jak dlouho drží tak dlouho maže (0.10s = -1 znak?)
 
-kdo ví jestli to vůbec půjde
-
-možná řešit přes for s uloženýma hodnotama? 
-
-absolutně idk
+odfiltrovat znaky jako ctrl, alt, win btn atd 
