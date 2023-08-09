@@ -1,4 +1,4 @@
-##!!!nastav JB Raidera jako IDE místo VS code!!!##
+#!!!nastav JB Raidera jako IDE místo VS code!!!#
 
 vyřešit amzání i při držení enteru ne jenom při stisku
 
