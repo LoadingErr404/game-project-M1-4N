@@ -1,29 +1,30 @@
+using System;
 using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
-public class writingGameplay : MonoBehaviour
+public class WritingGameplay : MonoBehaviour
 {
     public TMP_Text myText;
-    private string myWord;
+    private string MyWord;
 
     // Start is called before the first frame update
     void Start()
     {
         ClearText();
-        myWord="";
+        MyWord="";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.anyKeyDown){ //ošetři jenom pro písmena, čísla a základní znaky ang klávesnice
+        if(Input.anyKeyDown){ 
             foreach (char letter in Input.inputString){ //every possible key input
-                Debug.Log(letter);
-                buffWord(letter);
-                Debug.Log(myWord);
-                printWord();
+                BuffWord(letter); //checks if it is an allowed letter
+                PrintWord();
             }
         }
     }
@@ -32,17 +33,14 @@ public class writingGameplay : MonoBehaviour
         myText.text="";
     }
 
-    private void buffWord(char letter){ //buffers pressed characters
-        if(letter != '\b'){
-            myWord+=letter;
-        }
-        else{
-            myWord = myWord.Remove(myWord.Length - 1);
+    private void BuffWord(char letter){ //buffers pressed characters
+        if(letter >= 33 && letter <= 126 ){ //numbers representing ASCII characters from '!' to '~'
+            MyWord+=letter;
         }
     }
 
-    private void printWord(){
-        myText.text=myWord;
+    private void PrintWord(){
+        myText.text=MyWord;
     }
 
     
