@@ -101,3 +101,7 @@ kapitoly podle způsoby ochrany (https://cs.wikipedia.org/wiki/Frustrace)
 
 inspirace fighting systém (https://cs.wikipedia.org/wiki/Agrese)
 
+------------------------
+
+postava bojovy stav animace - particle ve vzduchu -> spadne z nej klavesnice postave do ruky -> model s klavesnici v ruce
+
