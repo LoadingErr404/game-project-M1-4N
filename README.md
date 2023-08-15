@@ -4,6 +4,8 @@ odkaz na helpful playlist na YT
 
 https://youtube.com/playlist?list=PLeF8Gx2wuf5ARVIcjODldPUTyxR92iHuo
 
+pro přidání videa nutno přidat se před odkaz: https://www.youtube.com/playlist?list=PLeF8Gx2wuf5ARVIcjODldPUTyxR92iHuo&jct=vVFlwwHewGEaO-oxW1Alpt8uzsbrrg
+
 ## další odkazy 
 
 pohyb - WASD i šipky (implementovat obodvojí) kapitoly podle způsoby ochrany (https://cs.wikipedia.org/wiki/Frustrace)
