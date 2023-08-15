@@ -34,6 +34,7 @@ public class WritingGameplay : MonoBehaviour
         if (_myTimer.currentTime >= _myTimer.timerDelayTrigger){
             _myTimer.currentTime = 0.0;
             ClearText();
+            _myWord = "";
         }
 
         
