@@ -105,3 +105,9 @@ inspirace fighting systém (https://cs.wikipedia.org/wiki/Agrese)
 
 postava bojovy stav animace - particle ve vzduchu -> spadne z nej klavesnice postave do ruky -> model s klavesnici v ruce
 
+------
+
+defance budou slova obrany
+opakování slov menší dmg
+inspo yakuza a komba
+
