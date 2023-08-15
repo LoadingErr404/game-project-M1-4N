@@ -36,16 +36,19 @@ public class WritingGameplay : MonoBehaviour
             ClearText();
         }
 
-        
+        Debug.Log("Slovo: "+_myWord);
+        Debug.Log("Text field: "+myText.text);
+
+
     }
 
     private void ClearText(){ //clears output text
-        myText.text="";
         _myWord = "";
+        myText.text="";
     }
 
     private void BuffWord(char letter){ //buffers pressed characters
-        if(letter >= 33 && letter <= 126 ){ //numbers representing ASCII characters from '!' to '~'
+        if(letter >= 32 && letter <= 126 ){ //numbers representing ASCII characters from 'space' to '~'
             _myWord+=letter;
         }
     }
