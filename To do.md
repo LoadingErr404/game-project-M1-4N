@@ -1,1 +1,3 @@
-spravitr Timer idk ta shitovina nejede a absolutně idk proč
+všechno jede 
+
+pokračuj dál v práci
