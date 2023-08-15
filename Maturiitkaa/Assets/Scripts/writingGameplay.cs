@@ -34,7 +34,6 @@ public class WritingGameplay : MonoBehaviour
         if (_myTimer.currentTime >= _myTimer.timerDelayTrigger){
             _myTimer.currentTime = 0.0;
             ClearText();
-            _myWord = "";
         }
 
         
@@ -42,6 +41,7 @@ public class WritingGameplay : MonoBehaviour
 
     private void ClearText(){ //clears output text
         myText.text="";
+        _myWord = "";
     }
 
     private void BuffWord(char letter){ //buffers pressed characters

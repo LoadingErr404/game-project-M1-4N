@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d525338e511bb974cafa7356fa2ec123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDelayTrigger: 5
+  timerDelayTrigger: 3
   currentTime: 0
 --- !u!4 &754532614
 Transform:
