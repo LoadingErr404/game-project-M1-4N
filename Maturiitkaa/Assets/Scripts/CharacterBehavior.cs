@@ -6,14 +6,11 @@ using UnityEngine;
 public class CharacterBehavior : MonoBehaviour
 {
     public Animator animator;
-
-    //private static readonly int Move = Animator.StringToHash("Move");
-
+    
     // Start is called before the first frame update
     void Start()
     {
         //controls animation for movement
-        
         
         
     }
@@ -21,8 +18,18 @@ public class CharacterBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0); //changes localScale to make character look left
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0); //changes localScale to make character look right
+        }
+        
         AnimationGoIdle();
     }
+    
 
     private void AnimationGoIdle() //handles animation switches between go and idle
     {

@@ -28,13 +28,11 @@ public class CharacterController2D : MonoBehaviour
         float moveX = 0f;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            //transform.position += new Vector3(-1, 0);
             moveX -= movementForce;
 
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            //transform.position += new Vector3(1, 0);
             moveX += movementForce;
         }
 
@@ -45,4 +43,5 @@ public class CharacterController2D : MonoBehaviour
     {
         _rigidbody2D.velocity = moveDir;
     }
+    
 }
