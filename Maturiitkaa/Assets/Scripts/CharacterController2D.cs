@@ -14,8 +14,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void Awake()
     {
-        throw new NotImplementedException();
-        _rigidbody2D = GetComponent<Rigidbody2D>(); 
+        _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -39,7 +38,6 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate() //for physics
     {
-        throw new NotImplementedException();
         _rigidbody2D.velocity = moveDir;
     }
 }
