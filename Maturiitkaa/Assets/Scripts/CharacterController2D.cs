@@ -12,6 +12,11 @@ public class CharacterController2D : MonoBehaviour
 
     private Vector3 moveDir; //vector that will be handeling physics
 
+    private void Start()
+    {
+        _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
