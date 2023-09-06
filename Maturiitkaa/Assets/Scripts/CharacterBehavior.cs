@@ -33,14 +33,16 @@ public class CharacterBehavior : MonoBehaviour
 
     private void AnimationGoIdle() //handles animation switches between go and idle
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
             animator.SetBool("Move", true);
-            
         }
-        else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        else
         {
             animator.SetBool("Move", false);
         }
+        
+        
     }
 }
