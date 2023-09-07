@@ -1901,7 +1901,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1996418049}
-  transform: {fileID: 1996418047}
 --- !u!1 &2027015681
 GameObject:
   m_ObjectHideFlags: 0
