@@ -25,18 +25,7 @@ public class CharacterController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveX = 0f;
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            moveX -= movementForce;
-
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            moveX += movementForce;
-        }
-
-        moveDir = new Vector3(moveX, 0);
+        moveDir = new Vector3(movementForce * Input.GetAxisRaw("Horizontal"), _rigidbody2D.velocity.y);
     }
 
     private void FixedUpdate() //for physics
