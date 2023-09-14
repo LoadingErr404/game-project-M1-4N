@@ -9,8 +9,10 @@ public class CharacterController2D : MonoBehaviour
     
     [Header("Movement physics")]
     public float movementForce;
+    public float jumpForce;
 
     private Vector3 moveDir; //vector that will be handeling physics
+    private Vector3 moveJump; //vector that will be handeling jumping physics
 
     private void Start()
     {
@@ -26,6 +28,11 @@ public class CharacterController2D : MonoBehaviour
     void Update()
     {
         moveDir = new Vector3(movementForce * Input.GetAxisRaw("Horizontal"), _rigidbody2D.velocity.y);
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpForce);
+        }
     }
 
     private void FixedUpdate() //for physics
