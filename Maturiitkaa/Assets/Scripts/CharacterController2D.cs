@@ -13,6 +13,13 @@ public class CharacterController2D : MonoBehaviour
 
     private Vector3 moveDir; //vector that will be handeling physics
     private Vector3 moveJump; //vector that will be handeling jumping physics
+    
+    //for jumping
+    private bool isGrounded;
+    public Transform feetPossition; //possition of player's feet
+    public float checkRadius;
+    public LayerMask layerOfGround; //will be checking for Tag "ground"
+    
 
     private void Start()
     {
@@ -27,17 +34,19 @@ public class CharacterController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveDir = new Vector3(movementForce * Input.GetAxisRaw("Horizontal"), _rigidbody2D.velocity.y);
+        moveDir = new Vector3(movementForce * Input.GetAxisRaw("Horizontal"), _rigidbody2D.velocity.y); //moving left-right
+        isGrounded = Physics2D.OverlapCircle(feetPossition.position, checkRadius, layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (isGrounded && Input.GetKey(KeyCode.UpArrow)) //will jump if we are on ground and press up arrow
         {
-            _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpForce);
+            _rigidbody2D.velocity = Vector2.up * jumpForce;
         }
+        
     }
 
     private void FixedUpdate() //for physics
     {
-        _rigidbody2D.velocity = moveDir;
+        _rigidbody2D.velocity = moveDir; //moving left-right
     }
     
 }
