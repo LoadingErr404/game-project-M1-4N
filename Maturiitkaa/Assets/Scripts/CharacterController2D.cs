@@ -15,7 +15,7 @@ public class CharacterController2D : MonoBehaviour
     private Vector3 moveJump; //vector that will be handeling jumping physics
     
     //for jumping
-    private bool isGrounded;
+    public bool isGrounded;
     public Transform feetPossition; //possition of player's feet
     public float checkRadius;
     public LayerMask layerOfGround; //will be checking for Tag "ground"
@@ -27,6 +27,8 @@ public class CharacterController2D : MonoBehaviour
 
     private void Start()
     {
+        isGrounded = false;
+        isJumping = false;
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
