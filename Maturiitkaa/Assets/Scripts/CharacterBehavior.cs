@@ -9,20 +9,12 @@ public class CharacterBehavior : MonoBehaviour
     public Animator animator;
 
     public CharacterController2D characterController2D;
-    /*
-    public bool isGrounded;
-    //fuckupujou to feetz idk proč ale
-    public Transform feetPossition; //possition of player's feet
-    public float checkRadius;
-    public LayerMask layerOfGround; //will be checking for Tag "ground"*/
-   
+    private String move = "Move";
+    private String jump = "Jump";
     
-    
-
     // Update is called once per frame
     void Update()
     {
-        //isGrounded = Physics2D.OverlapCircle(feetPossition.position, checkRadius, layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
         AnimationGoIdleJump();
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -42,21 +34,21 @@ public class CharacterBehavior : MonoBehaviour
         
             if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
             {
-                animator.SetBool("Move", true);
+                animator.SetBool(move, true);
                 
             }
             else
             {
-                animator.SetBool("Move", false);
+                animator.SetBool(move, false);
             }
 
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                animator.SetBool("Jump", !(characterController2D.isGrounded));
+                animator.SetBool(jump, !(characterController2D.isGrounded));
             }
             else
             {
-                animator.SetBool("Jump", false);
+                animator.SetBool(jump, false);
             }
             
         
