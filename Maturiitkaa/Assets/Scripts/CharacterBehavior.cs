@@ -9,18 +9,21 @@ public class CharacterBehavior : MonoBehaviour
     public Animator animator;
 
     public CharacterController2D characterController2D;
-    private String move = "Move";
-    private String jump = "Jump";
+    private readonly String _move = "Move";
+    private readonly String _jump = "Jump";
+    
     
     // Update is called once per frame
     void Update()
     {
+        
         AnimationGoIdleJump();
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        
+        if (characterController2D.moveLeft)
         {
             transform.eulerAngles = new Vector3(0, 0, 0); //changes localScale to make character look left
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (characterController2D.moveRight)
         {
             transform.eulerAngles = new Vector3(0, 180, 0); //changes localScale to make character look right
         }
@@ -32,23 +35,23 @@ public class CharacterBehavior : MonoBehaviour
     private void AnimationGoIdleJump() //handles animation switches between go, idle and jump
     {
         
-            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
+            if (characterController2D.moveLeft || characterController2D.moveRight)
             {
-                animator.SetBool(move, true);
+                animator.SetBool(_move, true);
                 
             }
             else
             {
-                animator.SetBool(move, false);
+                animator.SetBool(_move, false);
             }
 
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (characterController2D.moveUp)
             {
-                animator.SetBool(jump, !(characterController2D.isGrounded));
+                animator.SetBool(_jump, !(characterController2D.isGrounded));
             }
             else
             {
-                animator.SetBool(jump, false);
+                animator.SetBool(_jump, false);
             }
             
         

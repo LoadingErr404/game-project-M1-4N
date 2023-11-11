@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -11,8 +13,13 @@ public class CharacterController2D : MonoBehaviour
     public float movementForce;
     public float jumpForce;
 
-    private Vector3 moveDir; //vector that will be handeling physics
-    private Vector3 moveJump; //vector that will be handeling jumping physics
+    private Vector3 _moveDir; //vector that will be handeling physics
+    private Vector3 _moveJump; //vector that will be handeling jumping physics
+    public bool moveUp;
+    public bool notMoveUp;
+    public bool moveLeft;
+    public bool moveRight;
+    
     
     //for jumping
     public bool isGrounded;
@@ -20,15 +27,16 @@ public class CharacterController2D : MonoBehaviour
     public float checkRadius;
     public LayerMask layerOfGround; //will be checking for Tag "ground"
     //for buffered jump
-    private float jumpTimeCounter;
+    private float _jumpTimeCounter;
     public float jumpTime;
-    private bool isJumping;
+    private bool _isJumping;
+    
     
 
     private void Start()
     {
         isGrounded = false;
-        isJumping = false;
+        _isJumping = false;
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
@@ -40,40 +48,55 @@ public class CharacterController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveDir = new Vector3(movementForce * Input.GetAxisRaw("Horizontal"), _rigidbody2D.velocity.y); //moving left-right
-        isGrounded = Physics2D.OverlapCircle(feetPossition.position, checkRadius, layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
-
-        if (isGrounded && Input.GetKeyDown(KeyCode.UpArrow)) //will jump if we are on ground and press up arrow
+        moveUp = Input.GetKey(KeyCode.UpArrow) || ((Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift)));
+        notMoveUp = Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.LeftShift);
+        moveLeft = Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift));
+        moveRight = Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift));
+        
+        
+        if (moveLeft || moveRight)
         {
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
+            _moveDir = new Vector3(movementForce * Input.GetAxisRaw("Horizontal"), _rigidbody2D.velocity.y); //moving left-right
+
+        }
+
+        isGrounded = Physics2D.OverlapCircle(feetPossition.position, checkRadius, layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
+        
+        
+        if (isGrounded && moveUp) //will jump if we are on ground and press up arrow
+        {
+            _isJumping = true;
+            _jumpTimeCounter = jumpTime;
             _rigidbody2D.velocity = Vector2.up * jumpForce;
         }
 
-        if (Input.GetKey(KeyCode.UpArrow) && isJumping) //buffered jump
+        if (moveUp && _isJumping) //buffered jump
         {
-            if (jumpTimeCounter > 0)
+            if (_jumpTimeCounter > 0)
             {
                 _rigidbody2D.velocity = Vector2.up * jumpForce;
-                jumpTimeCounter -= Time.deltaTime;
+                _jumpTimeCounter -= Time.deltaTime;
             }
             else
             {
-                isJumping = false;
+                _isJumping = false;
             }
             
         }
 
-        if (Input.GetKeyUp(KeyCode.UpArrow))
+        if (notMoveUp)
         {
-            isJumping = false;
+            _isJumping = false;
         }
         
     }
 
     private void FixedUpdate() //for physics
     {
-        _rigidbody2D.velocity = moveDir; //moving left-right
+        if (moveLeft || moveRight)
+        {
+            _rigidbody2D.velocity = _moveDir; //moving left-right
+        }
     }
     
 }
