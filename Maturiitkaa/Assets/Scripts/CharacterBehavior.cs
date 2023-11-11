@@ -10,7 +10,7 @@ public class CharacterBehavior : MonoBehaviour
 
     public CharacterController2D characterController2D;
     
-    private bool isGrounded;
+    public bool isGrounded;
     //fuckupujou to feetz idk proč ale
     public Transform feetPossition; //possition of player's feet
     public float checkRadius;
@@ -23,7 +23,7 @@ public class CharacterBehavior : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetPossition.position, checkRadius, layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
-        AnimationGoIdleJump();
+        AnimationGoIdleJump(characterController2D, animator);
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.eulerAngles = new Vector3(0, 0, 0); //changes localScale to make character look left
@@ -37,36 +37,28 @@ public class CharacterBehavior : MonoBehaviour
     }
     
 
-    private void AnimationGoIdleJump() //handles animation switches between go, idle and jump
+    private void AnimationGoIdleJump(CharacterController2D ch2D, Animator ani) //handles animation switches between go, idle and jump
     {
         
             if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
             {
-                animator.SetBool("Move", true);
+                ani.SetBool("Move", true);
+                
             }
             else
             {
-                animator.SetBool("Move", false);
+                ani.SetBool("Move", false);
             }
 
-/*            if (characterController2D.isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
-                while(!(characterController2D.isGrounded)){
-                    animator.SetBool("Jump", true);
-                }
-                animator.SetBool("Jump", false);
+                ani.SetBool("Jump", !(ch2D.isGrounded));
             }
             else
             {
-                animator.SetBool("Jump", false);
-            }*/
-
-        if (characterController2D == null)
-        {
-            Debug.Log("Nenasel se Character Controler");
-        }
-
-        Debug.Log(isGrounded);
+                ani.SetBool("Jump", false);
+            }
+            
         
         
 
