@@ -9,12 +9,12 @@ public class CharacterBehavior : MonoBehaviour
     public Animator animator;
 
     public CharacterController2D characterController2D;
-    
+    /*
     public bool isGrounded;
     //fuckupujou to feetz idk proč ale
     public Transform feetPossition; //possition of player's feet
     public float checkRadius;
-    public LayerMask layerOfGround; //will be checking for Tag "ground"
+    public LayerMask layerOfGround; //will be checking for Tag "ground"*/
    
     
     
@@ -22,8 +22,8 @@ public class CharacterBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(feetPossition.position, checkRadius, layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
-        AnimationGoIdleJump(characterController2D, animator);
+        //isGrounded = Physics2D.OverlapCircle(feetPossition.position, checkRadius, layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
+        AnimationGoIdleJump();
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.eulerAngles = new Vector3(0, 0, 0); //changes localScale to make character look left
@@ -37,26 +37,26 @@ public class CharacterBehavior : MonoBehaviour
     }
     
 
-    private void AnimationGoIdleJump(CharacterController2D ch2D, Animator ani) //handles animation switches between go, idle and jump
+    private void AnimationGoIdleJump() //handles animation switches between go, idle and jump
     {
         
             if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
             {
-                ani.SetBool("Move", true);
+                animator.SetBool("Move", true);
                 
             }
             else
             {
-                ani.SetBool("Move", false);
+                animator.SetBool("Move", false);
             }
 
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                ani.SetBool("Jump", !(ch2D.isGrounded));
+                animator.SetBool("Jump", !(characterController2D.isGrounded));
             }
             else
             {
-                ani.SetBool("Jump", false);
+                animator.SetBool("Jump", false);
             }
             
         
