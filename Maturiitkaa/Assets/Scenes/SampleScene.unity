@@ -1042,8 +1042,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16515182e19ad564cacca6bcb03fd4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementForce: 6
+  movementForce: 5.8
   jumpForce: 8
+  moveUp: 0
+  notMoveUp: 0
+  moveLeft: 0
+  moveRight: 0
   isGrounded: 0
   feetPossition: {fileID: 1093431732}
   checkRadius: 0.5
@@ -1065,11 +1069,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 890974443}
   characterController2D: {fileID: 890974445}
-  feetPossition: {fileID: 1093431732}
-  checkRadius: 0.5
-  layerOfGround:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!70 &890974447
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2329,6 +2328,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementForce: 6
   jumpForce: 8
+  moveUp: 0
+  notMoveUp: 0
+  moveLeft: 0
+  moveRight: 0
   isGrounded: 0
   feetPossition: {fileID: 1093431732}
   checkRadius: 0.5
@@ -2350,11 +2353,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1996418049}
   characterController2D: {fileID: 890974445}
-  feetPossition: {fileID: 1093431732}
-  checkRadius: 0.5
-  layerOfGround:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!1 &2027015681
 GameObject:
   m_ObjectHideFlags: 0
