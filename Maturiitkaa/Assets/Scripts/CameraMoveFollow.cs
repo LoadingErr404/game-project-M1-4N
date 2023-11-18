@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CameraMoveFollow : MonoBehaviour
 {
@@ -17,23 +13,13 @@ public class CameraMoveFollow : MonoBehaviour
 
     public Transform target;
     private float _diff;
-
-    private void Start()
-    {
-        //_offset = new Vector3(offX, offY, offZ);
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
         var myPosition = transform.position;
         var tarPosition = target.position;
-        /*
-        _diff = transform.position.y - target.position.y;
-        _offset = new Vector3(offX, _diff, offZ); //the cam doesn't move on the Y axis
-        Vector3 targetPosition = target.position + _offset;
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, SmoothTime); //function that makes smooth camera move
-        */
         
         _diff = myPosition.y - tarPosition.y;
         _offset = new Vector3(offX, _diff, offZ); //the cam doesn't move on the Y axis
