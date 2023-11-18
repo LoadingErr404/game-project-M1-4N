@@ -26,11 +26,18 @@ public class CameraMoveFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //var tarPosition = target.position;
-        
+        var myPosition = transform.position;
+        var tarPosition = target.position;
+        /*
         _diff = transform.position.y - target.position.y;
         _offset = new Vector3(offX, _diff, offZ); //the cam doesn't move on the Y axis
         Vector3 targetPosition = target.position + _offset;
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, SmoothTime); //function that makes smooth camera move
+        */
+        
+        _diff = myPosition.y - tarPosition.y;
+        _offset = new Vector3(offX, _diff, offZ); //the cam doesn't move on the Y axis
+        Vector3 targetPosition = tarPosition + _offset;
+        transform.position = Vector3.SmoothDamp(myPosition, targetPosition, ref _velocity, SmoothTime);
     }
 }
