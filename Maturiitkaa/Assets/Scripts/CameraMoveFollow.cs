@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class CameraMoveFollow : MonoBehaviour
 {
+    public CharacterController2D character;
     [Header("Camera offset")]
     public float offX;
     public float offY;
@@ -15,10 +16,10 @@ public class CameraMoveFollow : MonoBehaviour
     public float zoomSpeed;
     public Camera cam;
     private float _originZoom;
-    private static float _maxZoomPoint;  //for saving position from scene only once
-    private static float _minZoomPoint;
-    private float _distanceMin;
-    private float _distanceMax;
+    private static float _zoomOutPoint;  //for saving position from scene only once
+    private static float _zoomInPoint; 
+    private float _distanceZoomOut;
+    private float _distanceZoomIn;
     private float _zoom;
 
     private const float SmoothTime = 0f; //how long it takes to catch up
@@ -30,38 +31,58 @@ public class CameraMoveFollow : MonoBehaviour
 
     private void Start()
     {
-        _maxZoomPoint = zoomInPoint.position.x;
-        _minZoomPoint = zoomOutPoint.position.x;
+        _zoomInPoint = zoomInPoint.position.x;
+        _zoomOutPoint = zoomOutPoint.position.x;
         _originZoom = cam.orthographicSize;
+        target = character.transform;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        MoveCam();
-        ZoomCam();
-    }
-
-    private void MoveCam()
-    {
         var myPosition = transform.position;
         var tarPosition = target.position;
         
-        _diff = myPosition.y - tarPosition.y;
-        _offset = new Vector3(offX, _diff, offZ); //the cam doesn't move on the Y axis
+        MoveCam(myPosition, tarPosition);
+        ZoomCam(tarPosition);
+    }
+
+    private void MoveCam(Vector3 myPosition, Vector3 tarPosition)
+    {
+        
+        
+        //_diff = myPosition.y - tarPosition.y;
+        if (!character.isGrounded)
+        {
+            _offset = new Vector3(offX, _diff, offZ);
+        }
+        _offset = new Vector3(offX, offY, offZ); //the cam doesn't move on the Y axis
         Vector3 targetPosition = tarPosition + _offset;
         transform.position = Vector3.SmoothDamp(myPosition, targetPosition, ref _velocity, SmoothTime);
     }
 
-    private void ZoomCam()
+    private void ZoomCam(Vector3 tarPosition)
     {
-        var myPosition = transform.position;
-        var targetSize=0;
-        if (myPosition.x < _minZoomPoint)
+        var targetSize=1f;
+        _distanceZoomIn = _zoomInPoint - tarPosition.x;
+        _distanceZoomOut =  tarPosition.x - _zoomOutPoint;
+        //Debug.Log(_distanceZoomIn);
+        //if (!(_distanceZoomIn > 0) || !(_distanceZoomOut > 0)) return; //will play only if we are in between the points
+        if (_distanceZoomIn < _distanceZoomOut) //zooming IN
         {
-            targetSize = 2;
+            targetSize = 1 / _distanceZoomIn;
+            Debug.Log(targetSize);
+            //cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, Time.deltaTime * zoomSpeed);
+            cam.orthographicSize = targetSize;
+
         }
-        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, Time.deltaTime * zoomSpeed);
+        else
+        {
+            //Debug.Log("ZoomOut"); 
+        }
+        Debug.Log(_distanceZoomOut);
+        Debug.Log(_distanceZoomIn);
+
     }
 }

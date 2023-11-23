@@ -510,6 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae1d5060ec1e3c4bb944ff9a29bcc67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1218648068}
   offX: 0
   offY: 7
   offZ: -10
