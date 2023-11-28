@@ -16,9 +16,7 @@ public class CharacterBehavior : MonoBehaviour
         MoveLeftRight();
         AnimationGoIdleJump();
         
-        
-        
-       
+      
     }
     
 

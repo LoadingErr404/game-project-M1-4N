@@ -10,18 +10,19 @@ public class CharacterController2D : MonoBehaviour
 
     private Vector3 _moveDir; //vector that will be handeling physics
     private Vector3 _moveJump; //vector that will be handeling jumping physics
+    [Header("Movement bools")]
     public bool moveUp;
     public bool notMoveUp;
     public bool moveLeft;
     public bool moveRight;
     
     
-    //for jumping
+    [Header("Jump motion settings")]
     public bool isGrounded;
     public Transform feetPossition; //possition of player's feet
     public float checkRadius;
     public LayerMask layerOfGround; //will be checking for Tag "ground"
-    //for buffered jump
+    [Header("Settings for buffered jump")]
     private float _jumpTimeCounter;
     public float jumpTime;
     private bool _isJumping;
@@ -37,19 +38,36 @@ public class CharacterController2D : MonoBehaviour
 
     private void Awake()
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
+        _rigidbody2D = GetComponent<Rigidbody2D>(); //cannot move to Start - isn't working there
     }
 
     // Update is called once per frame
     void Update()
     {
+        LoadInputs();
+        MovingAround();
+        
+        
+    }
+
+    private void FixedUpdate() //for physics
+    {
+        if (moveLeft || moveRight)
+        {
+            _rigidbody2D.velocity = _moveDir; //moving left-right
+        }
+    }
+
+    private void LoadInputs()
+    {
         moveUp = Input.GetKey(KeyCode.UpArrow) || ((Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift)));
         notMoveUp = Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.LeftShift);
         moveLeft = Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift));
         moveRight = Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift));
-        
-        
-        
+    }
+
+    private void MovingAround()
+    {
         if (moveLeft || moveRight)
         {
             _moveDir = new Vector3(movementForce * Input.GetAxisRaw("Horizontal"), _rigidbody2D.velocity.y); //moving left-right
@@ -84,15 +102,7 @@ public class CharacterController2D : MonoBehaviour
         {
             _isJumping = false;
         }
-        
-    }
 
-    private void FixedUpdate() //for physics
-    {
-        if (moveLeft || moveRight)
-        {
-            _rigidbody2D.velocity = _moveDir; //moving left-right
-        }
     }
     
 }
