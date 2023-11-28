@@ -8,31 +8,15 @@ public class CharacterBehavior : MonoBehaviour
     public CharacterController2D characterController2D;
     private readonly String _move = "Move";
     private readonly String _jump = "Jump";
-    private readonly String _canJump = "CanJump";
-    private double _currentTime;
-    private readonly double _resetAnimationTime = 2;
-    public float motionTime;
-
-    private void Start()
-    {
-        
-    }
-
+    
 
     // Update is called once per frame
     void Update()
     {
-        _currentTime += Time.deltaTime;
+        MoveLeftRight();
         AnimationGoIdleJump();
         
-        if (characterController2D.moveLeft)
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0); //changes localScale to make character look left
-        }
-        if (characterController2D.moveRight)
-        {
-            transform.eulerAngles = new Vector3(0, 180, 0); //changes localScale to make character look right
-        }
+        
         
        
     }
@@ -52,29 +36,24 @@ public class CharacterBehavior : MonoBehaviour
                 animator.SetBool(_move, false);
             }
 
-            if (Input.GetKeyDown(KeyCode.UpArrow) || (Input.GetKeyDown(KeyCode.W)&& Input.GetKeyDown(KeyCode.LeftShift)))
+            if (Input.GetKeyDown(KeyCode.UpArrow) ||
+                (Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift))) //cannot use GetKey -> leads to looping
             {
                 animator.SetTrigger(_jump);
-
-                //animator.SetBool(_jump, !(characterController2D.isGrounded));
-                /*if (_currentTime <= _resetAnimationTime)
-                {
-                    animator.Play("Jump_animation");
-                }
-                else
-                {
-                    _currentTime = 0.0;
-                }*/
-
             }
-            else
-            {
-                //animator.ResetTrigger(_jump);
-            }
-            
     }
 
-    
+    private void MoveLeftRight()
+    {
+        if (characterController2D.moveLeft)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0); //changes localScale to make character look left
+        }
+        if (characterController2D.moveRight)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0); //changes localScale to make character look right
+        }  
+    }
     
     
 }
