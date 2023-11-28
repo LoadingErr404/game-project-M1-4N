@@ -8,12 +8,21 @@ public class CharacterBehavior : MonoBehaviour
     public CharacterController2D characterController2D;
     private readonly String _move = "Move";
     private readonly String _jump = "Jump";
-    
-    
+    private readonly String _canJump = "CanJump";
+    private double _currentTime;
+    private readonly double _resetAnimationTime = 2;
+    public float motionTime;
+
+    private void Start()
+    {
+        
+    }
+
+
     // Update is called once per frame
     void Update()
     {
-        
+        _currentTime += Time.deltaTime;
         AnimationGoIdleJump();
         
         if (characterController2D.moveLeft)
@@ -32,30 +41,40 @@ public class CharacterBehavior : MonoBehaviour
     private void AnimationGoIdleJump() //handles animation switches between go, idle and jump
     {
         
-            if (characterController2D.moveLeft || characterController2D.moveRight)
+        
+            if ((characterController2D.moveLeft || characterController2D.moveRight) && characterController2D.isGrounded)
             {
                 animator.SetBool(_move, true);
-                
+
             }
             else
             {
                 animator.SetBool(_move, false);
             }
 
-            if (characterController2D.moveUp)
+            if (Input.GetKeyDown(KeyCode.UpArrow) || (Input.GetKeyDown(KeyCode.W)&& Input.GetKeyDown(KeyCode.LeftShift)))
             {
-                animator.SetBool(_jump, !(characterController2D.isGrounded));
+                animator.SetTrigger(_jump);
+
+                //animator.SetBool(_jump, !(characterController2D.isGrounded));
+                /*if (_currentTime <= _resetAnimationTime)
+                {
+                    animator.Play("Jump_animation");
+                }
+                else
+                {
+                    _currentTime = 0.0;
+                }*/
+
             }
             else
             {
-                animator.SetBool(_jump, false);
+                //animator.ResetTrigger(_jump);
             }
             
-        
-        
-
-        
-        
-        
     }
+
+    
+    
+    
 }

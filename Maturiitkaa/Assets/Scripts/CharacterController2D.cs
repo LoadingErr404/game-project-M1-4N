@@ -49,6 +49,7 @@ public class CharacterController2D : MonoBehaviour
         moveRight = Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift));
         
         
+        
         if (moveLeft || moveRight)
         {
             _moveDir = new Vector3(movementForce * Input.GetAxisRaw("Horizontal"), _rigidbody2D.velocity.y); //moving left-right

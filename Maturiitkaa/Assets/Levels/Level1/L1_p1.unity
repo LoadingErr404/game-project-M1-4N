@@ -705,6 +705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1218648070}
   characterController2D: {fileID: 1218648068}
+  motionTime: 0
 --- !u!95 &1218648070
 Animator:
   serializedVersion: 5
