@@ -684,6 +684,7 @@ MonoBehaviour:
   notMoveUp: 0
   moveLeft: 0
   moveRight: 0
+  jumpCooldown: 2
   isGrounded: 0
   feetPossition: {fileID: 1265420553}
   checkRadius: 0.2
@@ -705,7 +706,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1218648070}
   characterController2D: {fileID: 1218648068}
-  motionTime: 0
 --- !u!95 &1218648070
 Animator:
   serializedVersion: 5

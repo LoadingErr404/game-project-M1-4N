@@ -15,9 +15,13 @@ public class CharacterController2D : MonoBehaviour
     public bool notMoveUp;
     public bool moveLeft;
     public bool moveRight;
+
+
+    [Header("Jump motion settings")] 
+    public float jumpCooldown;
     
-    
-    [Header("Jump motion settings")]
+
+    private double _currentTime;
     public bool isGrounded;
     public Transform feetPossition; //possition of player's feet
     public float checkRadius;
@@ -46,8 +50,8 @@ public class CharacterController2D : MonoBehaviour
     {
         LoadInputs();
         MovingAround();
-        
-        
+
+
     }
 
     private void FixedUpdate() //for physics
@@ -68,14 +72,17 @@ public class CharacterController2D : MonoBehaviour
 
     private void MovingAround()
     {
+        _currentTime = 0.0;
         if (moveLeft || moveRight)
         {
-            _moveDir = new Vector3(movementForce * Input.GetAxisRaw("Horizontal"), _rigidbody2D.velocity.y); //moving left-right
+            _moveDir = new Vector3(movementForce * Input.GetAxisRaw("Horizontal"),
+                _rigidbody2D.velocity.y); //moving left-right
 
         }
 
-        isGrounded = Physics2D.OverlapCircle(feetPossition.position, checkRadius, layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
-        
+        isGrounded =
+            Physics2D.OverlapCircle(feetPossition.position, checkRadius,
+                layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
         
         if (isGrounded && moveUp) //will jump if we are on ground and press up arrow
         {
@@ -95,14 +102,21 @@ public class CharacterController2D : MonoBehaviour
             {
                 _isJumping = false;
             }
-            
+
         }
 
         if (notMoveUp)
         {
             _isJumping = false;
+            while (_currentTime < jumpCooldown)
+            {
+                Debug.Log(_currentTime);
+                _currentTime += Time.deltaTime;
+            }
         }
 
+        
+        
     }
     
 }
