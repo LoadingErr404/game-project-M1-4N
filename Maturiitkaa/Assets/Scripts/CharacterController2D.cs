@@ -11,11 +11,12 @@ public class CharacterController2D : MonoBehaviour
 
     private Vector3 _moveDir; //vector that will be handeling physics
     private Vector3 _moveJump; //vector that will be handeling jumping physics
-    [Header("Movement bools")]
+    [Header("Movement bools")] //must be public for CharacterBehavior
     public bool moveUp;
     public bool notMoveUp;
     public bool moveLeft;
     public bool moveRight;
+    private bool _moveUpKeyDown;
 
 
     [Header("Jump motion settings")] 
@@ -75,6 +76,7 @@ public class CharacterController2D : MonoBehaviour
         notMoveUp = Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W);
         moveLeft = Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift));
         moveRight = Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift));
+        _moveUpKeyDown = Input.GetKeyDown(KeyCode.UpArrow) || ((Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift)));
     }
 
     private void MovingAround()
@@ -93,6 +95,8 @@ public class CharacterController2D : MonoBehaviour
 
         AbleToJumpAgain();
         IsAbleToJump();
+        
+        Debug.Log(_jumpAgain);
         
         if (!ableToJump)
         {
@@ -141,17 +145,11 @@ public class CharacterController2D : MonoBehaviour
 
     private void AbleToJumpAgain()
     {
-        if (moveUp)
+        if (_moveUpKeyDown)
         {
-           _jumpAgain = false;
+            _jumpAgain = false;
         }
-
-       // _jumpAgain = !moveUp; <- todle je ten problem
-        if (!moveUp)
-        {
-            _jumpAgain = true;
-        }
-
+        
         if (notMoveUp)
         {
             _jumpAgain = true;
