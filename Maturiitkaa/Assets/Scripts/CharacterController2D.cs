@@ -143,9 +143,10 @@ public class CharacterController2D : MonoBehaviour
     {
         if (moveUp)
         {
-            _jumpAgain = false;
+           _jumpAgain = false;
         }
 
+       // _jumpAgain = !moveUp; <- todle je ten problem
         if (!moveUp)
         {
             _jumpAgain = true;
