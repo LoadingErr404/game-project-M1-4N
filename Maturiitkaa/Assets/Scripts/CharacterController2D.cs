@@ -22,6 +22,7 @@ public class CharacterController2D : MonoBehaviour
     public float jumpCooldown;
     public bool ableToJump; //redudnant but needed for CharacterBehavior
     public MyTimer myTimer;
+    private bool _jumpAgain;
     
     private double _currentTime;
     public bool isGrounded;
@@ -40,6 +41,7 @@ public class CharacterController2D : MonoBehaviour
         isGrounded = false;
         _isJumping = false;
         ableToJump = true;
+        _jumpAgain = true;
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         myTimer.timerDelayTrigger = jumpCooldown; //making the max time value according to our value
     }
@@ -53,8 +55,8 @@ public class CharacterController2D : MonoBehaviour
     void Update()
     {
         LoadInputs();
-        IsAbleToJump();
         MovingAround();
+        
 
 
     }
@@ -70,7 +72,7 @@ public class CharacterController2D : MonoBehaviour
     private void LoadInputs()
     {
         moveUp = Input.GetKey(KeyCode.UpArrow) || ((Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift)));
-        notMoveUp = Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.LeftShift);
+        notMoveUp = Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W);
         moveLeft = Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift));
         moveRight = Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift));
     }
@@ -89,11 +91,15 @@ public class CharacterController2D : MonoBehaviour
             Physics2D.OverlapCircle(feetPossition.position, checkRadius,
                 layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
 
+        AbleToJumpAgain();
+        IsAbleToJump();
+        
         if (!ableToJump)
         {
             return;
         }
         
+
         if (isGrounded && moveUp) //will jump if we are on ground and press up arrow
         {
             _isJumping = true;
@@ -129,6 +135,25 @@ public class CharacterController2D : MonoBehaviour
         if (myTimer.currentTime >= myTimer.timerDelayTrigger){
             myTimer.currentTime = 0.0;
             ableToJump = true;
+        }
+        
+    }
+
+    private void AbleToJumpAgain()
+    {
+        if (moveUp)
+        {
+            _jumpAgain = false;
+        }
+
+        if (!moveUp)
+        {
+            _jumpAgain = true;
+        }
+
+        if (notMoveUp)
+        {
+            _jumpAgain = true;
         }
         
     }

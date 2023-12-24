@@ -34,8 +34,7 @@ public class CharacterBehavior : MonoBehaviour
                 animator.SetBool(_move, false);
             }
 
-            if (Input.GetKeyDown(KeyCode.UpArrow) ||
-                (Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift))) //cannot use GetKey -> leads to looping
+            if ((Input.GetKeyDown(KeyCode.UpArrow) || (Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift))) && characterController2D.ableToJump) //cannot use GetKey -> leads to looping
             {
                 animator.SetTrigger(_jump);
             }
