@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -19,8 +20,9 @@ public class CharacterController2D : MonoBehaviour
 
     [Header("Jump motion settings")] 
     public float jumpCooldown;
+    public bool ableToJump; //redudnant but needed for CharacterBehavior
+    public MyTimer myTimer;
     
-
     private double _currentTime;
     public bool isGrounded;
     public Transform feetPossition; //possition of player's feet
@@ -37,7 +39,9 @@ public class CharacterController2D : MonoBehaviour
     {
         isGrounded = false;
         _isJumping = false;
+        ableToJump = true;
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        myTimer.timerDelayTrigger = jumpCooldown; //making the max time value according to our value
     }
 
     private void Awake()
@@ -49,6 +53,7 @@ public class CharacterController2D : MonoBehaviour
     void Update()
     {
         LoadInputs();
+        IsAbleToJump();
         MovingAround();
 
 
@@ -72,7 +77,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void MovingAround()
     {
-        _currentTime = 0.0;
+       
         if (moveLeft || moveRight)
         {
             _moveDir = new Vector3(movementForce * Input.GetAxisRaw("Horizontal"),
@@ -83,6 +88,11 @@ public class CharacterController2D : MonoBehaviour
         isGrounded =
             Physics2D.OverlapCircle(feetPossition.position, checkRadius,
                 layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
+
+        if (!ableToJump)
+        {
+            return;
+        }
         
         if (isGrounded && moveUp) //will jump if we are on ground and press up arrow
         {
@@ -101,21 +111,25 @@ public class CharacterController2D : MonoBehaviour
             else
             {
                 _isJumping = false;
+                ableToJump = false;
             }
 
         }
 
-        if (notMoveUp)
+    }
+
+    private void IsAbleToJump()
+    {
+        if (!isGrounded)
         {
-            _isJumping = false;
-            while (_currentTime < jumpCooldown)
-            {
-                Debug.Log(_currentTime);
-                _currentTime += Time.deltaTime;
-            }
+            return;
         }
-
         
+       
+        if (myTimer.currentTime >= myTimer.timerDelayTrigger){
+            myTimer.currentTime = 0.0;
+            ableToJump = true;
+        }
         
     }
     
