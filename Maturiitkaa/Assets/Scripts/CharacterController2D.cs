@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class CharacterController2D : MonoBehaviour
@@ -11,7 +10,6 @@ public class CharacterController2D : MonoBehaviour
 
     private Vector3 _moveDir; //vector that will be handeling physics
     private Vector3 _moveJump; //vector that will be handeling jumping physics
-    
     [Header("Movement bools")]
     public bool moveUp;
     public bool notMoveUp;
@@ -21,8 +19,9 @@ public class CharacterController2D : MonoBehaviour
 
     [Header("Jump motion settings")] 
     public float jumpCooldown;
-    public JumpTimerCooldown jumpTimerCooldown;
     
+
+    private double _currentTime;
     public bool isGrounded;
     public Transform feetPossition; //possition of player's feet
     public float checkRadius;
@@ -73,6 +72,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void MovingAround()
     {
+        _currentTime = 0.0;
         if (moveLeft || moveRight)
         {
             _moveDir = new Vector3(movementForce * Input.GetAxisRaw("Horizontal"),
@@ -83,11 +83,6 @@ public class CharacterController2D : MonoBehaviour
         isGrounded =
             Physics2D.OverlapCircle(feetPossition.position, checkRadius,
                 layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
-
-        if (!jumpTimerCooldown.ableToJump)
-        {
-            return;
-        }
         
         if (isGrounded && moveUp) //will jump if we are on ground and press up arrow
         {
@@ -107,9 +102,21 @@ public class CharacterController2D : MonoBehaviour
             {
                 _isJumping = false;
             }
-            
 
         }
+
+        if (notMoveUp)
+        {
+            _isJumping = false;
+            while (_currentTime < jumpCooldown)
+            {
+                Debug.Log(_currentTime);
+                _currentTime += Time.deltaTime;
+            }
+        }
+
+        
         
     }
+    
 }

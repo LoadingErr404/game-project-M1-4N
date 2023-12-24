@@ -50,9 +50,14 @@ public class CameraMoveFollow : MonoBehaviour
 
     private void MoveCam(Vector3 myPosition, Vector3 tarPosition)
     {
-        _diff = myPosition.y - tarPosition.y;
-        _offset = !character.isGrounded ? new Vector3(offX, _diff, offZ) :  new Vector3(offX, offY, offZ); 
         
+        
+        //_diff = myPosition.y - tarPosition.y;
+        if (!character.isGrounded)
+        {
+            _offset = new Vector3(offX, _diff, offZ);
+        }
+        _offset = new Vector3(offX, offY, offZ); //the cam doesn't move on the Y axis
         Vector3 targetPosition = tarPosition + _offset;
         transform.position = Vector3.SmoothDamp(myPosition, targetPosition, ref _velocity, SmoothTime);
     }
