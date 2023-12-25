@@ -152,12 +152,15 @@ public class CharacterController2D : MonoBehaviour
         IsAbleToJump();
         _jumps++;
         
-        if (!ableToJump || notMoveUp || !moveUp)
+        if (!ableToJump)
         {
-            _jumps = 0;
             return true;
         }
 
+        if (isGrounded)
+        {
+            _jumps = 0;
+        }
         
         if (_jumps <= 31) //my frame rate tho
         {
