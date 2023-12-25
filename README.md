@@ -11,3 +11,6 @@ pro přidání videa nutno přidat se před odkaz: https://www.youtube.com/playl
 pohyb - WASD i šipky (implementovat obodvojí) kapitoly podle způsoby ochrany (https://cs.wikipedia.org/wiki/Frustrace)
 
 inspirace fighting systém (https://cs.wikipedia.org/wiki/Agrese)
+
+## do budoucna - switchování enginu
+https://www.reddit.com/r/Unity2D/comments/16keg2y/if_you_are_considering_a_switch_to_a_different_2d/
