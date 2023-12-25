@@ -34,6 +34,7 @@ public class CharacterController2D : MonoBehaviour
     private float _jumpTimeCounter;
     public float jumpTime;
     private bool _isJumping;
+    private int _jumps;
     
     
 
@@ -43,6 +44,7 @@ public class CharacterController2D : MonoBehaviour
         _isJumping = false;
         ableToJump = true;
         _jumpAgain = true;
+        _jumps = 0;
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         myTimer.timerDelayTrigger = jumpCooldown; //making the max time value according to our value
     }
@@ -74,9 +76,10 @@ public class CharacterController2D : MonoBehaviour
     {
         moveUp = Input.GetKey(KeyCode.UpArrow) || ((Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift)));
         notMoveUp = Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W);
+        _moveUpKeyDown = Input.GetKeyDown(KeyCode.UpArrow) || ((Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift)));
         moveLeft = Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift));
         moveRight = Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift));
-        _moveUpKeyDown = Input.GetKeyDown(KeyCode.UpArrow) || ((Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift)));
+        
     }
 
     private void MovingAround()
@@ -93,15 +96,17 @@ public class CharacterController2D : MonoBehaviour
             Physics2D.OverlapCircle(feetPossition.position, checkRadius,
                 layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
 
-        AbleToJumpAgain();
-        IsAbleToJump();
-        
-        Debug.Log(_jumpAgain);
-        
-        if (!ableToJump)
+
+        if (!AbleToJumpAgain())
         {
             return;
         }
+        
+        
+        
+
+        Debug.Log(++_jumps);
+        
         
 
         if (isGrounded && moveUp) //will jump if we are on ground and press up arrow
@@ -123,7 +128,6 @@ public class CharacterController2D : MonoBehaviour
                 _isJumping = false;
                 ableToJump = false;
             }
-
         }
 
     }
@@ -143,18 +147,25 @@ public class CharacterController2D : MonoBehaviour
         
     }
 
-    private void AbleToJumpAgain()
+    private bool AbleToJumpAgain()
     {
-        if (_moveUpKeyDown)
-        {
-            _jumpAgain = false;
-        }
+        IsAbleToJump();
+        _jumps++;
         
-        if (notMoveUp)
+        if (!ableToJump || notMoveUp || !moveUp)
         {
-            _jumpAgain = true;
+            _jumps = 0;
+            return true;
         }
+
         
+        if (_jumps <= 31) //my frame rate tho
+        {
+            return true;
+        }
+
+        return false;
+
     }
     
 }
