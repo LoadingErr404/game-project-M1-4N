@@ -4,7 +4,6 @@ using UnityEngine.Serialization;
 public class CharacterController2D : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
-    public FpsCounter fpsCounter;
     
     [Header("Movement physics")]
     public float movementForce;
@@ -24,6 +23,7 @@ public class CharacterController2D : MonoBehaviour
     public float jumpCooldown;
     public bool ableToJump; //redudnant but needed for CharacterBehavior
     public MyTimer myTimer;
+    private bool _jumpAgain;
     
     private double _currentTime;
     public bool isGrounded;
@@ -43,6 +43,7 @@ public class CharacterController2D : MonoBehaviour
         isGrounded = false;
         _isJumping = false;
         ableToJump = true;
+        _jumpAgain = true;
         _jumps = 0;
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         myTimer.timerDelayTrigger = jumpCooldown; //making the max time value according to our value
@@ -151,17 +152,14 @@ public class CharacterController2D : MonoBehaviour
         IsAbleToJump();
         _jumps++;
         
-        if (!ableToJump)
+        if (!ableToJump || notMoveUp || !moveUp)
         {
+            _jumps = 0;
             return true;
         }
 
-        if (isGrounded)
-        {
-            _jumps = 0;
-        }
         
-        if (_jumps <= (fpsCounter.fpsCount)/2) 
+        if (_jumps <= 31) //my frame rate tho
         {
             return true;
         }
