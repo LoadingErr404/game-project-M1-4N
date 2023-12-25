@@ -58,7 +58,10 @@ public class CharacterController2D : MonoBehaviour
     void Update()
     {
         LoadInputs();
+        IsAbleToJump();
+       // IsAbleToJumpAgain();
         MovingAround();
+        
         
 
 
@@ -66,17 +69,20 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate() //for physics
     {
+        
+        
         if (moveLeft || moveRight)
         {
             _rigidbody2D.velocity = _moveDir; //moving left-right
         }
+        
+        
     }
 
     private void LoadInputs()
     {
         moveUp = Input.GetKey(KeyCode.UpArrow) || ((Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift)));
         notMoveUp = Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W);
-        _moveUpKeyDown = Input.GetKeyDown(KeyCode.UpArrow) || ((Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift)));
         moveLeft = Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift));
         moveRight = Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift));
         
@@ -97,7 +103,7 @@ public class CharacterController2D : MonoBehaviour
                 layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
 
 
-        if (!AbleToJumpAgain())
+        if (!ableToJump)
         {
             return;
         }
@@ -122,6 +128,7 @@ public class CharacterController2D : MonoBehaviour
             {
                 _rigidbody2D.velocity = Vector2.up * jumpForce;
                 _jumpTimeCounter -= Time.deltaTime;
+                
             }
             else
             {
@@ -147,25 +154,32 @@ public class CharacterController2D : MonoBehaviour
         
     }
 
-    private bool AbleToJumpAgain()
+    private void IsAbleToJumpAgain()
     {
-        IsAbleToJump();
-        _jumps++;
         
-        if (!ableToJump || notMoveUp || !moveUp)
+        _moveUpKeyDown = Input.GetKeyDown(KeyCode.UpArrow) || ((Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift)));
+        
+        if (_moveUpKeyDown)
+        {
+            _jumps++;
+        }
+
+        if (isGrounded)
         {
             _jumps = 0;
-            return true;
         }
 
-        
-        if (_jumps <= 31) //my frame rate tho
+        if (_jumps < 1)
         {
-            return true;
+            ableToJump = true;
         }
-
-        return false;
-
+        else
+        {
+            ableToJump = false;
+        }
+        
+        
     }
+    
     
 }
