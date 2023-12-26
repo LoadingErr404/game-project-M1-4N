@@ -145,7 +145,7 @@ public class CharacterController2D : MonoBehaviour
         {
             return;
         }
-        
+        //koment
        
         if (myTimer.currentTime >= myTimer.timerDelayTrigger){
             myTimer.currentTime = 0.0;
