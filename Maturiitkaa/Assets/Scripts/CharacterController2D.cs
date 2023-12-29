@@ -5,9 +5,10 @@ public class CharacterController2D : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
     
+    [FormerlySerializedAs("_movementForce")]
     [Header("Movement physics")]
-    [SerializeField] float movementForce;
-    [SerializeField] float jumpForce;
+    [SerializeField] private float movementForce;
+    [SerializeField] private float jumpForce;
     private Vector3 _moveDir; //vector that will be handeling physics
     private Vector3 _moveJump; //vector that will be handeling jumping physics
     
@@ -21,18 +22,21 @@ public class CharacterController2D : MonoBehaviour
 
 
     [Header("Jump motion settings")] 
-    [SerializeField] float jumpCooldown;
+    [SerializeField] private float jumpCooldown;
     public bool ableToJump; //redudnant but needed for CharacterBehavior
-    [SerializeField] MyTimer myTimer;
+    [SerializeField] private MyTimer myTimerJumpCooldown;
+    [SerializeField] private MyTimer myTimerSaveJump;
     
-    private double _currentTime;
+    //for ground check
     public bool isGrounded;
-    [SerializeField] Transform feetPossition; //possition of player's feet
-    [SerializeField] float checkRadius;
-    [SerializeField] LayerMask layerOfGround; //will be checking for Tag "ground"
+    [SerializeField] private Transform feetPosition; //possition of player's feet
+    [SerializeField] private float checkRadius;
+    [SerializeField] private LayerMask layerOfGround; //will be checking for Tag "ground"
+    
+    
     [Header("Settings for buffered jump")]
     private float _jumpTimeCounter;
-    [SerializeField] float jumpTime;
+    [SerializeField] private float jumpTime;
     private bool _isJumping;
     private int _jumps;
     
@@ -45,7 +49,8 @@ public class CharacterController2D : MonoBehaviour
         ableToJump = true;
         _jumps = 0;
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-        myTimer.timerDelayTrigger = jumpCooldown; //making the max time value according to our value
+        myTimerJumpCooldown.timerDelayTrigger = jumpCooldown; //making the max time value according to our value
+        myTimerSaveJump.timerDelayTrigger = 0.5;
     }
 
     private void Awake()
@@ -58,7 +63,7 @@ public class CharacterController2D : MonoBehaviour
     {
         LoadInputs();
         IsAbleToJump();
-       // IsAbleToJumpAgain();
+      // Debug.Log(IsAbleToJumpAgain());
         MovingAround();
         
         
@@ -84,6 +89,7 @@ public class CharacterController2D : MonoBehaviour
         notMoveUp = Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W);
         moveLeft = Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift));
         moveRight = Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift));
+        _moveUpKeyDown = Input.GetKeyDown(KeyCode.UpArrow) || ((Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift)));
         
     }
 
@@ -98,7 +104,7 @@ public class CharacterController2D : MonoBehaviour
         }
 
         isGrounded =
-            Physics2D.OverlapCircle(feetPossition.position, checkRadius,
+            Physics2D.OverlapCircle(feetPosition.position, checkRadius,
                 layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
 
 
@@ -106,11 +112,6 @@ public class CharacterController2D : MonoBehaviour
         {
             return;
         }
-        
-        
-        
-
-        Debug.Log(++_jumps);
         
         
 
@@ -146,38 +147,36 @@ public class CharacterController2D : MonoBehaviour
         }
         
        
-        if (myTimer.currentTime >= myTimer.timerDelayTrigger){
-            myTimer.currentTime = 0.0;
+        if (myTimerJumpCooldown.currentTime >= myTimerJumpCooldown.timerDelayTrigger){
+            myTimerJumpCooldown.currentTime = 0.0;
             ableToJump = true;
         }
         
     }
 
-    private void IsAbleToJumpAgain()
+    private bool IsAbleToJumpAgain()
     {
+        var ableToJumpAgain = false;
         
-        _moveUpKeyDown = Input.GetKeyDown(KeyCode.UpArrow) || ((Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift)));
         
         if (_moveUpKeyDown)
         {
+            if (myTimerSaveJump.currentTime <= myTimerSaveJump.timerDelayTrigger){
+                ableToJumpAgain = true;
+            }
             _jumps++;
         }
 
         if (isGrounded)
         {
             _jumps = 0;
+            myTimerSaveJump.currentTime = 0.0;
+            ableToJumpAgain = true;
         }
 
-        if (_jumps < 1)
-        {
-            ableToJump = true;
-        }
-        else
-        {
-            ableToJump = false;
-        }
-        
-        
+        ableToJump = _jumps < 1;
+
+        return ableToJumpAgain;
     }
     
     

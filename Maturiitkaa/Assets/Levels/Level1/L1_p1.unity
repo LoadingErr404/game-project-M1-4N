@@ -203,6 +203,52 @@ Transform:
   - {fileID: 468355245}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &240329554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 240329556}
+  - component: {fileID: 240329555}
+  m_Layer: 0
+  m_Name: MyTimerSaveJump
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &240329555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240329554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d525338e511bb974cafa7356fa2ec123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerDelayTrigger: 0
+  currentTime: 0
+--- !u!4 &240329556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240329554}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.9222866, y: -3.2816982, z: -2.044023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &374900836
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +431,7 @@ GameObject:
   - component: {fileID: 601521495}
   - component: {fileID: 601521494}
   m_Layer: 0
-  m_Name: MyTimer
+  m_Name: MyTimerCooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -732,9 +778,10 @@ MonoBehaviour:
   moveRight: 0
   jumpCooldown: 2
   ableToJump: 0
-  myTimer: {fileID: 601521494}
+  myTimerJumpCooldown: {fileID: 601521494}
+  myTimerSaveJump: {fileID: 240329555}
   isGrounded: 0
-  feetPossition: {fileID: 1265420553}
+  feetPosition: {fileID: 1265420553}
   checkRadius: 0.2
   layerOfGround:
     serializedVersion: 2
@@ -886,3 +933,4 @@ SceneRoots:
   - {fileID: 374900837}
   - {fileID: 968189922}
   - {fileID: 601521495}
+  - {fileID: 240329556}
