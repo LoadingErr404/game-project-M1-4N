@@ -5,22 +5,30 @@ public class CameraMoveFollow : MonoBehaviour
 {
     public CharacterController2D character;
     [Header("Camera offset")]
-    [SerializeField] float offX;
-    [SerializeField] float offY;
-    [SerializeField] float offZ;
+    [SerializeField] private float offX;
+    [SerializeField] private float offY;
+    [SerializeField] private float offZ;
     private Vector3 _offset;
 
     [Header("Zooming")] 
-    [SerializeField] Transform zoomOutPoint; //object from scene
-    [SerializeField] Transform zoomInPoint;
-    [SerializeField] float zoomSpeed;
-    [SerializeField] Camera cam;
-    private float _originZoom;
+    [SerializeField] private Transform zoomOutPoint; //object from scene
+    [SerializeField] private Transform zoomInPoint;
+    [SerializeField] private Transform midPoint;
+    [SerializeField] private float zoomSpeed;
+    [SerializeField] private Camera cam;
+
+    [Header("Zooming settings")] 
+    [SerializeField] private float maxZoomSize;
+    [SerializeField] private float minZoomSize;
+    [SerializeField] private float defaultZoomSize;
+    
     private static float _zoomOutPoint;  //for saving position from scene only once
-    private static float _zoomInPoint; 
+    private static float _zoomInPoint;
+    private static float _midPoint;
     private float _distanceZoomOut;
     private float _distanceZoomIn;
-    private float _zoom;
+    private float _startSize;
+    private float _endSize;
 
     private const float SmoothTime = 0f; //how long it takes to catch up
 
@@ -33,24 +41,23 @@ public class CameraMoveFollow : MonoBehaviour
     {
         _zoomInPoint = zoomInPoint.position.x;
         _zoomOutPoint = zoomOutPoint.position.x;
-        _originZoom = cam.orthographicSize;
+        _midPoint = midPoint.position.x;
+        cam.orthographicSize = defaultZoomSize;
         target = character.transform;
     }
 
 
     // Update is called once per frame
     void Update()
-    {
-        var myPosition = transform.position;
-        var tarPosition = target.position;
+    { 
         
-        MoveCam(myPosition, tarPosition);
-        ZoomCam(tarPosition);
+        MoveCam();
+        ZoomCam();
+
     }
 
-    private void MoveCam(Vector3 myPosition, Vector3 tarPosition)
+    private void MoveCam()
     {
-        
         
         //_diff = myPosition.y - tarPosition.y;
         if (!character.isGrounded)
@@ -58,31 +65,32 @@ public class CameraMoveFollow : MonoBehaviour
             _offset = new Vector3(offX, _diff, offZ);
         }
         _offset = new Vector3(offX, offY, offZ); //the cam doesn't move on the Y axis
-        Vector3 targetPosition = tarPosition + _offset;
-        transform.position = Vector3.SmoothDamp(myPosition, targetPosition, ref _velocity, SmoothTime);
+        Vector3 targetPosition = target.position + _offset;
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, SmoothTime);
     }
 
-    private void ZoomCam(Vector3 tarPosition)
+    private void ZoomCam()
     {
-        var targetSize=1f;
-        _distanceZoomIn = _zoomInPoint - tarPosition.x;
-        _distanceZoomOut =  tarPosition.x - _zoomOutPoint;
-        //Debug.Log(_distanceZoomIn);
-        //if (!(_distanceZoomIn > 0) || !(_distanceZoomOut > 0)) return; //will play only if we are in between the points
-        if (_distanceZoomIn < _distanceZoomOut) //zooming IN
-        {
-            targetSize = 1 / _distanceZoomIn;
-            Debug.Log(targetSize);
-            //cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, Time.deltaTime * zoomSpeed);
-            cam.orthographicSize = targetSize;
-
+        var newCamSize = 0f;
+        if ((target.position.x - _midPoint) < 0)
+        { 
+            
+           newCamSize = Remap((target.position.x - _zoomOutPoint), 0, Math.Abs(_midPoint - _zoomOutPoint), maxZoomSize, defaultZoomSize);
+           if (newCamSize > maxZoomSize) return;
+           
         }
         else
         {
-            //Debug.Log("ZoomOut"); 
+            newCamSize = Remap((_zoomInPoint - target.position.x), 0, Math.Abs(_zoomOutPoint - _midPoint), minZoomSize, defaultZoomSize - 2)+1;
+            if(newCamSize < (minZoomSize+1)) return;
         }
-        Debug.Log(_distanceZoomOut);
-        Debug.Log(_distanceZoomIn);
-
+        Debug.Log(newCamSize);
+        cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, newCamSize, 0.2f);
+        
     }
+    private static float Remap (float value, float from1, float from2, float to1, float to2)
+    {
+        return to1 + (value-from1)*(to2-to1)/(from2-from1);
+    }
+    
 }
