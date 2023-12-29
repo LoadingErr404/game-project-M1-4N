@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class CharacterBehavior : MonoBehaviour
 {
-    public Animator animator;
+    [SerializeField] Animator animator;
 
-    public CharacterController2D characterController2D;
+    [SerializeField] CharacterController2D characterController2D;
     private readonly String _move = "Move";
     private readonly String _jump = "Jump";
     

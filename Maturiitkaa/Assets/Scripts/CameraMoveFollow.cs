@@ -5,16 +5,16 @@ public class CameraMoveFollow : MonoBehaviour
 {
     public CharacterController2D character;
     [Header("Camera offset")]
-    public float offX;
-    public float offY;
-    public float offZ;
+    [SerializeField] float offX;
+    [SerializeField] float offY;
+    [SerializeField] float offZ;
     private Vector3 _offset;
 
     [Header("Zooming")] 
-    public Transform zoomOutPoint; //object from scene
-    public Transform zoomInPoint;
-    public float zoomSpeed;
-    public Camera cam;
+    [SerializeField] Transform zoomOutPoint; //object from scene
+    [SerializeField] Transform zoomInPoint;
+    [SerializeField] float zoomSpeed;
+    [SerializeField] Camera cam;
     private float _originZoom;
     private static float _zoomOutPoint;  //for saving position from scene only once
     private static float _zoomInPoint; 
@@ -26,7 +26,7 @@ public class CameraMoveFollow : MonoBehaviour
 
     private Vector3 _velocity = Vector3.zero;
 
-    public Transform target;
+    [SerializeField] Transform target;
     private float _diff;
 
     private void Start()

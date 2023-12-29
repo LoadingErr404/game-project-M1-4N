@@ -6,11 +6,12 @@ public class CharacterController2D : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     
     [Header("Movement physics")]
-    public float movementForce;
-    public float jumpForce;
-
+    [SerializeField] float movementForce;
+    [SerializeField] float jumpForce;
     private Vector3 _moveDir; //vector that will be handeling physics
     private Vector3 _moveJump; //vector that will be handeling jumping physics
+    
+    
     [Header("Movement bools")] //must be public for CharacterBehavior
     public bool moveUp;
     public bool notMoveUp;
@@ -20,19 +21,18 @@ public class CharacterController2D : MonoBehaviour
 
 
     [Header("Jump motion settings")] 
-    public float jumpCooldown;
+    [SerializeField] float jumpCooldown;
     public bool ableToJump; //redudnant but needed for CharacterBehavior
-    public MyTimer myTimer;
-    private bool _jumpAgain;
+    [SerializeField] MyTimer myTimer;
     
     private double _currentTime;
     public bool isGrounded;
-    public Transform feetPossition; //possition of player's feet
-    public float checkRadius;
-    public LayerMask layerOfGround; //will be checking for Tag "ground"
+    [SerializeField] Transform feetPossition; //possition of player's feet
+    [SerializeField] float checkRadius;
+    [SerializeField] LayerMask layerOfGround; //will be checking for Tag "ground"
     [Header("Settings for buffered jump")]
     private float _jumpTimeCounter;
-    public float jumpTime;
+    [SerializeField] float jumpTime;
     private bool _isJumping;
     private int _jumps;
     
@@ -43,7 +43,6 @@ public class CharacterController2D : MonoBehaviour
         isGrounded = false;
         _isJumping = false;
         ableToJump = true;
-        _jumpAgain = true;
         _jumps = 0;
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         myTimer.timerDelayTrigger = jumpCooldown; //making the max time value according to our value
