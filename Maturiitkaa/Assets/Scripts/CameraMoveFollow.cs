@@ -30,7 +30,7 @@ public class CameraMoveFollow : MonoBehaviour
     private float _startSize;
     private float _endSize;
 
-    private const float SmoothTime = 0f; //how long it takes to catch up
+    //private const float SmoothTime = 0f; //how long it takes to catch up
 
     private Vector3 _velocity = Vector3.zero;
 
@@ -66,10 +66,10 @@ public class CameraMoveFollow : MonoBehaviour
         }
         _offset = new Vector3(offX, offY, offZ); //the cam doesn't move on the Y axis
         Vector3 targetPosition = target.position + _offset;
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, SmoothTime);
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, 0);
     }
 
-    private void ZoomCam()
+    private void Zoom()
     {
         var newCamSize = 0f;
         if ((target.position.x - _midPoint) < 0)
@@ -87,6 +87,28 @@ public class CameraMoveFollow : MonoBehaviour
         Debug.Log(newCamSize);
         cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, newCamSize, 0.2f);
         
+    }
+
+    private void ZoomCam()
+    {
+        var targetX = target.position.x;
+        var newCamSize = 0f;
+        var distanceOut = targetX - _zoomOutPoint;
+        var distanceIn = _zoomInPoint - targetX;
+
+        if (distanceOut < distanceIn)
+        {
+            newCamSize = Remap((target.position.x - _zoomOutPoint), 0, Math.Abs(_midPoint - _zoomOutPoint), maxZoomSize, defaultZoomSize);
+            if (newCamSize > maxZoomSize) return;
+        }
+        else
+        {
+            newCamSize = Remap((_zoomInPoint - target.position.x), 0, Math.Abs(_zoomOutPoint - _midPoint), minZoomSize, defaultZoomSize - 2)+1;
+            if(newCamSize < (minZoomSize+1)) return;
+        }
+        
+        Debug.Log(newCamSize);
+        cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, newCamSize, 0.2f);
     }
     private static float Remap (float value, float from1, float from2, float to1, float to2)
     {
