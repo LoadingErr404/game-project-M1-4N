@@ -13,8 +13,6 @@ public class CameraMoveFollow : MonoBehaviour
     [Header("Zooming")] 
     [SerializeField] private Transform zoomOutPoint; //object from scene
     [SerializeField] private Transform zoomInPoint;
-    [SerializeField] private Transform midPoint;
-    [SerializeField] private float zoomSpeed;
     [SerializeField] private Camera cam;
 
     [Header("Zooming settings")] 
@@ -24,7 +22,6 @@ public class CameraMoveFollow : MonoBehaviour
     
     private static float _zoomOutPoint;  //for saving position from scene only once
     private static float _zoomInPoint;
-    private static float _midPoint;
     private float _distanceZoomOut;
     private float _distanceZoomIn;
     private float _startSize;
@@ -41,7 +38,6 @@ public class CameraMoveFollow : MonoBehaviour
     {
         _zoomInPoint = zoomInPoint.position.x;
         _zoomOutPoint = zoomOutPoint.position.x;
-        _midPoint = midPoint.position.x;
         cam.orthographicSize = defaultZoomSize;
         target = character.transform;
     }
@@ -68,26 +64,7 @@ public class CameraMoveFollow : MonoBehaviour
         Vector3 targetPosition = target.position + _offset;
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, 0);
     }
-
-    private void Zoom()
-    {
-        var newCamSize = 0f;
-        if ((target.position.x - _midPoint) < 0)
-        { 
-            
-           newCamSize = Remap((target.position.x - _zoomOutPoint), 0, Math.Abs(_midPoint - _zoomOutPoint), maxZoomSize, defaultZoomSize);
-           if (newCamSize > maxZoomSize) return;
-           
-        }
-        else
-        {
-            newCamSize = Remap((_zoomInPoint - target.position.x), 0, Math.Abs(_zoomOutPoint - _midPoint), minZoomSize, defaultZoomSize - 2)+1;
-            if(newCamSize < (minZoomSize+1)) return;
-        }
-        Debug.Log(newCamSize);
-        cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, newCamSize, 0.2f);
-        
-    }
+    
 
     private void ZoomCam()
     {
@@ -95,17 +72,11 @@ public class CameraMoveFollow : MonoBehaviour
         var newCamSize = 0f;
         var distanceOut = targetX - _zoomOutPoint;
         var distanceIn = _zoomInPoint - targetX;
+        var distanceOutIn = _zoomInPoint - _zoomOutPoint;
 
-        if (distanceOut < distanceIn)
-        {
-            newCamSize = Remap((target.position.x - _zoomOutPoint), 0, Math.Abs(_midPoint - _zoomOutPoint), maxZoomSize, defaultZoomSize);
-            if (newCamSize > maxZoomSize) return;
-        }
-        else
-        {
-            newCamSize = Remap((_zoomInPoint - target.position.x), 0, Math.Abs(_zoomOutPoint - _midPoint), minZoomSize, defaultZoomSize - 2)+1;
-            if(newCamSize < (minZoomSize+1)) return;
-        }
+        newCamSize = Remap((distanceOut), 0, Math.Abs(distanceOutIn), maxZoomSize, minZoomSize);
+
+        if (newCamSize > maxZoomSize || newCamSize < minZoomSize) return; //out of bounds
         
         Debug.Log(newCamSize);
         cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, newCamSize, 0.2f);
