@@ -62,9 +62,10 @@ public class CharacterController2D : MonoBehaviour
     void Update()
     {
         LoadInputs();
-        IsAbleToJump();
+        
       // Debug.Log(IsAbleToJumpAgain());
         MovingAround();
+        IsAbleToJump();
         
         
 
