@@ -20,6 +20,11 @@ public class CameraMoveFollow : MonoBehaviour
     [SerializeField] private float minZoomSize;
     [SerializeField] private float defaultZoomSize;
     
+    [Header("Offset settings")] 
+    [SerializeField] private float bottomOffset;
+    [SerializeField] private float topOffset;
+    
+    
     private static float _zoomOutPoint;  //for saving position from scene only once
     private static float _zoomInPoint;
     private float _distanceZoomOut;
@@ -73,10 +78,14 @@ public class CameraMoveFollow : MonoBehaviour
         var distanceOut = targetX - _zoomOutPoint;
         var distanceIn = _zoomInPoint - targetX;
         var distanceOutIn = _zoomInPoint - _zoomOutPoint;
+        var newOffset = 0f;
 
         newCamSize = Remap((distanceOut), 0, Math.Abs(distanceOutIn), maxZoomSize, minZoomSize);
 
         if (newCamSize > maxZoomSize || newCamSize < minZoomSize) return; //out of bounds
+
+        newOffset = Remap(newCamSize, minZoomSize, maxZoomSize, topOffset, bottomOffset); //otestovat
+        cam.transform.position.y = newOffset; //otestovat
         
         Debug.Log(newCamSize);
         cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, newCamSize, 0.2f);

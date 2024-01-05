@@ -158,23 +158,33 @@ public class CharacterController2D : MonoBehaviour
     {
         var ableToJumpAgain = false;
         
-        
+        /*
         if (_moveUpKeyDown)
         {
             if (myTimerSaveJump.currentTime <= myTimerSaveJump.timerDelayTrigger){
                 ableToJumpAgain = true;
             }
             _jumps++;
-        }
-
-        if (isGrounded)
+        }*/
+        if (_jumpTimeCounter > 0) //otestuj
         {
+            ableToJumpAgain = true;
+        }
+        
+
+        if (isGrounded) //otestuj
+        { /*
             _jumps = 0;
-            myTimerSaveJump.currentTime = 0.0;
+            myTimerSaveJump.currentTime = 0.0;*/
             ableToJumpAgain = true;
         }
 
-        ableToJump = _jumps < 1;
+        //ableToJump = _jumps < 1;
+
+        if (notMoveup)
+        {
+            ableToJumpAgain = true;
+        }
 
         return ableToJumpAgain;
     }
