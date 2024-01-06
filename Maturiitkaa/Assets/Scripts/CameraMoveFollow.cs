@@ -83,10 +83,10 @@ public class CameraMoveFollow : MonoBehaviour
         newCamSize = Remap((distanceOut), 0, Math.Abs(distanceOutIn), maxZoomSize, minZoomSize);
 
         if (newCamSize > maxZoomSize || newCamSize < minZoomSize) return; //out of bounds
-
+/*
         newOffset = Remap(newCamSize, minZoomSize, maxZoomSize, topOffset, bottomOffset); //otestovat
         cam.transform.position.y = newOffset; //otestovat
-        
+        */
         Debug.Log(newCamSize);
         cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, newCamSize, 0.2f);
     }

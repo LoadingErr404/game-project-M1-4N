@@ -155,7 +155,7 @@ public class CharacterController2D : MonoBehaviour
         
     }
 
-    private bool IsAbleToJumpAgain()
+    private void IsAbleToJumpAgain()
     {
         var ableToJumpAgain = false;
         
@@ -167,6 +167,7 @@ public class CharacterController2D : MonoBehaviour
             }
             _jumps++;
         }*/
+        /*
         if (_jumpTimeCounter > 0) //otestuj
         {
             ableToJumpAgain = true;
@@ -174,20 +175,23 @@ public class CharacterController2D : MonoBehaviour
         
 
         if (isGrounded) //otestuj
-        { /*
+        { 
             _jumps = 0;
             myTimerSaveJump.currentTime = 0.0;*/
             ableToJumpAgain = true;
-        }
+        //}
+    /*
 
         //ableToJump = _jumps < 1;
 
         if (notMoveup)
         {
             ableToJumpAgain = true;
-        }
+        } 
+    
 
         return ableToJumpAgain;
+        */
     }
     
     
