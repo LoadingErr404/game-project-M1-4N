@@ -50,14 +50,15 @@ public class CameraMoveFollow : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { 
+    {
+        var camSize = ZoomCam();
         
-        MoveCam();
-        ZoomCam();
+        MoveCam(camSize);
+        
 
     }
 
-    private void MoveCam()
+    private void MoveCam(float zoomSize)
     {
         
         //_diff = myPosition.y - tarPosition.y;
@@ -65,30 +66,34 @@ public class CameraMoveFollow : MonoBehaviour
         {
             _offset = new Vector3(offX, _diff, offZ);
         }
+        
+        var newOffset = Remap(zoomSize, minZoomSize, maxZoomSize,bottomOffset, topOffset);
+        /*
         _offset = new Vector3(offX, offY, offZ); //the cam doesn't move on the Y axis
-        Vector3 targetPosition = target.position + _offset;
+        Vector3 targetPosition = target.position + _offset;*/
+        Vector3 targetPosition = new Vector3(target.position.x, newOffset, offZ);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, 0);
     }
     
 
-    private void ZoomCam()
+    private float ZoomCam()
     {
         var targetX = target.position.x;
         var newCamSize = 0f;
         var distanceOut = targetX - _zoomOutPoint;
         var distanceIn = _zoomInPoint - targetX;
         var distanceOutIn = _zoomInPoint - _zoomOutPoint;
-        var newOffset = 0f;
-
+        
         newCamSize = Remap((distanceOut), 0, Math.Abs(distanceOutIn), maxZoomSize, minZoomSize);
 
-        if (newCamSize > maxZoomSize || newCamSize < minZoomSize) return; //out of bounds
-/*
-        newOffset = Remap(newCamSize, minZoomSize, maxZoomSize, topOffset, bottomOffset); //otestovat
-        cam.transform.position.y = newOffset; //otestovat
-        */
-        Debug.Log(newCamSize);
+        if (newCamSize > maxZoomSize || newCamSize < minZoomSize) //checking if in bounds
+        {
+            newCamSize = cam.orthographicSize;
+        }
+        
         cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, newCamSize, 0.2f);
+        
+        return newCamSize;
     }
     private static float Remap (float value, float from1, float from2, float to1, float to2)
     {

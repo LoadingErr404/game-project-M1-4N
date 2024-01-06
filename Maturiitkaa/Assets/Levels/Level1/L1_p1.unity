@@ -609,9 +609,11 @@ MonoBehaviour:
   zoomOutPoint: {fileID: 374900837}
   zoomInPoint: {fileID: 968189922}
   cam: {fileID: 977207262}
-  maxZoomSize: 15
+  maxZoomSize: 8
   minZoomSize: 1.5
   defaultZoomSize: 5
+  bottomOffset: -3
+  topOffset: 3
   target: {fileID: 1218648065}
 --- !u!1001 &1218648063
 PrefabInstance:
