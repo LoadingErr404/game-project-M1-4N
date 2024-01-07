@@ -38,7 +38,6 @@ public class CharacterController2D : MonoBehaviour
     private float _jumpTimeCounter;
     [SerializeField] private float jumpTime;
     private bool _isJumping;
-    private int _jumps;
     private bool _doneJumping;
     
     
@@ -49,7 +48,6 @@ public class CharacterController2D : MonoBehaviour
         _isJumping = false;
         ableToJump = true;
         _doneJumping = false;
-        _jumps = 0;
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         myTimerJumpCooldown.timerDelayTrigger = jumpCooldown; //making the max time value according to our value
         myTimerSaveJump.timerDelayTrigger = 0.5;
@@ -111,7 +109,7 @@ public class CharacterController2D : MonoBehaviour
             Physics2D.OverlapCircle(feetPosition.position, checkRadius,
                 layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
 
-        if (_doneJumping && canJumpAgain())
+        if (_doneJumping && CanJumpAgain())
         {
             return;
         }
@@ -150,7 +148,7 @@ public class CharacterController2D : MonoBehaviour
     }
     
 
-    private bool canJumpAgain()
+    private bool CanJumpAgain()
     { 
         var jump = !_moveUpKeyDown || notMoveUp;
         return jump;
