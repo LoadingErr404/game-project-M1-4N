@@ -39,6 +39,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private float jumpTime;
     private bool _isJumping;
     private int _jumps;
+    private bool _doneJumping;
     
     
 
@@ -47,6 +48,7 @@ public class CharacterController2D : MonoBehaviour
         isGrounded = false;
         _isJumping = false;
         ableToJump = true;
+        _doneJumping = false;
         _jumps = 0;
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         myTimerJumpCooldown.timerDelayTrigger = jumpCooldown; //making the max time value according to our value
@@ -108,7 +110,13 @@ public class CharacterController2D : MonoBehaviour
         isGrounded =
             Physics2D.OverlapCircle(feetPosition.position, checkRadius,
                 layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
+
+        if (_doneJumping && canJumpAgain())
+        {
+            return;
+        }
         
+    
         if (isGrounded && moveUp) //will jump if we are on ground and press up arrow
         {
             _isJumping = true;
@@ -116,11 +124,7 @@ public class CharacterController2D : MonoBehaviour
             _rigidbody2D.velocity = Vector2.up * jumpForce;
             ableToJump = true;
         }
-
-        if (_isJumping && canJumpAgain())
-        {
-            Debug.Log(("eyeye"));
-        }
+        
        
 
         if (moveUp && _isJumping) //buffered jump
@@ -129,28 +133,27 @@ public class CharacterController2D : MonoBehaviour
             {
                 _rigidbody2D.velocity = Vector2.up * jumpForce;
                 _jumpTimeCounter -= Time.deltaTime;
-                
+                _doneJumping = false;
+            }
+            else
+            {
+                _doneJumping = true;
             }
             
         }
         else
         {
             _isJumping = false;
+            _doneJumping = true;
         }
             
     }
     
 
     private bool canJumpAgain()
-    {
-        bool jumpAgain = !_moveUpKeyDown || notMoveUp;
-
-        if (!isGrounded)
-        {
-            jumpAgain = false;
-        }
-
-        return jumpAgain;
+    { 
+        var jump = !_moveUpKeyDown || notMoveUp;
+        return jump;
     }
     
     
