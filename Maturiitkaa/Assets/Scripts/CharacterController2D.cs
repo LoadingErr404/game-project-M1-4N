@@ -65,7 +65,7 @@ public class CharacterController2D : MonoBehaviour
         
       // Debug.Log(IsAbleToJumpAgain());
         MovingAround();
-        IsAbleToJump();
+        //IsAbleToJump();
         
         
 
@@ -90,7 +90,7 @@ public class CharacterController2D : MonoBehaviour
         notMoveUp = Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W);
         moveLeft = Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift));
         moveRight = Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift));
-        _moveUpKeyDown = Input.GetKeyDown(KeyCode.UpArrow) || ((Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift)));
+        _moveUpKeyDown = Input.GetKeyDown(KeyCode.UpArrow) || ((Input.GetKeyDown(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))); //shift needs to be GetKey because you press it down before W
         
     }
 
@@ -134,10 +134,29 @@ public class CharacterController2D : MonoBehaviour
             else
             {
                 _isJumping = false;
-                ableToJump = false;
+               // ableToJump = false;
             }
         }
 
+      
+
+    }
+
+    private bool canJumpAgain()
+    {
+        var jumped = false;
+        var jumpAgain = true;
+        if (_moveUpKeyDown)
+        {
+            jumpAgain = false;
+        }
+
+        if (isGrounded)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void IsAbleToJump()
