@@ -5,7 +5,6 @@ public class CharacterController2D : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
     
-    [FormerlySerializedAs("_movementForce")]
     [Header("Movement physics")]
     [SerializeField] private float movementForce;
     [SerializeField] private float jumpForce;
@@ -22,10 +21,7 @@ public class CharacterController2D : MonoBehaviour
 
 
     [Header("Jump motion settings")] 
-    [SerializeField] private float jumpCooldown;
-    public bool ableToJump; //redudnant but needed for CharacterBehavior
-    [SerializeField] private MyTimer myTimerJumpCooldown;
-    [SerializeField] private MyTimer myTimerSaveJump;
+    public bool ableToJump;
     
     //for ground check
     public bool isGrounded;
@@ -49,8 +45,7 @@ public class CharacterController2D : MonoBehaviour
         ableToJump = true;
         _doneJumping = false;
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-        myTimerJumpCooldown.timerDelayTrigger = jumpCooldown; //making the max time value according to our value
-        myTimerSaveJump.timerDelayTrigger = 0.5;
+        
     }
 
     private void Awake()
@@ -62,15 +57,8 @@ public class CharacterController2D : MonoBehaviour
     void Update()
     {
         LoadInputs();
-        
-      // Debug.Log(IsAbleToJumpAgain());
         MovingAround();
-        //IsAbleToJump();
         
-        
-        
-
-
     }
 
     private void FixedUpdate() //for physics
