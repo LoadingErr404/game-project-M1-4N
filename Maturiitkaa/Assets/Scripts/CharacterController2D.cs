@@ -68,6 +68,7 @@ public class CharacterController2D : MonoBehaviour
         //IsAbleToJump();
         
         
+        
 
 
     }
@@ -107,21 +108,20 @@ public class CharacterController2D : MonoBehaviour
         isGrounded =
             Physics2D.OverlapCircle(feetPosition.position, checkRadius,
                 layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
-
-
-        if (!ableToJump)
-        {
-            return;
-        }
         
-        
-
         if (isGrounded && moveUp) //will jump if we are on ground and press up arrow
         {
             _isJumping = true;
             _jumpTimeCounter = jumpTime;
             _rigidbody2D.velocity = Vector2.up * jumpForce;
+            ableToJump = true;
         }
+
+        if (_isJumping && canJumpAgain())
+        {
+            Debug.Log(("eyeye"));
+        }
+       
 
         if (moveUp && _isJumping) //buffered jump
         {
@@ -131,86 +131,26 @@ public class CharacterController2D : MonoBehaviour
                 _jumpTimeCounter -= Time.deltaTime;
                 
             }
-            else
-            {
-                _isJumping = false;
-               // ableToJump = false;
-            }
+            
         }
-
-      
-
+        else
+        {
+            _isJumping = false;
+        }
+            
     }
+    
 
     private bool canJumpAgain()
     {
-        var jumped = false;
-        var jumpAgain = true;
-        if (_moveUpKeyDown)
+        bool jumpAgain = !_moveUpKeyDown || notMoveUp;
+
+        if (!isGrounded)
         {
             jumpAgain = false;
         }
 
-        if (isGrounded)
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    private void IsAbleToJump()
-    {
-        if (!isGrounded)
-        {
-            return;
-        }
-        
-       
-        if (myTimerJumpCooldown.currentTime >= myTimerJumpCooldown.timerDelayTrigger){
-            myTimerJumpCooldown.currentTime = 0.0;
-            ableToJump = true;
-        }
-        
-    }
-
-    private void IsAbleToJumpAgain()
-    {
-        var ableToJumpAgain = false;
-        
-        /*
-        if (_moveUpKeyDown)
-        {
-            if (myTimerSaveJump.currentTime <= myTimerSaveJump.timerDelayTrigger){
-                ableToJumpAgain = true;
-            }
-            _jumps++;
-        }*/
-        /*
-        if (_jumpTimeCounter > 0) //otestuj
-        {
-            ableToJumpAgain = true;
-        }
-        
-
-        if (isGrounded) //otestuj
-        { 
-            _jumps = 0;
-            myTimerSaveJump.currentTime = 0.0;*/
-            ableToJumpAgain = true;
-        //}
-    /*
-
-        //ableToJump = _jumps < 1;
-
-        if (notMoveup)
-        {
-            ableToJumpAgain = true;
-        } 
-    
-
-        return ableToJumpAgain;
-        */
+        return jumpAgain;
     }
     
     
