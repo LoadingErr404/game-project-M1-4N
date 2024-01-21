@@ -1,4 +1,0 @@
-2
-Hello 100
-Bye 50
-BAba 10
