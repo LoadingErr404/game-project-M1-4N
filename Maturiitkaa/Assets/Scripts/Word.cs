@@ -3,18 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Words
+public class Word
 {
     private readonly string _myWord;
     private readonly int _damage;
 
-    public Words()
+    public Word()
     {
         _myWord = "";
         _damage = 0;
     }
 
-    public Words(string word, int damage)
+    public Word(string word, int damage)
     {
         _myWord = word;
         _damage = damage;

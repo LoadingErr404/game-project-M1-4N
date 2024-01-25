@@ -233,6 +233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myFile: {fileID: 4900000, guid: 20bd885a306cedc41a8b533ae239b578, type: 3}
+  separatorParts: ':'
+  separatorEndOfLine: 
 --- !u!4 &275277998
 Transform:
   m_ObjectHideFlags: 0
