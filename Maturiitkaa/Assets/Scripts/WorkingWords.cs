@@ -10,18 +10,22 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.Serialization;
 
-public class WorkingWithTextFiles : MonoBehaviour
+public class WorkingWords : MonoBehaviour
 {
     [SerializeField] private TextAsset myFile;
-    private List<Word> _wordsList = new();
+    private readonly List<Word> _wordsList = new();
     [SerializeField] private string separatorParts;
     
     // Start is called before the first frame update
     private void Start()
     {
-        
-        
-        
+        LoadWords();
+   
+    }
+
+
+    private void LoadWords()
+    {
         try
         { 
             
@@ -38,19 +42,19 @@ public class WorkingWithTextFiles : MonoBehaviour
                 
                 var arr= line.Split(separatorParts);
                 _wordsList.Add(new Word(arr[0], int.Parse(arr[1])));
-
+                
             }
+            
 
         }
         catch (Exception e)
         {
-           Debug.Log(e);
+            Debug.Log(e);
         }
-        
-       
-        
-       
     }
 
-    
+    public List<Word> ListOfWords()
+    {
+        return _wordsList;
+    }
 }

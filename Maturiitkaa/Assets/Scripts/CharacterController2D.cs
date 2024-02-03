@@ -35,6 +35,9 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private float jumpTime;
     private bool _isJumping;
     private bool _doneJumping;
+
+    [Header("Interaction settings")] 
+    [SerializeField] private float interactRadius;
     
     
 
