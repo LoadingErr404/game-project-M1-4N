@@ -21,7 +21,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - midleground
   - foreground
   - 
   - 
@@ -41,4 +41,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Sky
+    uniqueID: 3552396567
+    locked: 0
+  - name: Clouds
+    uniqueID: 1700230471
+    locked: 0
+  - name: Background stuff
+    uniqueID: 2323820899
+    locked: 0
+  - name: Midle ground
+    uniqueID: 3214025551
+    locked: 0
+  - name: Foreground
+    uniqueID: 1178369683
     locked: 0
