@@ -1,29 +1,42 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class WriteText : MonoBehaviour
 {
-    [SerializeField] private string _givenWord;
+    [SerializeField] private string givenWord;
     [SerializeField] private TMP_Text textArea;
+    private bool _writeOut;
+    [SerializeField] private float writeOutDelay;
+    private float _writeCounter;
+    private int _position;
 
-    
-    // Start is called before the first frame update
-    void Start()
+
+    private void Update()
     {
+        if (!_writeOut)
+        {
+            return;
+        }
+
+        if (_writeCounter < writeOutDelay)
+        {
+            _writeCounter += Time.deltaTime;
+            return;
+        }
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        if (_position >= givenWord.Length)
+        {
+            return;
+        }
+            
+        _writeCounter = 0f;
+        textArea.text += givenWord[_position++];
         
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        textArea.text = _givenWord;
+        _writeOut = true;
     }
 }
