@@ -5,12 +5,12 @@ public class MyTimer : MonoBehaviour
     [Header("Time delay trigger")]
     public double timerDelayTrigger;
 
-    [Header("Curent time")] 
+    [Header("Current time")] 
     public double currentTime;
     
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         currentTime += Time.deltaTime;
         

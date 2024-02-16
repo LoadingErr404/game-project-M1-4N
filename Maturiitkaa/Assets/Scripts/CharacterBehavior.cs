@@ -1,42 +1,35 @@
-using System;
 using UnityEngine;
 
 public class CharacterBehavior : MonoBehaviour
 {
-    [SerializeField] Animator animator;
+    [SerializeField] private Animator animator;
+    [SerializeField] private CharacterController2D characterController2D;
+    private const string Move = "Move";
+    private const string Jump = "Jump";
 
-    [SerializeField] CharacterController2D characterController2D;
-    private readonly String _move = "Move";
-    private readonly String _jump = "Jump";
-    
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         MoveLeftRight();
         AnimationGoIdleJump();
-        
-      
     }
     
-
     private void AnimationGoIdleJump() //handles animation switches between go, idle and jump
     {
         
         
             if ((characterController2D.moveLeft || characterController2D.moveRight) && characterController2D.isGrounded)
             {
-                animator.SetBool(_move, true);
+                animator.SetBool(Move, true);
 
             }
             else
             {
-                animator.SetBool(_move, false);
+                animator.SetBool(Move, false);
             }
 
             if ((Input.GetKeyDown(KeyCode.UpArrow) || (Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift))) && characterController2D.ableToJump) //cannot use GetKey -> leads to looping
             {
-                animator.SetTrigger(_jump);
+                animator.SetTrigger(Jump);
             }
     }
 

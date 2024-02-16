@@ -10,15 +10,15 @@ public class WritingGameplay : MonoBehaviour
 
     private MyTimer _myTimer; //object from script 'MyTimer'
 
-    // Start is called before the first frame update
-    void Start(){
+    
+    private void Start(){
         ClearText();
         _myWord="";
         _myTimer = GameObject.FindGameObjectWithTag("MyTimer").GetComponent<MyTimer>(); //assigning object to container via Tag
     }
 
-    // Update is called once per frame
-    void Update(){
+    
+    private void Update(){
         if(Input.anyKeyDown){ 
             foreach (char letter in Input.inputString){ //every possible key input
                 BuffWord(letter); //checks if it is an allowed letter
@@ -30,9 +30,6 @@ public class WritingGameplay : MonoBehaviour
             _myTimer.currentTime = 0.0;
             ClearText();
         }
-
-        Debug.Log("Slovo: "+_myWord);
-        Debug.Log("Text field: "+myText.text);
 
 
     }

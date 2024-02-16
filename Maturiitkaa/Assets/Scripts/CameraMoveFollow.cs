@@ -36,7 +36,7 @@ public class CameraMoveFollow : MonoBehaviour
 
     private Vector3 _velocity = Vector3.zero;
 
-    [SerializeField] Transform target;
+    [SerializeField] private Transform target;
     private float _diff;
 
     private void Start()
@@ -46,10 +46,8 @@ public class CameraMoveFollow : MonoBehaviour
         cam.orthographicSize = defaultZoomSize;
         target = character.transform;
     }
-
-
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
         var camSize = ZoomCam();
         
@@ -60,17 +58,12 @@ public class CameraMoveFollow : MonoBehaviour
 
     private void MoveCam(float zoomSize)
     {
-        
-        //_diff = myPosition.y - tarPosition.y;
         if (!character.isGrounded)
         {
             _offset = new Vector3(offX, _diff, offZ);
         }
         
         var newOffset = Remap(zoomSize, minZoomSize, maxZoomSize,bottomOffset, topOffset);
-        /*
-        _offset = new Vector3(offX, offY, offZ); //the cam doesn't move on the Y axis
-        Vector3 targetPosition = target.position + _offset;*/
         Vector3 targetPosition = new Vector3(target.position.x, newOffset, offZ);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, 0);
     }
@@ -81,7 +74,7 @@ public class CameraMoveFollow : MonoBehaviour
         var targetX = target.position.x;
         var newCamSize = 0f;
         var distanceOut = targetX - _zoomOutPoint;
-        var distanceIn = _zoomInPoint - targetX;
+        //var distanceIn = _zoomInPoint - targetX;
         var distanceOutIn = _zoomInPoint - _zoomOutPoint;
         
         newCamSize = Remap((distanceOut), 0, Math.Abs(distanceOutIn), maxZoomSize, minZoomSize);

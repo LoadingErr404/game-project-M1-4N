@@ -35,12 +35,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private float jumpTime;
     private bool _isJumping;
     private bool _doneJumping;
-
-    [Header("Interaction settings")] 
-    [SerializeField] private float interactRadius;
     
-    
-
     private void Start()
     {
         isGrounded = false;
@@ -57,7 +52,7 @@ public class CharacterController2D : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         LoadInputs();
         MovingAround();

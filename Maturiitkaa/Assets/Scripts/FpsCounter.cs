@@ -9,14 +9,12 @@ public class FpsCounter : MonoBehaviour
     private float[] _frameDeltaTimeArray;
     public int fpsCount;
     
-    // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
         _frameDeltaTimeArray = new float[50];
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
         _frameDeltaTimeArray[_lastFrameIndex] = Time.unscaledDeltaTime;
         _lastFrameIndex = (_lastFrameIndex + 1) % _frameDeltaTimeArray.Length;

@@ -1,22 +1,12 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using Unity.VisualScripting;
-using UnityEditor;
-
 using UnityEngine;
-using UnityEngine.Networking;
-using UnityEngine.Serialization;
-
 public class WorkingWords : MonoBehaviour
 {
     [SerializeField] private TextAsset myFile;
     private readonly List<Word> _wordsList = new();
     [SerializeField] private string separatorParts;
     
-    // Start is called before the first frame update
     private void Start()
     {
         LoadWords();
