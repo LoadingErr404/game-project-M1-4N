@@ -4,7 +4,7 @@ using TMPro;
 public class WritingGameplay : MonoBehaviour
 {
     [Header("Text field")]
-    [SerializeField] TMP_Text myText;
+    [SerializeField] private TMP_Text myText;
     
     private string _myWord;
 
