@@ -1,52 +1,67 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.Serialization;
 
 public class WritingGameplay : MonoBehaviour
 {
+    [FormerlySerializedAs("myText")]
     [Header("Text field")]
-    [SerializeField] private TMP_Text myText;
-    
-    private string _myWord;
+    [SerializeField] private TMP_Text myTextArea;
+    private TMP_Text _defaultTextArea;
+    [SerializeField] private float writeOutFlush;
+    private float _writeCounter;
 
-    private MyTimer _myTimer; //object from script 'MyTimer'
-
     
-    private void Start(){
+    private void Start()
+    {
+        _defaultTextArea = myTextArea;
+        
         ClearText();
-        _myWord="";
-        _myTimer = GameObject.FindGameObjectWithTag("MyTimer").GetComponent<MyTimer>(); //assigning object to container via Tag
     }
 
     
     private void Update(){
+       
         if(Input.anyKeyDown){ 
             foreach (var letter in Input.inputString){ //every possible key input
                 BuffWord(letter); //checks if it is an allowed letter
-                PrintWord();
             }
         }
         
-        if (_myTimer.currentTime >= _myTimer.timerDelayTrigger){
-            _myTimer.currentTime = 0.0;
+        if (_writeCounter >= writeOutFlush)
+        {
+            _writeCounter = 0;
             ClearText();
         }
 
+        _writeCounter += Time.deltaTime;
 
     }
 
     private void ClearText(){ //clears output text
-        _myWord = "";
-        myText.text="";
+        myTextArea.text="";
     }
 
     private void BuffWord(char letter){ //buffers pressed characters
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            return;
+        }
+        
         if(letter >= 32 && letter <= 126 ){ //numbers representing ASCII characters from 'space' to '~'
-            _myWord+=letter;
+            myTextArea.text += letter;
         }
     }
+    
 
-    private void PrintWord(){
-        myText.text=_myWord;
+    public void ChangeTextArea(TMP_Text newTextArea)
+    {
+        myTextArea = newTextArea;
+    }
+
+    public void UseDefaultTextArea()
+    {
+        myTextArea = _defaultTextArea;
     }
 
     
