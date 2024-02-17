@@ -20,7 +20,7 @@ public class WritingGameplay : MonoBehaviour
     
     private void Update(){
         if(Input.anyKeyDown){ 
-            foreach (char letter in Input.inputString){ //every possible key input
+            foreach (var letter in Input.inputString){ //every possible key input
                 BuffWord(letter); //checks if it is an allowed letter
                 PrintWord();
             }
