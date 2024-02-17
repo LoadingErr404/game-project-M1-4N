@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class WriteText : MonoBehaviour
 {
@@ -35,10 +32,6 @@ public class WriteText : MonoBehaviour
         _writeCounter = 0f;
         textArea.text += givenWord[_position++];
         
-        
-
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)

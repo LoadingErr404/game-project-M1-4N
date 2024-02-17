@@ -56,11 +56,13 @@ public class WritingGameplay : MonoBehaviour
 
     public void ChangeTextArea(TMP_Text newTextArea)
     {
+        ClearText();
         myTextArea = newTextArea;
     }
 
     public void UseDefaultTextArea()
     {
+        ClearText();
         myTextArea = _defaultTextArea;
     }
 
