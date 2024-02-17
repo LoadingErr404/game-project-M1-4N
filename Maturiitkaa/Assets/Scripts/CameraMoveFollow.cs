@@ -64,7 +64,7 @@ public class CameraMoveFollow : MonoBehaviour
         }
         
         var newOffset = Remap(zoomSize, minZoomSize, maxZoomSize,bottomOffset, topOffset);
-        Vector3 targetPosition = new Vector3(target.position.x, newOffset, offZ);
+        var targetPosition = new Vector3(target.position.x, newOffset, offZ);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, 0);
     }
     
