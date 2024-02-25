@@ -4,7 +4,9 @@ using UnityEngine.Serialization;
 
 public class WritingGameplay : MonoBehaviour
 {
-    [FormerlySerializedAs("myText")]
+    [SerializeField] public ControlWordsTutorial controlWordsTutorial;
+    
+    
     [Header("Text field")]
     [SerializeField] private TMP_Text myTextArea;
     private TMP_Text _defaultTextArea;
@@ -27,6 +29,11 @@ public class WritingGameplay : MonoBehaviour
                 BuffWord(letter); //checks if it is an allowed letter
             }
         }
+
+        if (controlWordsTutorial.stopWritingTimer) //stops counting timer if we are interacting with objects
+        {
+            return;
+        }
         
         if (_writeCounter >= writeOutFlush)
         {
@@ -38,7 +45,7 @@ public class WritingGameplay : MonoBehaviour
 
     }
 
-    private void ClearText(){ //clears output text
+    public void ClearText(){ //clears output text
         myTextArea.text="";
     }
 
@@ -49,10 +56,11 @@ public class WritingGameplay : MonoBehaviour
         }
         
         if(letter >= 32 && letter <= 126 ){ //numbers representing ASCII characters from 'space' to '~'
-            myTextArea.text += letter;
+            myTextArea.text += char.ToLower(letter);
+            
         }
     }
-    
+
 
     public void ChangeTextArea(TMP_Text newTextArea)
     {
@@ -64,6 +72,11 @@ public class WritingGameplay : MonoBehaviour
     {
         ClearText();
         myTextArea = _defaultTextArea;
+    }
+
+    public string ReturnText()
+    {
+        return myTextArea.text;
     }
 
     

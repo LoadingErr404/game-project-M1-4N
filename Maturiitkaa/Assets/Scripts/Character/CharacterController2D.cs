@@ -4,6 +4,7 @@ using UnityEngine.Serialization;
 public class CharacterController2D : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
+    [SerializeField] private ControlWordsTutorial controlWordsTutorial;
     
     [Header("Movement physics")]
     [SerializeField] private float movementForce;
