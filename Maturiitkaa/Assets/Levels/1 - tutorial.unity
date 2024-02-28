@@ -785,7 +785,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Are you ready \n    to continue?"
+  m_text: "Are you ready \n         to begin?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 813bc06cff8f3a54a8205c54fb8b9cf7, type: 2}
   m_sharedMaterial: {fileID: 4533362894119498064, guid: 813bc06cff8f3a54a8205c54fb8b9cf7, type: 2}

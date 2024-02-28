@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WriteText : MonoBehaviour
 {
-    [SerializeField] private string givenWord;
+    [SerializeField] protected string givenWord;
     [SerializeField] private TMP_Text textArea;
     private bool _writeOut;
     [SerializeField] private float writeOutDelay;
@@ -11,7 +11,7 @@ public class WriteText : MonoBehaviour
     private int _position;
     
 
-    private void Update()
+    protected void Update()
     {
         if (!_writeOut)
         {
@@ -39,6 +39,5 @@ public class WriteText : MonoBehaviour
         _writeOut = true;
        
     }
-
    
 }
