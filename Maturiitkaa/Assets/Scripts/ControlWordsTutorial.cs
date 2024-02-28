@@ -5,5 +5,4 @@ using UnityEngine;
 public class ControlWordsTutorial : MonoBehaviour
 {
     public bool stopWritingTimer;
-    public bool successWritingWord;
 }
