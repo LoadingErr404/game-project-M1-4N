@@ -2613,7 +2613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 088d38e58ebce9f44a29dab255d4dcce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16
+      value: 102.4
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 088d38e58ebce9f44a29dab255d4dcce, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3105,7 +3105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1ddfa2e62c6844aa03c13071ec7cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlWordsTutorial: {fileID: 0}
+  controlWordsTutorial: {fileID: 1533217792}
   myTextArea: {fileID: 2035086437}
   writeOutFlush: 2
 --- !u!1 &701153845
