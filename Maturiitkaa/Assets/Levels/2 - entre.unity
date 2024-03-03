@@ -152,11 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f920652f7b7f1d419dca96d1fac37b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  givenWord: 1
   textArea: {fileID: 74946073}
-  writeOutDelay: 0.1
-  waitTime: 100
   myFile: {fileID: 4900000, guid: aa1fd1a3902622d43b005ec594feada8, type: 3}
+  waitBetweenLetters: 0.1
+  waitBetweenSentences: 3
 --- !u!4 &50042540
 Transform:
   m_ObjectHideFlags: 0
@@ -292,7 +291,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -491.69763, y: -148.06804, z: -500.07864, w: -525.22235}
+  m_margin: {x: -376.3457, y: -49.194992, z: -368.24765, w: -436.23663}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

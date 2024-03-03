@@ -10,6 +10,7 @@ public class WriteText : MonoBehaviour
     private float _writeCounter;
     private int _position;
     
+    
 
     protected void Update()
     {
