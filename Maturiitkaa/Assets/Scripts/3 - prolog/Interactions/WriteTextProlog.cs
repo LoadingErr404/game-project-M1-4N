@@ -4,18 +4,18 @@ using UnityEngine.Serialization;
 
 public class WriteTextProlog : MonoBehaviour
 {
-    public string givenWord;
+    public string givenSentence;
     [SerializeField] private TMP_Text textArea;
-    public bool writeOut;
     [SerializeField] private float writeOutDelay;
     private float _writeCounter;
     private int _position;
+    [SerializeField] private WriteOutSentences writeOutSentences;
     
     
 
     protected void Update()
     {
-        if (!writeOut)
+        if (!writeOutSentences.writeNewSentence)
         {
             return;
         }
@@ -26,20 +26,14 @@ public class WriteTextProlog : MonoBehaviour
             return;
         }
         
-        if (_position >= givenWord.Length)
+        if (_position >= givenSentence.Length)
         {
+            writeOutSentences.writeNewSentence = false;
             return;
         }
             
         _writeCounter = 0f;
-        textArea.text += givenWord[_position++];
-        
-    }
+        textArea.text += givenSentence[_position++];
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        writeOut = true;
-       
     }
-   
 }

@@ -5,11 +5,12 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class WriteOutSentences : MonoBehaviour
 {
     //[SerializeField] private ControlWordsProlog controlWordsProlog;
-    [SerializeField] private WriteText writeText;
+    [SerializeField] private WriteTextProlog writeText;
     
     [Header("File")]
     private readonly List<string> _sentenceList = new();
@@ -20,22 +21,22 @@ public class WriteOutSentences : MonoBehaviour
     [Header("Text fields")]
     [SerializeField] private TMP_Text ownTextField;
     [SerializeField] private TMP_Text stableWordText;
-    [SerializeField] private WritingGameplay writing;
+    [SerializeField] private WritingGameplayProlog writing;
     
     private enum ReturnMeanings {EmptyWord, NotMatchingWord, MatchingWord};
     private int _position;
     private int _lastPosition = -1;
-    private bool _writeNewWord;
-    
-    
-    void Start()
+    public bool writeNewSentence;
+
+
+    private void Start()
     {
         LoadStrings();
         _numberOfSentences = _sentenceList.Count;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!_interacting)
         {
@@ -47,7 +48,19 @@ public class WriteOutSentences : MonoBehaviour
             return;
         }
 
-        writeText.givenWord = _sentenceList[_position];
+        if (_position >= _numberOfSentences)
+        {
+            return;
+        }
+
+        if (!writeNewSentence)
+        {
+            return;
+        }
+
+        
+        writeText.givenSentence = _sentenceList[_position++];
+        Debug.Log("Position: "+ _position);
 
     }
     
@@ -70,9 +83,10 @@ public class WriteOutSentences : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         _interacting = true;
-        //controlWordsProlog.SetCanMove(false);
-        writing.controlWordsTutorial.stopWritingTimer = true;
+        writing.controlWordsProlog.stopWritingTimer = true;
+        writing.controlWordsProlog.canMove = false;
         writing.ChangeTextArea(ownTextField);
+        writeNewSentence = true;
     }
     
     private int CheckIndexes(string textFromField)

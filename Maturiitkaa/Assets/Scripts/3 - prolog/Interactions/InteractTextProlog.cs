@@ -20,7 +20,6 @@ public class InteractTextProlog : MonoBehaviour
         stableWordText.text = textForInteraction;
         _ableToWriteInto = true;
         _interactable = false;
-        successfulInteraction.AddListener(GameObject.FindWithTag("destroyRocks").GetComponent<DestroyObject>().DestroySelf);
     }
 
     private void Update()
