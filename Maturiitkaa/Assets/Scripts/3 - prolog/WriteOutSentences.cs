@@ -27,6 +27,7 @@ public class WriteOutSentences : MonoBehaviour
     private enum ReturnMeanings {EmptyWord, NotMatchingWord, MatchingWord};
     public int rowIndex;
     public bool writeNewSentence;
+    public bool ableToWriteInto;
 
 
     private void Start()

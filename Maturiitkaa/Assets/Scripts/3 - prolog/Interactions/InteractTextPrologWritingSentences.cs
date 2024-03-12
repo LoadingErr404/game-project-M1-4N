@@ -14,14 +14,7 @@ public class InteractTextPrologWritingSentences : MonoBehaviour
     
     private enum ReturnMeanings {EmptyWord, NotMatchingLetter, MatchingLetter};
     
-
-    private void Start()
-    {
-        
-        //ableToWriteInto = true;
-        interactable = false;
-    }
-
+    
     private void Update()
     {
 
@@ -30,12 +23,12 @@ public class InteractTextPrologWritingSentences : MonoBehaviour
             return;
         }
         
-        /*
-        if (!ableToWriteInto)
+        
+        if (!writeOutSentences.ableToWriteInto)
         {
             return;
         }
-        */
+        
         
         
         var result = CheckIndexes(writing.ReturnText());

@@ -23,6 +23,7 @@ public class WriteTextProlog : MonoBehaviour
 
         if (_writeCounter < writeOutDelay)
         {
+            
             _writeCounter += Time.deltaTime;
             return;
         }
@@ -31,10 +32,12 @@ public class WriteTextProlog : MonoBehaviour
         {
             writeOutSentences.writeNewSentence = false;
             writeOutSentences.interactText.textForInteraction = givenSentence;
+            writeOutSentences.ableToWriteInto = true;
             _position = 0;
             return;
         }
-            
+        
+        writeOutSentences.ableToWriteInto = false;    
         _writeCounter = 0f;
         textArea.text += givenSentence[_position++];
 
