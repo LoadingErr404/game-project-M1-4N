@@ -11,6 +11,7 @@ public class WriteOutSentences : MonoBehaviour
 {
     //[SerializeField] private ControlWordsProlog controlWordsProlog;
     [SerializeField] private WriteTextProlog writeText;
+    [SerializeField] public InteractTextPrologWritingSentences interactText;
     
     [Header("File")]
     private readonly List<string> _sentenceList = new();
@@ -24,8 +25,7 @@ public class WriteOutSentences : MonoBehaviour
     [SerializeField] private WritingGameplayProlog writing;
     
     private enum ReturnMeanings {EmptyWord, NotMatchingWord, MatchingWord};
-    private int _position;
-    private int _lastPosition = -1;
+    public int rowIndex;
     public bool writeNewSentence;
 
 
@@ -38,29 +38,27 @@ public class WriteOutSentences : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        
         if (!_interacting)
         {
             return;
         }
-
-        if (_lastPosition == _position)
-        {
-            return;
-        }
-
-        if (_position >= _numberOfSentences)
-        {
-            return;
-        }
-
+        
         if (!writeNewSentence)
         {
             return;
         }
 
+        if (rowIndex < _numberOfSentences)
+        {
+            writeText.givenSentence = _sentenceList[rowIndex];
+        }
+        else
+        {
+            Destroy(gameObject); 
+        }
+
         
-        writeText.givenSentence = _sentenceList[_position++];
-        Debug.Log("Position: "+ _position);
 
     }
     
@@ -75,7 +73,6 @@ public class WriteOutSentences : MonoBehaviour
             {
                 _sentenceList.Add(line);
             }
-            
         }
 
     }
@@ -87,28 +84,6 @@ public class WriteOutSentences : MonoBehaviour
         writing.controlWordsProlog.canMove = false;
         writing.ChangeTextArea(ownTextField);
         writeNewSentence = true;
-    }
-    
-    private int CheckIndexes(string textFromField)
-    {
-        if (textFromField.Length == 0)
-        {
-            return (int) ReturnMeanings.EmptyWord;
-        }
-        
-        if (textFromField.Length > _sentenceList[_position].Length)
-        {
-            return (int)ReturnMeanings.NotMatchingWord;
-        }
-        
-        for (var i = 0; i < textFromField.Length; i++)
-        {
-            if (textFromField[i] != _sentenceList[_position][i])
-            {
-                return (int)ReturnMeanings.NotMatchingWord;
-            }
-        }
-        
-        return (int)ReturnMeanings.MatchingWord;
+        interactText.interactable = true;
     }
 }

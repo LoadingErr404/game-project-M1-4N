@@ -2344,10 +2344,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   writeText: {fileID: 2026149840}
+  interactText: {fileID: 1366798011}
   myFile: {fileID: 4900000, guid: 20bd885a306cedc41a8b533ae239b578, type: 3}
   ownTextField: {fileID: 1203423913}
   stableWordText: {fileID: 1606721736}
   writing: {fileID: 1565499911}
+  rowIndex: 0
+  writeNewSentence: 0
 --- !u!1 &1248261123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2618,6 +2621,55 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!1 &1366798009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1366798010}
+  - component: {fileID: 1366798011}
+  m_Layer: 0
+  m_Name: interactText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1366798010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366798009}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -57.548206, y: 39.65924, z: -2.7567606}
+  m_LocalScale: {x: 5.2626038, y: 6.3011975, z: 3.333333}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 821380349}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1366798011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366798009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63203eae132ce3649bdb56464a667bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textForInteraction: 
+  writing: {fileID: 1565499911}
+  writeOutSentences: {fileID: 1243446550}
+  textArea: {fileID: 1606721736}
+  interactable: 0
 --- !u!1 &1438054027
 GameObject:
   m_ObjectHideFlags: 0
@@ -3619,10 +3671,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5467b78318732134186782652e058304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  givenWord: 
+  givenSentence: 
   textArea: {fileID: 1606721736}
-  writeOut: 0
   writeOutDelay: 0.2
+  writeOutSentences: {fileID: 1243446550}
 --- !u!4 &2026149841
 Transform:
   m_ObjectHideFlags: 0
@@ -3765,6 +3817,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1719371442211273265, guid: 6aed788111d68be4d97962b47f014c6e, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2287640100982121290, guid: 6aed788111d68be4d97962b47f014c6e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.82
@@ -3809,6 +3865,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2664348716742335821, guid: 6aed788111d68be4d97962b47f014c6e, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5713367806913477062, guid: 6aed788111d68be4d97962b47f014c6e, type: 3}
       propertyPath: m_Name
       value: WriteOut
@@ -3835,6 +3895,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2287640100982121290, guid: 6aed788111d68be4d97962b47f014c6e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2026149841}
+    - targetCorrespondingSourceObject: {fileID: 2287640100982121290, guid: 6aed788111d68be4d97962b47f014c6e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1366798010}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5713367806913477062, guid: 6aed788111d68be4d97962b47f014c6e, type: 3}
       insertIndex: -1

@@ -12,6 +12,7 @@ public class WriteTextProlog : MonoBehaviour
     [SerializeField] private WriteOutSentences writeOutSentences;
     
     
+    
 
     protected void Update()
     {
@@ -29,6 +30,8 @@ public class WriteTextProlog : MonoBehaviour
         if (_position >= givenSentence.Length)
         {
             writeOutSentences.writeNewSentence = false;
+            writeOutSentences.interactText.textForInteraction = givenSentence;
+            _position = 0;
             return;
         }
             
