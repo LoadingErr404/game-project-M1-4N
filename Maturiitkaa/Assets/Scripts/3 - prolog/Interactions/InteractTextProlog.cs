@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class InteractText : MonoBehaviour
+public class InteractTextProlog : MonoBehaviour
 {
     public UnityEvent successfulInteraction;
     [SerializeField] private string textForInteraction;

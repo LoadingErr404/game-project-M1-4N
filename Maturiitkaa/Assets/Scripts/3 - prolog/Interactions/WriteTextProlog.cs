@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class WriteText : MonoBehaviour
+public class WriteTextProlog : MonoBehaviour
 {
     public string givenWord;
     [SerializeField] private TMP_Text textArea;
