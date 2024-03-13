@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 public class CharacterController2DProlog : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
-    [SerializeField] private ControlWordsProlog controlWordsProlog;
+    [SerializeField] public ControlWordsProlog controlWordsProlog;
     
     [Header("Movement physics")]
     [SerializeField] private float movementForce;
@@ -44,7 +44,8 @@ public class CharacterController2DProlog : MonoBehaviour
         ableToJump = true;
         _doneJumping = false;
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-        
+        controlWordsProlog.canMove = true;
+
     }
 
     private void Awake()
@@ -55,6 +56,14 @@ public class CharacterController2DProlog : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        
+        
+        if (!controlWordsProlog.canMove)
+        {
+            _moveDir = new Vector3(0, 0, 0);
+            return;
+        }
+        
         LoadInputs();
         MovingAround();
         

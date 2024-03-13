@@ -9,7 +9,6 @@ using UnityEngine.Serialization;
 
 public class WriteOutSentences : MonoBehaviour
 {
-    //[SerializeField] private ControlWordsProlog controlWordsProlog;
     [SerializeField] private WriteTextProlog writeText;
     [SerializeField] public InteractTextPrologWritingSentences interactText;
     
@@ -21,10 +20,8 @@ public class WriteOutSentences : MonoBehaviour
     
     [Header("Text fields")]
     [SerializeField] private TMP_Text ownTextField;
-    [SerializeField] private TMP_Text stableWordText;
     [SerializeField] private WritingGameplayProlog writing;
     
-    private enum ReturnMeanings {EmptyWord, NotMatchingWord, MatchingWord};
     public int rowIndex;
     public bool writeNewSentence;
     public bool ableToWriteInto;
@@ -56,6 +53,7 @@ public class WriteOutSentences : MonoBehaviour
         }
         else
         {
+            writing.controlWordsProlog.canMove = true;
             Destroy(gameObject); 
         }
 

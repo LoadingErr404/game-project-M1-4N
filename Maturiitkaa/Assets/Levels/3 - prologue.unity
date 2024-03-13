@@ -2343,14 +2343,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36f209d125a6ea448e2c1c5780ae2c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlWordsProlog: {fileID: 0}
   writeText: {fileID: 2026149840}
   interactText: {fileID: 1366798011}
   myFile: {fileID: 4900000, guid: 20bd885a306cedc41a8b533ae239b578, type: 3}
   ownTextField: {fileID: 1203423913}
-  stableWordText: {fileID: 1606721736}
   writing: {fileID: 1565499911}
   rowIndex: 0
   writeNewSentence: 0
+  ableToWriteInto: 0
 --- !u!1 &1248261123
 GameObject:
   m_ObjectHideFlags: 0
@@ -3256,7 +3257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704f9925bf6180541b49a13364c2a233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlWordsProlog: {fileID: 0}
+  controlWordsProlog: {fileID: 428783217}
   movementForce: 8
   jumpForce: 15
   moveUp: 0
@@ -3868,6 +3869,10 @@ PrefabInstance:
     - target: {fileID: 2664348716742335821, guid: 6aed788111d68be4d97962b47f014c6e, type: 3}
       propertyPath: m_fontStyle
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885762127355858718, guid: 6aed788111d68be4d97962b47f014c6e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 53.8
       objectReference: {fileID: 0}
     - target: {fileID: 5713367806913477062, guid: 6aed788111d68be4d97962b47f014c6e, type: 3}
       propertyPath: m_Name

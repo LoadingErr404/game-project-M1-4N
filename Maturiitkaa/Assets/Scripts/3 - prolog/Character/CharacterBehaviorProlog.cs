@@ -9,6 +9,12 @@ public class CharacterBehaviorProlog : MonoBehaviour
 
     private void Update()
     {
+        if (!characterController2D.controlWordsProlog.canMove)
+        {
+            animator.SetBool(Move, false);
+            return;
+        }
+        
         MoveLeftRight();
         AnimationGoIdleJump();
     }
