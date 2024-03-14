@@ -1,0 +1,2500 @@
+fileFormatVersion: 2
+guid: 95481d64825ff6140ab60b336b188a2c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: kamen2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2678
+      width: 2511
+      height: 640
+    spriteID: 8be351912d7804542a3b187b54248219
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2678}
+    spritePosition: {x: 628, y: 0}
+  - name: kamen2 barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2523
+      y: 2678
+      width: 2506
+      height: 640
+    spriteID: df9e4c0638e4c8b41aa824951b9cb49b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2523, y: 2678}
+    spritePosition: {x: 631, y: 0}
+  - name: kamen1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3326
+      width: 2002
+      height: 798
+    spriteID: fc63d5194ea5b4140980cae33c5f7265
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3326}
+    spritePosition: {x: 1016, y: 0}
+  - name: kamen1 barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2014
+      y: 3326
+      width: 1998
+      height: 796
+    spriteID: 9c28af4f5f067ce458b1e9ca9e0e5a2d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2014, y: 3326}
+    spritePosition: {x: 1018, y: 0}
+  - name: sparkle2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3697
+      y: 5901
+      width: 43
+      height: 57
+    spriteID: 6a6b42b31323a3f43b2405a4c03e0f15
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3697, y: 5901}
+    spritePosition: {x: 827, y: 485}
+  - name: sparkle1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3626
+      y: 5901
+      width: 63
+      height: 53
+    spriteID: 8b9b222a8b6fdac41ac78d3cb60038d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3626, y: 5901}
+    spritePosition: {x: 790, y: 473}
+  - name: voda1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6210
+      y: 3948
+      width: 190
+      height: 143
+    spriteID: b6385436f68994f4484a986115980427
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6210, y: 3948}
+    spritePosition: {x: 821, y: 393}
+  - name: voda1 barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6408
+      y: 3948
+      width: 184
+      height: 138
+    spriteID: 8ffe0956906759c458cf881415443e60
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6408, y: 3948}
+    spritePosition: {x: 823, y: 396}
+  - name: voda zaklad
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6210
+      y: 3326
+      width: 400
+      height: 409
+    spriteID: f2d16cd37c1db9749b144627d1bd1391
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6210, y: 3326}
+    spritePosition: {x: 754, y: 93}
+  - name: voda zaklad barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6618
+      y: 3326
+      width: 396
+      height: 407
+    spriteID: b2d502c5dce461447b5df2e51c2dfa9a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6618, y: 3326}
+    spritePosition: {x: 756, y: 94}
+  - name: strom vrchni
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 13527
+      y: 791
+      width: 418
+      height: 259
+    spriteID: ab66b39f1975ee445b2954c889bd24e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 13527, y: 791}
+    spritePosition: {x: 6388, y: 816}
+  - name: vrchni barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 12674
+      y: 5612
+      width: 414
+      height: 256
+    spriteID: c83ab658bfab5b247a87b368e645e1db
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 12674, y: 5612}
+    spritePosition: {x: 6391, y: 819}
+  - name: strom hl
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3802
+      y: 4942
+      width: 954
+      height: 1075
+    spriteID: 6ecf2d1bb787bde448e3a035981b4f62
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3802, y: 4942}
+    spritePosition: {x: 6057, y: 0}
+  - name: strom hl barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4764
+      y: 4942
+      width: 948
+      height: 1075
+    spriteID: 836091c6db590f445a735d2447165535
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4764, y: 4942}
+    spritePosition: {x: 6060, y: 0}
+  - name: strom v zadu
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 14103
+      y: 5146
+      width: 673
+      height: 378
+    spriteID: 1f5673089a51b7f45a04175163b467e3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 14103, y: 5146}
+    spritePosition: {x: 6272, y: 697}
+  - name: vzadu barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 14784
+      y: 5146
+      width: 668
+      height: 375
+    spriteID: 486b2e198a1bf9244914310b1e67a9cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 14784, y: 5146}
+    spritePosition: {x: 6274, y: 700}
+  - name: strom upe v zadu
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6764
+      y: 5534
+      width: 951
+      height: 462
+    spriteID: 6dc826e1dd954954188a4cca2b78fa76
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6764, y: 5534}
+    spritePosition: {x: 6167, y: 613}
+  - name: strom upe v zadu barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 9108
+      y: 5533
+      width: 947
+      height: 462
+    spriteID: 4c88232f58418844782c7ac5eb656c8d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 9108, y: 5533}
+    spritePosition: {x: 6168, y: 613}
+  - name: predek 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15842
+      y: 4
+      width: 168
+      height: 1075
+    spriteID: 8f5bc427bd165164989172c7bd821241
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 15842, y: 4}
+    spritePosition: {x: 8897, y: 0}
+  - name: predek
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16018
+      y: 4
+      width: 168
+      height: 1075
+    spriteID: 53724f531622c8f4289b7c369b287a7f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 16018, y: 4}
+    spritePosition: {x: 7207, y: 0}
+  - name: predek predek
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 12564
+      y: 5146
+      width: 761
+      height: 365
+    spriteID: 4dfeeb05614b9124aa81c84ceaaa2b8d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 12564, y: 5146}
+    spritePosition: {x: 9071, y: 0}
+  - name: predek predek b
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 13333
+      y: 5146
+      width: 762
+      height: 364
+    spriteID: 22e88a4c3214fa24e8f42b35a75b0ccc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 13333, y: 5146}
+    spritePosition: {x: 9070, y: 0}
+  - name: predek predek
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4942
+      width: 1346
+      height: 1075
+    spriteID: 136b871cfe984ba40b1f294aae90056b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4942}
+    spritePosition: {x: 7552, y: 0}
+  - name: predek predek m
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1358
+      y: 4942
+      width: 1324
+      height: 822
+    spriteID: 9bf983c877f517149a2a4d9fd95d6c41
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1358, y: 4942}
+    spritePosition: {x: 7554, y: 0}
+  - name: stompin cara
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5774
+      y: 1087
+      width: 9163
+      height: 487
+    spriteID: 70ef0d19a6549ec40a133b4aa26be130
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5774, y: 1087}
+    spritePosition: {x: 895, y: 296}
+  - name: predek
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5530
+      y: 3326
+      width: 672
+      height: 770
+    spriteID: 47c598b985a03464fb2478262e625f1d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5530, y: 3326}
+    spritePosition: {x: 6580, y: 305}
+  - name: zadek
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5720
+      y: 4942
+      width: 1036
+      height: 834
+    spriteID: 73cfbe7f7eaf87545a00db8e66bd4772
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5720, y: 4942}
+    spritePosition: {x: 6333, y: 0}
+  - name: predek b
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4132
+      width: 1892
+      height: 802
+    spriteID: 7ba0a72e781554240b2aa238cec14c69
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4132}
+    spritePosition: {x: 7082, y: 273}
+  - name: zadek b
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 14122
+      y: 4
+      width: 1712
+      height: 978
+    spriteID: 5e87b05f7f1ff3c4f8861a91158b026c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 14122, y: 4}
+    spritePosition: {x: 7294, y: 0}
+  - name: stul b
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15789
+      y: 1875
+      width: 566
+      height: 417
+    spriteID: be6b12e109c37fb4e95f4576b1f02842
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 15789, y: 1875}
+    spritePosition: {x: 9308, y: 302}
+  - name: predek b
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 14945
+      y: 1087
+      width: 1218
+      height: 776
+    spriteID: eb7af2c7407998546b55b201fafe51db
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 14945, y: 1087}
+    spritePosition: {x: 8840, y: 299}
+  - name: zadek b
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2690
+      y: 4942
+      width: 1104
+      height: 951
+    spriteID: 3ee4acc102c364d43abbd620750841fe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2690, y: 4942}
+    spritePosition: {x: 8954, y: 0}
+  - name: plot
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15460
+      y: 5431
+      width: 920
+      height: 86
+    spriteID: d1e27be42fda8f04791eab11d2794339
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 15460, y: 5431}
+    spritePosition: {x: 5626, y: 362}
+  - name: barva plot
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7977
+      y: 5932
+      width: 919
+      height: 85
+    spriteID: 0b6e07f69fd68a842bc4a78f53eb88ca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7977, y: 5932}
+    spritePosition: {x: 5629, y: 360}
+  - name: dumn vepredu
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6764
+      y: 4942
+      width: 1205
+      height: 584
+    spriteID: e068b9caf188d2e4086894e0b4805143
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6764, y: 4942}
+    spritePosition: {x: 5384, y: 363}
+  - name: barva vepredu
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7977
+      y: 4942
+      width: 1197
+      height: 583
+    spriteID: 4fe8f23534d3f1a49bf01b86ff244ffa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7977, y: 4942}
+    spritePosition: {x: 5389, y: 361}
+  - name: dum vuadu
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6210
+      y: 3743
+      width: 361
+      height: 197
+    spriteID: 9d959ade6af5ebd4482d04cb45637105
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6210, y: 3743}
+    spritePosition: {x: 5404, y: 373}
+  - name: barva vzadu
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7977
+      y: 5533
+      width: 1123
+      height: 391
+    spriteID: 480263f527fb4094b8c1944f90dea06e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7977, y: 5533}
+    spritePosition: {x: 5407, y: 368}
+  - name: trava2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 9182
+      y: 4942
+      width: 3152
+      height: 196
+    spriteID: 8e092773f9d541944a34076d44d012ef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 9182, y: 4942}
+    spritePosition: {x: 3109, y: 0}
+  - name: trava2 barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 12342
+      y: 4942
+      width: 3146
+      height: 193
+    spriteID: 09c3056a7e45427419ad8531265c243e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 12342, y: 4942}
+    spritePosition: {x: 3112, y: 0}
+  - name: trava1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 9182
+      y: 5146
+      width: 3374
+      height: 152
+    spriteID: 581dcab304b6bb84dba5fd1c8044c265
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 9182, y: 5146}
+    spritePosition: {x: 3103, y: 219}
+  - name: trava1 barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 12385
+      y: 1875
+      width: 3396
+      height: 367
+    spriteID: 71f21b20c4488214284b7e7a945e77bc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 12385, y: 1875}
+    spritePosition: {x: 3088, y: 0}
+  - name: stompin barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1087
+      width: 5762
+      height: 780
+    spriteID: 93146fc12c647384cae8c7e5bdfd4c54
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1087}
+    spritePosition: {x: 895, y: 0}
+  - name: strom vrchni
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5720
+      y: 5784
+      width: 498
+      height: 210
+    spriteID: f6a0765c326ef984eb9f995e8e940fff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5720, y: 5784}
+    spritePosition: {x: 4814, y: 865}
+  - name: vrchni barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6226
+      y: 5784
+      width: 494
+      height: 207
+    spriteID: f69a7654f1740fc46b4a4ce4026b73c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6226, y: 5784}
+    spritePosition: {x: 4816, y: 868}
+  - name: strom hl
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4774
+      y: 3326
+      width: 748
+      height: 704
+    spriteID: ad66068743ad7d940a302178f4a83b5d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4774, y: 3326}
+    spritePosition: {x: 4744, y: 371}
+  - name: strom hl barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4020
+      y: 3326
+      width: 746
+      height: 708
+    spriteID: 86d26bcdc9cba5d48a04d1bbb7fa9d55
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4020, y: 3326}
+    spritePosition: {x: 4744, y: 367}
+  - name: strom v zadu
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15460
+      y: 5146
+      width: 779
+      height: 277
+    spriteID: d24139287b4edf8439d62e9ba5ba56eb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 15460, y: 5146}
+    spritePosition: {x: 4706, y: 798}
+  - name: v zadu barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 14762
+      y: 2320
+      width: 773
+      height: 276
+    spriteID: d2b665a2213b1dc43a238005591fada7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 14762, y: 2320}
+    spritePosition: {x: 4709, y: 799}
+  - name: upe vzadu
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 10063
+      y: 5612
+      width: 1051
+      height: 387
+    spriteID: 3b425f0105d356844a52192737f883e5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 10063, y: 5612}
+    spritePosition: {x: 4559, y: 688}
+  - name: upe vzadu b arva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 11122
+      y: 5612
+      width: 1044
+      height: 384
+    spriteID: 059f1df6544bfd84ab5ea3241f6b231b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 11122, y: 5612}
+    spritePosition: {x: 4562, y: 691}
+  - name: trava u kameni bliz stredu
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2690
+      y: 5901
+      width: 928
+      height: 87
+    spriteID: 412d99008ca95634a8b1061261a6750d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2690, y: 5901}
+    spritePosition: {x: 2844, y: 374}
+  - name: trava u kameni bliz stredu barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 13271
+      y: 2551
+      width: 924
+      height: 76
+    spriteID: fddd6265e8eb57f498f6a47d022d4ee7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 13271, y: 2551}
+    spritePosition: {x: 2845, y: 372}
+  - name: trava u kameni
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 12036
+      y: 791
+      width: 1483
+      height: 234
+    spriteID: 09fff089b4a04bb4eb18857f1bb70d56
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 12036, y: 791}
+    spritePosition: {x: 943, y: 568}
+  - name: trava u kameni barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 13271
+      y: 2320
+      width: 1483
+      height: 223
+    spriteID: 80d51e5047ac32c4797fae2204372c7e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 13271, y: 2320}
+    spritePosition: {x: 943, y: 578}
+  - name: trava vedle stromu
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15543
+      y: 2320
+      width: 498
+      height: 345
+    spriteID: ecd5737ba8fdcac4d89dc31de7474165
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 15543, y: 2320}
+    spritePosition: {x: 4575, y: 369}
+  - name: trava vedle stromu barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 12174
+      y: 5612
+      width: 492
+      height: 342
+    spriteID: cd26fbb8104a5974eaeca3e2394a795e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 12174, y: 5612}
+    spritePosition: {x: 4578, y: 370}
+  - name: trava po ceste
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1358
+      y: 5772
+      width: 619
+      height: 235
+    spriteID: 8df9cf81f08b07b4e9ed645b06e7b9db
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1358, y: 5772}
+    spritePosition: {x: 3954, y: 369}
+  - name: trava po ceste barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1985
+      y: 5772
+      width: 618
+      height: 235
+    spriteID: fd27327ca7c47bc45a0a90e0c59acdd4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1985, y: 5772}
+    spritePosition: {x: 3955, y: 369}
+  - name: mraky
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 8249
+      y: 791
+      width: 3779
+      height: 229
+    spriteID: 47e650045755a5e41a309b287490e850
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 8249, y: 791}
+    spritePosition: {x: 450, y: 827}
+  - name: mraky barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 9489
+      y: 2320
+      width: 3774
+      height: 227
+    spriteID: 9ee699ba738955a48b3a679be2705f28
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 9489, y: 2320}
+    spritePosition: {x: 452, y: 828}
+  - name: les1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 9489
+      y: 2555
+      width: 3539
+      height: 63
+    spriteID: 4e62a54739dbd58429218da9737dfacc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 9489, y: 2555}
+    spritePosition: {x: 2309, y: 572}
+  - name: les1 barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5922
+      y: 2320
+      width: 3559
+      height: 331
+    spriteID: fd4670c9f8f4e324799d7969e25be41b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5922, y: 2320}
+    spritePosition: {x: 2306, y: 301}
+  - name: les2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 10063
+      y: 5533
+      width: 5861
+      height: 71
+    spriteID: 0662edae2173af143bbcf2b9b46b491a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 10063, y: 5533}
+    spritePosition: {x: 0, y: 708}
+  - name: les2 barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 8249
+      y: 4
+      width: 5865
+      height: 779
+    spriteID: ddb38a976c914c24d8b6362015f1bcad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 8249, y: 4}
+    spritePosition: {x: 0, y: 0}
+  - name: pole
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6520
+      y: 1875
+      width: 5857
+      height: 366
+    spriteID: 6047491c70e20844ba0ba23ee1b48a26
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6520, y: 1875}
+    spritePosition: {x: 0, y: 632}
+  - name: pole barva
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2320
+      width: 5910
+      height: 350
+    spriteID: 86accb68f2e689b4abe1f311734a6be4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2320}
+    spritePosition: {x: 0, y: 648}
+  - name: obloha
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1875
+      width: 6508
+      height: 437
+    spriteID: c945329d55eaf5441972eb8cb3122ebc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1875}
+    spritePosition: {x: 0, y: 638}
+  - name: Vrstva 0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 8237
+      height: 1075
+    spriteID: 173ac9123dc558d43ba02752bb87e273
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: "kamen\xED"
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: f582e9a56d076eb4fab99be755058135
+    layerID: 111
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: kamen2
+    spriteName: kamen2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 8be351912d7804542a3b187b54248219
+    layerID: 116
+    mosaicPosition: {x: 4, y: 2678}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: kamen2 barva
+    spriteName: kamen2 barva
+    isGroup: 0
+    parentIndex: 0
+    spriteID: df9e4c0638e4c8b41aa824951b9cb49b
+    layerID: 115
+    mosaicPosition: {x: 2523, y: 2678}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: kamen1
+    spriteName: kamen1
+    isGroup: 0
+    parentIndex: 0
+    spriteID: fc63d5194ea5b4140980cae33c5f7265
+    layerID: 114
+    mosaicPosition: {x: 4, y: 3326}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: kamen1 barva
+    spriteName: kamen1 barva
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 9c28af4f5f067ce458b1e9ca9e0e5a2d
+    layerID: 113
+    mosaicPosition: {x: 2014, y: 3326}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: voda
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 1be931f33c827404984039d0e7092ee0
+    layerID: 117
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: sparkle2
+    spriteName: sparkle2
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 6a6b42b31323a3f43b2405a4c03e0f15
+    layerID: 124
+    mosaicPosition: {x: 3697, y: 5901}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: sparkle1
+    spriteName: sparkle1
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 8b9b222a8b6fdac41ac78d3cb60038d9
+    layerID: 123
+    mosaicPosition: {x: 3626, y: 5901}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: voda1
+    spriteName: voda1
+    isGroup: 0
+    parentIndex: 5
+    spriteID: b6385436f68994f4484a986115980427
+    layerID: 121
+    mosaicPosition: {x: 6210, y: 3948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: voda1 barva
+    spriteName: voda1 barva
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 8ffe0956906759c458cf881415443e60
+    layerID: 122
+    mosaicPosition: {x: 6408, y: 3948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: voda zaklad
+    spriteName: voda zaklad
+    isGroup: 0
+    parentIndex: 5
+    spriteID: f2d16cd37c1db9749b144627d1bd1391
+    layerID: 120
+    mosaicPosition: {x: 6210, y: 3326}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: voda zaklad barva
+    spriteName: voda zaklad barva
+    isGroup: 0
+    parentIndex: 5
+    spriteID: b2d502c5dce461447b5df2e51c2dfa9a
+    layerID: 119
+    mosaicPosition: {x: 6618, y: 3326}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: strom
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 4fa70c1aaf7cc184d8f7e45733569200
+    layerID: 60
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: strom vrchni
+    spriteName: strom vrchni
+    isGroup: 0
+    parentIndex: 12
+    spriteID: ab66b39f1975ee445b2954c889bd24e9
+    layerID: 63
+    mosaicPosition: {x: 13527, y: 791}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: vrchni barva
+    spriteName: vrchni barva
+    isGroup: 0
+    parentIndex: 12
+    spriteID: c83ab658bfab5b247a87b368e645e1db
+    layerID: 64
+    mosaicPosition: {x: 12674, y: 5612}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: strom hl
+    spriteName: strom hl
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 6ecf2d1bb787bde448e3a035981b4f62
+    layerID: 59
+    mosaicPosition: {x: 3802, y: 4942}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: strom hl barva
+    spriteName: strom hl barva
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 836091c6db590f445a735d2447165535
+    layerID: 62
+    mosaicPosition: {x: 4764, y: 4942}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: strom v zadu
+    spriteName: strom v zadu
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 1f5673089a51b7f45a04175163b467e3
+    layerID: 65
+    mosaicPosition: {x: 14103, y: 5146}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: vzadu barva
+    spriteName: vzadu barva
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 486b2e198a1bf9244914310b1e67a9cc
+    layerID: 66
+    mosaicPosition: {x: 14784, y: 5146}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: strom upe v zadu
+    spriteName: strom upe v zadu
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 6dc826e1dd954954188a4cca2b78fa76
+    layerID: 67
+    mosaicPosition: {x: 6764, y: 5534}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: strom upe v zadu barva
+    spriteName: strom upe v zadu barva
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 4c88232f58418844782c7ac5eb656c8d
+    layerID: 68
+    mosaicPosition: {x: 9108, y: 5533}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pruchhod
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: cae984e81f18e0b42ae5f0971e7952fd
+    layerID: 158
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: predek 2
+    spriteName: predek 2
+    isGroup: 0
+    parentIndex: 21
+    spriteID: 8f5bc427bd165164989172c7bd821241
+    layerID: 200
+    mosaicPosition: {x: 15842, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: predek
+    spriteName: predek
+    isGroup: 0
+    parentIndex: 21
+    spriteID: 53724f531622c8f4289b7c369b287a7f
+    layerID: 162
+    mosaicPosition: {x: 16018, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pokoj predek
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: c4f5d398acaf20542a818281fddb15ff
+    layerID: 218
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: predek predek
+    spriteName: predek predek
+    isGroup: 0
+    parentIndex: 24
+    spriteID: 4dfeeb05614b9124aa81c84ceaaa2b8d
+    layerID: 207
+    mosaicPosition: {x: 12564, y: 5146}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: predek predek b
+    spriteName: predek predek b
+    isGroup: 0
+    parentIndex: 24
+    spriteID: 22e88a4c3214fa24e8f42b35a75b0ccc
+    layerID: 208
+    mosaicPosition: {x: 13333, y: 5146}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: obyvak predek
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 260d8280305982d4197c7507a9655f7a
+    layerID: 191
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: predek predek
+    spriteName: predek predek
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 136b871cfe984ba40b1f294aae90056b
+    layerID: 171
+    mosaicPosition: {x: 4, y: 4942}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: predek predek m
+    spriteName: predek predek m
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 9bf983c877f517149a2a4d9fd95d6c41
+    layerID: 170
+    mosaicPosition: {x: 1358, y: 4942}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: stompin cara
+    spriteName: stompin cara
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 70ef0d19a6549ec40a133b4aa26be130
+    layerID: 4
+    mosaicPosition: {x: 5774, y: 1087}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: botnik
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 7081500c29783a24c958b4b30ce3840e
+    layerID: 69
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: predek
+    spriteName: predek
+    isGroup: 0
+    parentIndex: 31
+    spriteID: 47c598b985a03464fb2478262e625f1d
+    layerID: 71
+    mosaicPosition: {x: 5530, y: 3326}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: zadek
+    spriteName: zadek
+    isGroup: 0
+    parentIndex: 31
+    spriteID: 73cfbe7f7eaf87545a00db8e66bd4772
+    layerID: 79
+    mosaicPosition: {x: 5720, y: 4942}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "ob\xFDvak"
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: a7da991366151ab44b114a21b1dedabd
+    layerID: 164
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: predek b
+    spriteName: predek b
+    isGroup: 0
+    parentIndex: 34
+    spriteID: 7ba0a72e781554240b2aa238cec14c69
+    layerID: 167
+    mosaicPosition: {x: 4, y: 4132}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: zadek b
+    spriteName: zadek b
+    isGroup: 0
+    parentIndex: 34
+    spriteID: 5e87b05f7f1ff3c4f8861a91158b026c
+    layerID: 166
+    mosaicPosition: {x: 14122, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pokoj
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: e355858b71cec824e9f1fa5d932f1202
+    layerID: 193
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: stul b
+    spriteName: stul b
+    isGroup: 0
+    parentIndex: 37
+    spriteID: be6b12e109c37fb4e95f4576b1f02842
+    layerID: 215
+    mosaicPosition: {x: 15789, y: 1875}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: predek b
+    spriteName: predek b
+    isGroup: 0
+    parentIndex: 37
+    spriteID: eb7af2c7407998546b55b201fafe51db
+    layerID: 201
+    mosaicPosition: {x: 14945, y: 1087}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: zadek b
+    spriteName: zadek b
+    isGroup: 0
+    parentIndex: 37
+    spriteID: 3ee4acc102c364d43abbd620750841fe
+    layerID: 203
+    mosaicPosition: {x: 2690, y: 4942}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: plot
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 77848c3ed6658ad4b9ee557740234420
+    layerID: 46
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: plot
+    spriteName: plot
+    isGroup: 0
+    parentIndex: 41
+    spriteID: d1e27be42fda8f04791eab11d2794339
+    layerID: 16
+    mosaicPosition: {x: 15460, y: 5431}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: barva plot
+    spriteName: barva plot
+    isGroup: 0
+    parentIndex: 41
+    spriteID: 0b6e07f69fd68a842bc4a78f53eb88ca
+    layerID: 17
+    mosaicPosition: {x: 7977, y: 5932}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: dum predek
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: c6bcd1e2b26f293418a628966e08c11d
+    layerID: 48
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: dumn vepredu
+    spriteName: dumn vepredu
+    isGroup: 0
+    parentIndex: 44
+    spriteID: e068b9caf188d2e4086894e0b4805143
+    layerID: 6
+    mosaicPosition: {x: 6764, y: 4942}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: barva vepredu
+    spriteName: barva vepredu
+    isGroup: 0
+    parentIndex: 44
+    spriteID: 4fe8f23534d3f1a49bf01b86ff244ffa
+    layerID: 14
+    mosaicPosition: {x: 7977, y: 4942}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: dum vzdadu
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 2c07a3314be64c74fa4b71bf426dedbd
+    layerID: 57
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: dum vuadu
+    spriteName: dum vuadu
+    isGroup: 0
+    parentIndex: 47
+    spriteID: 9d959ade6af5ebd4482d04cb45637105
+    layerID: 12
+    mosaicPosition: {x: 6210, y: 3743}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: barva vzadu
+    spriteName: barva vzadu
+    isGroup: 0
+    parentIndex: 47
+    spriteID: 480263f527fb4094b8c1944f90dea06e
+    layerID: 15
+    mosaicPosition: {x: 7977, y: 5533}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: trava v popredi
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 90d0de5a584961e46b68ea75cb083184
+    layerID: 103
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: trava2
+    spriteName: trava2
+    isGroup: 0
+    parentIndex: 50
+    spriteID: 8e092773f9d541944a34076d44d012ef
+    layerID: 108
+    mosaicPosition: {x: 9182, y: 4942}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: trava2 barva
+    spriteName: trava2 barva
+    isGroup: 0
+    parentIndex: 50
+    spriteID: 09c3056a7e45427419ad8531265c243e
+    layerID: 109
+    mosaicPosition: {x: 12342, y: 4942}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: trava1
+    spriteName: trava1
+    isGroup: 0
+    parentIndex: 50
+    spriteID: 581dcab304b6bb84dba5fd1c8044c265
+    layerID: 105
+    mosaicPosition: {x: 9182, y: 5146}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: trava1 barva
+    spriteName: trava1 barva
+    isGroup: 0
+    parentIndex: 50
+    spriteID: 71f21b20c4488214284b7e7a945e77bc
+    layerID: 106
+    mosaicPosition: {x: 12385, y: 1875}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: stompin barva
+    spriteName: stompin barva
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 93146fc12c647384cae8c7e5bdfd4c54
+    layerID: 98
+    mosaicPosition: {x: 4, y: 1087}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: strom pred domem
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: c006e83f90b64be44b03b3a26a1f32f8
+    layerID: 81
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: strom vrchni
+    spriteName: strom vrchni
+    isGroup: 0
+    parentIndex: 56
+    spriteID: f6a0765c326ef984eb9f995e8e940fff
+    layerID: 85
+    mosaicPosition: {x: 5720, y: 5784}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: vrchni barva
+    spriteName: vrchni barva
+    isGroup: 0
+    parentIndex: 56
+    spriteID: f69a7654f1740fc46b4a4ce4026b73c4
+    layerID: 89
+    mosaicPosition: {x: 6226, y: 5784}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: strom hl
+    spriteName: strom hl
+    isGroup: 0
+    parentIndex: 56
+    spriteID: ad66068743ad7d940a302178f4a83b5d
+    layerID: 80
+    mosaicPosition: {x: 4774, y: 3326}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: strom hl barva
+    spriteName: strom hl barva
+    isGroup: 0
+    parentIndex: 56
+    spriteID: 86d26bcdc9cba5d48a04d1bbb7fa9d55
+    layerID: 84
+    mosaicPosition: {x: 4020, y: 3326}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: strom v zadu
+    spriteName: strom v zadu
+    isGroup: 0
+    parentIndex: 56
+    spriteID: d24139287b4edf8439d62e9ba5ba56eb
+    layerID: 86
+    mosaicPosition: {x: 15460, y: 5146}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: v zadu barva
+    spriteName: v zadu barva
+    isGroup: 0
+    parentIndex: 56
+    spriteID: d2b665a2213b1dc43a238005591fada7
+    layerID: 88
+    mosaicPosition: {x: 14762, y: 2320}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: upe vzadu
+    spriteName: upe vzadu
+    isGroup: 0
+    parentIndex: 56
+    spriteID: 3b425f0105d356844a52192737f883e5
+    layerID: 90
+    mosaicPosition: {x: 10063, y: 5612}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: upe vzadu b arva
+    spriteName: upe vzadu b arva
+    isGroup: 0
+    parentIndex: 56
+    spriteID: 059f1df6544bfd84ab5ea3241f6b231b
+    layerID: 91
+    mosaicPosition: {x: 11122, y: 5612}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: travy pred pozadim
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: d0de57443f97527479fbb3e1093c9a75
+    layerID: 93
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: trava u kameni bliz stredu
+    spriteName: trava u kameni bliz stredu
+    isGroup: 0
+    parentIndex: 65
+    spriteID: 412d99008ca95634a8b1061261a6750d
+    layerID: 128
+    mosaicPosition: {x: 2690, y: 5901}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: trava u kameni bliz stredu barva
+    spriteName: trava u kameni bliz stredu barva
+    isGroup: 0
+    parentIndex: 65
+    spriteID: fddd6265e8eb57f498f6a47d022d4ee7
+    layerID: 129
+    mosaicPosition: {x: 13271, y: 2551}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: trava u kameni
+    spriteName: trava u kameni
+    isGroup: 0
+    parentIndex: 65
+    spriteID: 09fff089b4a04bb4eb18857f1bb70d56
+    layerID: 126
+    mosaicPosition: {x: 12036, y: 791}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: trava u kameni barva
+    spriteName: trava u kameni barva
+    isGroup: 0
+    parentIndex: 65
+    spriteID: 80d51e5047ac32c4797fae2204372c7e
+    layerID: 127
+    mosaicPosition: {x: 13271, y: 2320}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: trava vedle stromu
+    spriteName: trava vedle stromu
+    isGroup: 0
+    parentIndex: 65
+    spriteID: ecd5737ba8fdcac4d89dc31de7474165
+    layerID: 92
+    mosaicPosition: {x: 15543, y: 2320}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: trava vedle stromu barva
+    spriteName: trava vedle stromu barva
+    isGroup: 0
+    parentIndex: 65
+    spriteID: cd26fbb8104a5974eaeca3e2394a795e
+    layerID: 95
+    mosaicPosition: {x: 12174, y: 5612}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: trava po ceste
+    spriteName: trava po ceste
+    isGroup: 0
+    parentIndex: 65
+    spriteID: 8df9cf81f08b07b4e9ed645b06e7b9db
+    layerID: 99
+    mosaicPosition: {x: 1358, y: 5772}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: trava po ceste barva
+    spriteName: trava po ceste barva
+    isGroup: 0
+    parentIndex: 65
+    spriteID: fd27327ca7c47bc45a0a90e0c59acdd4
+    layerID: 102
+    mosaicPosition: {x: 1985, y: 5772}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pozadi
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 76fc41e84454f474f84acd8bfe90126d
+    layerID: 130
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: mraky
+    spriteName: mraky
+    isGroup: 0
+    parentIndex: 74
+    spriteID: 47e650045755a5e41a309b287490e850
+    layerID: 153
+    mosaicPosition: {x: 8249, y: 791}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: mraky barva
+    spriteName: mraky barva
+    isGroup: 0
+    parentIndex: 74
+    spriteID: 9ee699ba738955a48b3a679be2705f28
+    layerID: 154
+    mosaicPosition: {x: 9489, y: 2320}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: les1
+    spriteName: les1
+    isGroup: 0
+    parentIndex: 74
+    spriteID: 4e62a54739dbd58429218da9737dfacc
+    layerID: 132
+    mosaicPosition: {x: 9489, y: 2555}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: les1 barva
+    spriteName: les1 barva
+    isGroup: 0
+    parentIndex: 74
+    spriteID: fd4670c9f8f4e324799d7969e25be41b
+    layerID: 137
+    mosaicPosition: {x: 5922, y: 2320}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: les2
+    spriteName: les2
+    isGroup: 0
+    parentIndex: 74
+    spriteID: 0662edae2173af143bbcf2b9b46b491a
+    layerID: 138
+    mosaicPosition: {x: 10063, y: 5533}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: les2 barva
+    spriteName: les2 barva
+    isGroup: 0
+    parentIndex: 74
+    spriteID: ddb38a976c914c24d8b6362015f1bcad
+    layerID: 139
+    mosaicPosition: {x: 8249, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pole
+    spriteName: pole
+    isGroup: 0
+    parentIndex: 74
+    spriteID: 6047491c70e20844ba0ba23ee1b48a26
+    layerID: 149
+    mosaicPosition: {x: 6520, y: 1875}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pole barva
+    spriteName: pole barva
+    isGroup: 0
+    parentIndex: 74
+    spriteID: 86accb68f2e689b4abe1f311734a6be4
+    layerID: 150
+    mosaicPosition: {x: 4, y: 2320}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: obloha
+    spriteName: obloha
+    isGroup: 0
+    parentIndex: 74
+    spriteID: c945329d55eaf5441972eb8cb3122ebc
+    layerID: 148
+    mosaicPosition: {x: 4, y: 1875}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: ref
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 72d7ddd4c5a2641499cb0ac571691878
+    layerID: 50
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: kyle ultimate pencil hard
+    spriteName: 
+    isGroup: 0
+    parentIndex: 84
+    spriteID: b5c7a313ab5c03642b52700c59a1559b
+    layerID: 42
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Vrstva 1
+    spriteName: 
+    isGroup: 0
+    parentIndex: 84
+    spriteID: 9444d850094f45c4a8a297631b5f8fe0
+    layerID: 2
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Vrstva 4
+    spriteName: 
+    isGroup: 0
+    parentIndex: 84
+    spriteID: bc7322b817f9c364f8ee1614d12f142b
+    layerID: 44
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Vrstva 3
+    spriteName: 
+    isGroup: 0
+    parentIndex: 84
+    spriteID: 50a3395240ac3884d942cde7f3e264d9
+    layerID: 43
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Vrstva 5
+    spriteName: 
+    isGroup: 0
+    parentIndex: 84
+    spriteID: b365dc77ccb9ce0499bf7edd817a402e
+    layerID: 100
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Vrstva 0
+    spriteName: Vrstva 0
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 173ac9123dc558d43ba02752bb87e273
+    layerID: 96
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
