@@ -437,6 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   givenWord: For jumping use Up arrow
   textArea: {fileID: 2058356605}
+  writeOut: 0
   writeOutDelay: 0.1
 --- !u!61 &48514618
 BoxCollider2D:
@@ -545,6 +546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   givenWord: Or you can use Shitf + W
   textArea: {fileID: 306686595}
+  writeOut: 0
   writeOutDelay: 0.1
 --- !u!61 &107731644
 BoxCollider2D:
@@ -714,6 +716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   givenWord: To walk use arrows
   textArea: {fileID: 526358365}
+  writeOut: 0
   writeOutDelay: 0.1
 --- !u!114 &154399045
 MonoBehaviour:
@@ -1292,8 +1295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455cc31cf4f4e18419087ba6673b1dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  givenWord: You can access this level in menu
+  givenWord: If having trouble, look into controls in menu
   textArea: {fileID: 1796161915}
+  writeOut: 0
   writeOutDelay: 0.1
 --- !u!61 &230016789
 BoxCollider2D:
@@ -2613,7 +2617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 088d38e58ebce9f44a29dab255d4dcce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 102.4
+      value: -14.44
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 088d38e58ebce9f44a29dab255d4dcce, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2913,6 +2917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   givenWord: These are your "words"
   textArea: {fileID: 818792439}
+  writeOut: 0
   writeOutDelay: 0.1
 --- !u!61 &640839105
 BoxCollider2D:
@@ -3878,6 +3883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   givenWord: Now, try typing anything on your keyboard
   textArea: {fileID: 862173606}
+  writeOut: 0
   writeOutDelay: 0.1
 --- !u!61 &882204196
 BoxCollider2D:
@@ -4262,6 +4268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   givenWord: Also try using L Shift + A and L Shift + D
   textArea: {fileID: 1121028563}
+  writeOut: 0
   writeOutDelay: 0.1
 --- !u!61 &1083101108
 BoxCollider2D:
@@ -5178,6 +5185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   givenWord: Try to write it
   textArea: {fileID: 2746969}
+  writeOut: 0
   writeOutDelay: 0.1
 --- !u!61 &1357938632
 BoxCollider2D:
@@ -5271,6 +5279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   givenWord: Now, let's try interacting with things
   textArea: {fileID: 382853064}
+  writeOut: 0
   writeOutDelay: 0.1
 --- !u!61 &1402924697
 BoxCollider2D:
@@ -5769,6 +5778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   givenWord: Look at the word/words above the object
   textArea: {fileID: 1874439919}
+  writeOut: 0
   writeOutDelay: 0.1
 --- !u!61 &1549402707
 BoxCollider2D:
@@ -5862,6 +5872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   givenWord: If incorect, you'll need to start anew
   textArea: {fileID: 424833579}
+  writeOut: 0
   writeOutDelay: 0.1
 --- !u!61 &1624683723
 BoxCollider2D:
@@ -6731,6 +6742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   givenWord: Be careful how you use them
   textArea: {fileID: 1805246863}
+  writeOut: 0
   writeOutDelay: 0.1
 --- !u!61 &1960141274
 BoxCollider2D:
@@ -6824,6 +6836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   givenWord: Good job!
   textArea: {fileID: 553052480}
+  writeOut: 0
   writeOutDelay: 0.1
 --- !u!61 &2013142035
 BoxCollider2D:
@@ -7082,6 +7095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   givenWord: Remember, you can't take anything back
   textArea: {fileID: 439735510}
+  writeOut: 0
   writeOutDelay: 0.1
 --- !u!61 &2057748074
 BoxCollider2D:

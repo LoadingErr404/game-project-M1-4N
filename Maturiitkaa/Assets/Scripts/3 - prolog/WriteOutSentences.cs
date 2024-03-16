@@ -16,11 +16,11 @@ public class WriteOutSentences : MonoBehaviour
     private readonly List<string> _sentenceList = new();
     [SerializeField] private TextAsset myFile;
     private int _numberOfSentences;
-    private bool _interacting;
+    public bool interacting;
     
     [Header("Text fields")]
-    [SerializeField] private TMP_Text ownTextField;
-    [SerializeField] private WritingGameplayProlog writing;
+    [SerializeField] public TMP_Text ownTextField;
+    [SerializeField] public WritingGameplayProlog writing;
     
     public int rowIndex;
     public bool writeNewSentence;
@@ -37,7 +37,7 @@ public class WriteOutSentences : MonoBehaviour
     private void Update()
     {
         
-        if (!_interacting)
+        if (!interacting)
         {
             return;
         }
@@ -47,6 +47,7 @@ public class WriteOutSentences : MonoBehaviour
             return;
         }
 
+       
         if (rowIndex < _numberOfSentences)
         {
             writeText.givenSentence = _sentenceList[rowIndex];
@@ -78,7 +79,7 @@ public class WriteOutSentences : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        _interacting = true;
+        interacting = true;
         writing.controlWordsProlog.stopWritingTimer = true;
         writing.controlWordsProlog.canMove = false;
         writing.ChangeTextArea(ownTextField);

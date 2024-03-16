@@ -6,5 +6,7 @@ public class ControlWordsProlog : MonoBehaviour
 {
     public bool canMove = true;
     public bool stopWritingTimer = false;
-    
+    public bool pictureOverlay = false;
+    public int numberOfInteractedObjects = 0;
+    public bool hasBook;
 }
