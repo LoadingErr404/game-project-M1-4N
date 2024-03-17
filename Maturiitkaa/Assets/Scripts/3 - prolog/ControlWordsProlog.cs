@@ -9,4 +9,10 @@ public class ControlWordsProlog : MonoBehaviour
     public bool pictureOverlay = false;
     public int numberOfInteractedObjects = 0;
     public bool hasBook;
+    public bool activateNextLevelTrigger;
+
+    public void SetNextLevelToTrue()
+    {
+        activateNextLevelTrigger = true;
+    }
 }

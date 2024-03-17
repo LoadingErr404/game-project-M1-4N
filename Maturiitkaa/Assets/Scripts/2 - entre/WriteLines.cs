@@ -11,12 +11,14 @@ public class WriteLines : MonoBehaviour
     [SerializeField] private TextAsset myFile;
     [SerializeField] private float waitBetweenLetters;
     [SerializeField] private float waitBetweenSentences;
+    [SerializeField] private LoadNextLevel loadNextLevel;
     
 
     private void Start()
     {
         LoadStrings();
         StartCoroutine(PrintSentences());
+        
 
     }
     
@@ -52,6 +54,8 @@ public class WriteLines : MonoBehaviour
             textArea.text = "";
 
         }
+        loadNextLevel.NextLevel();
+        
     }
     
 }

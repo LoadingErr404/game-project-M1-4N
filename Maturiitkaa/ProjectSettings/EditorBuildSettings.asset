@@ -5,7 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Levels/0 - main_menu.unity
+    guid: a2ed39f423f95e14fa952e994a76ae1a
+  - enabled: 1
+    path: Assets/Levels/1 - tutorial.unity
+    guid: ba0daad76b819d04e8f262cde1a88e8d
+  - enabled: 1
+    path: Assets/Levels/2 - entre.unity
+    guid: 0976b3ab601c8424e958c34b17470ddc
+  - enabled: 1
+    path: Assets/Levels/3 - prologue.unity
+    guid: 84f2e32ab29cbf24090df19961289d10
+  - enabled: 1
+    path: Assets/Levels/4 - kitchen.unity
+    guid: 2e7507190d6315149a4e5fe7b27297cf
+  - enabled: 1
+    path: Assets/Levels/5 - livingRoom.unity
+    guid: 95c26e106f947d240922e97c7e6ca709
+  - enabled: 1
+    path: Assets/Levels/6 - bedroom.unity
+    guid: 6ac63f064f4119343a21b3a1d87d9d94
   m_configObjects: {}

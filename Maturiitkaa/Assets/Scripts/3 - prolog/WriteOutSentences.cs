@@ -9,6 +9,7 @@ using UnityEngine.Serialization;
 
 public class WriteOutSentences : MonoBehaviour
 {
+    public UnityEvent successfulInteraction;
     [SerializeField] private WriteTextProlog writeText;
     [SerializeField] public InteractTextPrologWritingSentences interactText;
     
