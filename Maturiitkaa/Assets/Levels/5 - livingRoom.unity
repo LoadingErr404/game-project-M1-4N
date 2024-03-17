@@ -414,6 +414,7 @@ MonoBehaviour:
   pictureOverlay: 0
   numberOfInteractedObjects: 0
   hasBook: 0
+  activateNextLevelTrigger: 0
 --- !u!4 &185557594
 Transform:
   m_ObjectHideFlags: 0
@@ -739,6 +740,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuOpener
       objectReference: {fileID: 0}
+    - target: {fileID: 34704856710863241, guid: 1b3f8cad415c8fb489aeaf76c752745e, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654275887451938964, guid: 1b3f8cad415c8fb489aeaf76c752745e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829905085074285085, guid: 1b3f8cad415c8fb489aeaf76c752745e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3829905085074285085, guid: 1b3f8cad415c8fb489aeaf76c752745e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 485.12222
@@ -749,7 +762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3829905085074285085, guid: 1b3f8cad415c8fb489aeaf76c752745e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.4420166
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 3829905085074285085, guid: 1b3f8cad415c8fb489aeaf76c752745e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -778,6 +791,26 @@ PrefabInstance:
     - target: {fileID: 3829905085074285085, guid: 1b3f8cad415c8fb489aeaf76c752745e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3960895443866870242, guid: 1b3f8cad415c8fb489aeaf76c752745e, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4058230155509790410, guid: 1b3f8cad415c8fb489aeaf76c752745e, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4058230155509790410, guid: 1b3f8cad415c8fb489aeaf76c752745e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492885629642301171, guid: 1b3f8cad415c8fb489aeaf76c752745e, type: 3}
+      propertyPath: m_BlockingObjects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584591386859652683, guid: 1b3f8cad415c8fb489aeaf76c752745e, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

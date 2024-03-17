@@ -1007,6 +1007,7 @@ MonoBehaviour:
   pictureOverlay: 0
   numberOfInteractedObjects: 0
   hasBook: 0
+  activateNextLevelTrigger: 0
 --- !u!4 &428783218
 Transform:
   m_ObjectHideFlags: 0
@@ -4535,7 +4536,7 @@ PrefabInstance:
       objectReference: {fileID: 428783217}
     - target: {fileID: 5472072438389578190, guid: 5428005856507664985c7ce839a813d4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.53
+      value: -14.93
       objectReference: {fileID: 0}
     - target: {fileID: 5472072438389578190, guid: 5428005856507664985c7ce839a813d4, type: 3}
       propertyPath: m_LocalPosition.y
