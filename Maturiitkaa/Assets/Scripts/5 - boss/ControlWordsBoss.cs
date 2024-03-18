@@ -15,4 +15,5 @@ public class ControlWordsBoss : MonoBehaviour
     {
         return milanDoneWriting;
     }
+    
 }

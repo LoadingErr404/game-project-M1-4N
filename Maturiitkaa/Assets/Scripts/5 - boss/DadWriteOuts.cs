@@ -12,6 +12,7 @@ public class DadWriteOuts : MonoBehaviour
     [SerializeField] private float waitBetweenLetters;
     [SerializeField] private float waitBetweenSentences;
     private int _numberOfLines;
+    private int _numberPrinted;
     private string _index;
     [SerializeField] private ControlWordsBoss controls;
     [SerializeField] private enum VersionOfFieldMove {Small, Medium, Big=5};
@@ -23,9 +24,8 @@ public class DadWriteOuts : MonoBehaviour
         LoadStrings();
         
         //getting index from name of object
-        var fullIndex = gameObject.ToString().Split('_');
-        _index = fullIndex[1];
-        Debug.Log(_index);
+        _index = gameObject.ToString().Split('_')[1];
+        _numberOfLines = _sentenceList.Count;
         
         StartCoroutine(PrintSentences());
 
@@ -44,9 +44,7 @@ public class DadWriteOuts : MonoBehaviour
             {
                 _sentenceList.Add(line);
             }
-
-            _numberOfLines++;
-
+            
         }
 
     }
@@ -55,6 +53,7 @@ public class DadWriteOuts : MonoBehaviour
     {
         controls.dadDoneWriting = false;
 
+        yield return new WaitUntil(SameIndexesDad);
         yield return new WaitUntil(controls.GetMilanWriting);
         
         foreach (var sentence in _sentenceList)
@@ -67,11 +66,27 @@ public class DadWriteOuts : MonoBehaviour
 
             yield return new WaitForSeconds(waitBetweenSentences);
             textArea.text += "\n";
-
+            _numberPrinted++;
+            
         }
+       
+        yield return new WaitUntil(EverythingPrinted);
         
-        controls.dadDoneWriting = false;
-        
+        controls.dadDoneWriting = true;
+        controls.dadWritingIndex++;
+
+    }
+    
+    private bool SameIndexesDad() //cannot be in ControlWords - we cant have parameters
+    {
+        var writeIndex = controls.dadWritingIndex + 1; //names are from 1
+        _index = _index.Split("_")[0]; //the rest is a mess from engine 
+        return writeIndex.ToString().Equals(_index);
+    }
+
+    private bool EverythingPrinted()
+    {
+        return _numberPrinted == _numberOfLines;
     }
     
 }
