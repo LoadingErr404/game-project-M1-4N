@@ -7,13 +7,31 @@ public class ControlWordsBoss : MonoBehaviour
 {
     public bool dadDoneWriting;
     public bool milanDoneWriting;
-    public bool moveUp;
     public int dadWritingIndex;
     public int milanWritingIndex;
+    public int nextLevel;
+
+    public enum NextLevelIdentifiers
+    {
+        SameLevel,
+        WinLevel,
+        LooseLevel
+    };
+
+    private void Start()
+    {
+        nextLevel = (int)NextLevelIdentifiers.SameLevel;
+    }
+
 
     public bool GetMilanWriting()
     {
         return milanDoneWriting;
+    }
+
+    public bool GetDadWriting()
+    {
+        return dadDoneWriting;
     }
     
 }

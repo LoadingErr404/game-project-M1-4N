@@ -7,23 +7,18 @@ using UnityEngine;
 public class MoveScreenUp : MonoBehaviour
 {
     [SerializeField] private GameObject canvas;
-    [SerializeField] private ControlWordsBoss controls;
-    //[SerializeField] public float valueUp;
+    public ControlWordsBoss controls;
     private Vector3 _velocity = Vector3.zero;
 
     private void Start()
     {
-        //controls.milanDoneWriting = true;
+        controls.milanDoneWriting = true;
+        
     }
 
 
     public void MoveUp(float valueUp)
     {
-        if (!controls.moveUp)
-        {
-            return;
-        }
-        
         var position = canvas.transform.position;
         var targetPosition = new Vector3(position.x, position.y + valueUp, position.z);
         

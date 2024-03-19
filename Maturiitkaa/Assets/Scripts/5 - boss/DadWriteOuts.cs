@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DadWriteOuts : MonoBehaviour
 {
@@ -11,12 +13,15 @@ public class DadWriteOuts : MonoBehaviour
     [SerializeField] private TextAsset myFile;
     [SerializeField] private float waitBetweenLetters;
     [SerializeField] private float waitBetweenSentences;
-    private int _numberOfLines;
+    
+    public int numberOfLines;
     private int _numberPrinted;
     private string _index;
+    
     [SerializeField] private ControlWordsBoss controls;
-    [SerializeField] private enum VersionOfFieldMove {Small, Medium, Big=5};
-    [SerializeField] private enum NumberOfLinesPerVersion {Small=1, Medium=2, Big=3};
+    [SerializeField] private MoveScreenUp moveScreen;
+    private enum VersionOfFieldMove {Small, Medium, Big=5};
+    private enum NumberOfLinesPerVersion {Small=1, Medium=2, Big=3};
     
 
     private void Start()
@@ -25,7 +30,7 @@ public class DadWriteOuts : MonoBehaviour
         
         //getting index from name of object
         _index = gameObject.ToString().Split('_')[1];
-        _numberOfLines = _sentenceList.Count;
+        numberOfLines = _sentenceList.Count;
         
         StartCoroutine(PrintSentences());
 
@@ -55,6 +60,8 @@ public class DadWriteOuts : MonoBehaviour
 
         yield return new WaitUntil(SameIndexesDad);
         yield return new WaitUntil(controls.GetMilanWriting);
+
+        controls.milanDoneWriting = false;
         
         foreach (var sentence in _sentenceList)
         {
@@ -72,8 +79,10 @@ public class DadWriteOuts : MonoBehaviour
        
         yield return new WaitUntil(EverythingPrinted);
         
-        controls.dadDoneWriting = true;
+        
         controls.dadWritingIndex++;
+        moveScreen.MoveUp(2);
+        controls.dadDoneWriting = true;
 
     }
     
@@ -86,7 +95,7 @@ public class DadWriteOuts : MonoBehaviour
 
     private bool EverythingPrinted()
     {
-        return _numberPrinted == _numberOfLines;
+        return _numberPrinted == numberOfLines;
     }
     
 }
