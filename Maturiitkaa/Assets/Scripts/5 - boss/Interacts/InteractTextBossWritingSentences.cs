@@ -29,8 +29,6 @@ public class InteractTextBossWritingSentences : MonoBehaviour
             return;
         }
         
-        
-        
         var result = CheckIndexes(writing.ReturnText());
         
         switch (result)
@@ -44,10 +42,10 @@ public class InteractTextBossWritingSentences : MonoBehaviour
         
         if (writing.ReturnText().Equals(textForInteraction))
         {
-            writing.ClearText();
-            writeOutSentences.writeNewSentence = true;
             writeOutSentences.rowIndex++;
-            textArea.text = "";
+            interactable = false;
+            writing.UseDefaultTextArea();
+            writing.controlWordsBoss.milanDoneWriting = true;
         }
         
     }

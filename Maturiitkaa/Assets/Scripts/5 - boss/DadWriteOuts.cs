@@ -60,8 +60,7 @@ public class DadWriteOuts : MonoBehaviour
 
         yield return new WaitUntil(SameIndexesDad);
         yield return new WaitUntil(controls.GetMilanWriting);
-
-        controls.milanDoneWriting = false;
+        
         
         foreach (var sentence in _sentenceList)
         {

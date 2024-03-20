@@ -10,8 +10,6 @@ public class WritingGameplayBoss : MonoBehaviour
     [Header("Text field")]
     [SerializeField] private TMP_Text myTextArea;
     private TMP_Text _defaultTextArea;
-    [SerializeField] private float writeOutFlush;
-    private float _writeCounter;
 
     
     private void Start()
@@ -29,15 +27,6 @@ public class WritingGameplayBoss : MonoBehaviour
                 BuffWord(letter); //checks if it is an allowed letter
             }
         }
-        /*
-        if (_writeCounter >= writeOutFlush)
-        {
-            _writeCounter = 0;
-            ClearText();
-        }
-
-        _writeCounter += Time.deltaTime;*/
-
     }
 
     public void ClearText(){ //clears output text
@@ -65,7 +54,7 @@ public class WritingGameplayBoss : MonoBehaviour
 
     public void UseDefaultTextArea()
     {
-        ClearText();
+        //ClearText();
         myTextArea = _defaultTextArea;
     }
 

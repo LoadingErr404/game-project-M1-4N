@@ -46,6 +46,7 @@ public class WriteOutSentencesBoss : MonoBehaviour
         {
             return;
         }
+        
        
         if (rowIndex < _numberOfSentences)
         {
@@ -69,13 +70,7 @@ public class WriteOutSentencesBoss : MonoBehaviour
         }
 
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        writing.ChangeTextArea(ownTextField);
-        writeNewSentence = true;
-        interactText.interactable = true;
-    }
+    
 
     private bool CheckIndexes()
     {
@@ -88,8 +83,9 @@ public class WriteOutSentencesBoss : MonoBehaviour
     {
         yield return new WaitUntil(CheckIndexes);
         yield return new WaitUntil(screenController.controls.GetDadWriting);
-        
-        interacting = true;
+
+        screenController.controls.milanDoneWriting = false;
+        interactText.interactable = true;
         writing.ChangeTextArea(ownTextField);
         writeNewSentence = true;
     }
