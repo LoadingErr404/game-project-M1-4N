@@ -20,8 +20,7 @@ public class DadWriteOuts : MonoBehaviour
     
     [SerializeField] private ControlWordsBoss controls;
     [SerializeField] private MoveScreenUp moveScreen;
-    private enum VersionOfFieldMove {Small, Medium, Big=5};
-    private enum NumberOfLinesPerVersion {Small=1, Medium=2, Big=3};
+    [SerializeField] private int orderInQuery;
     
 
     private void Start()
@@ -56,10 +55,13 @@ public class DadWriteOuts : MonoBehaviour
 
     private IEnumerator PrintSentences()
     {
+        yield return new WaitUntil(MyTime);
         controls.dadDoneWriting = false;
 
+        
+        
         yield return new WaitUntil(SameIndexesDad);
-        yield return new WaitUntil(controls.GetMilanWriting);
+        yield return new WaitUntil(controls.GetMilanDoneWriting);
         
         
         foreach (var sentence in _sentenceList)
@@ -80,8 +82,9 @@ public class DadWriteOuts : MonoBehaviour
         
         
         controls.dadWritingIndex++;
-        moveScreen.MoveUp(2);
+        moveScreen.MoveUp(2.3f);
         controls.dadDoneWriting = true;
+        controls.objectQuery++;
 
     }
     
@@ -95,6 +98,11 @@ public class DadWriteOuts : MonoBehaviour
     private bool EverythingPrinted()
     {
         return _numberPrinted == numberOfLines;
+    }
+
+    private bool MyTime()
+    {
+        return controls.objectQuery == orderInQuery;
     }
     
 }

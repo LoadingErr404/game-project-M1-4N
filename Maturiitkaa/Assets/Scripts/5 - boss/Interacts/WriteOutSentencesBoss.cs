@@ -12,28 +12,30 @@ public class WriteOutSentencesBoss : MonoBehaviour
     public UnityEvent successfulInteraction;
     [SerializeField] private WriteTextBoss writeText;
     [SerializeField] public InteractTextBossWritingSentences interactText;
+    public DadWriteOuts nextGameObject;
     
     [Header("File")]
     private readonly List<string> _sentenceList = new();
     [SerializeField] private TextAsset myFile;
-    private int _numberOfSentences;
+    public int numberOfSentences;
     public bool interacting;
     
     [Header("Text fields")]
     [SerializeField] private TMP_Text ownTextField;
-    [SerializeField] private MoveScreenUp screenController;
+    public MoveScreenUp screenController;
     public WritingGameplayBoss writing;
     
     public int rowIndex;
     public bool writeNewSentence;
     public bool ableToWriteInto;
     private string _index;
+    [SerializeField] private int orderInQuery;
 
 
     private void Start()
     {
         LoadStrings();
-        _numberOfSentences = _sentenceList.Count;
+        numberOfSentences = _sentenceList.Count;
         _index = gameObject.ToString().Split('_')[1];
         StartCoroutine(WaitForAction());
 
@@ -48,7 +50,7 @@ public class WriteOutSentencesBoss : MonoBehaviour
         }
         
        
-        if (rowIndex < _numberOfSentences)
+        if (rowIndex < numberOfSentences)
         {
             writeText.givenSentence = _sentenceList[rowIndex];
         }
@@ -81,13 +83,25 @@ public class WriteOutSentencesBoss : MonoBehaviour
 
     private IEnumerator WaitForAction()
     {
+        yield return new WaitUntil(MyTime);
         yield return new WaitUntil(CheckIndexes);
-        yield return new WaitUntil(screenController.controls.GetDadWriting);
-
+        yield return new WaitUntil(screenController.controls.GetDadDoneWriting);
         screenController.controls.milanDoneWriting = false;
+
+        
         interactText.interactable = true;
         writing.ChangeTextArea(ownTextField);
         writeNewSentence = true;
+    }
+
+    public int ReturnNumOfLinesNextObject()
+    {
+        return nextGameObject.numberOfLines;
+    }
+    
+    private bool MyTime()
+    {
+        return writing.controlWordsBoss.objectQuery == orderInQuery;
     }
     
 }

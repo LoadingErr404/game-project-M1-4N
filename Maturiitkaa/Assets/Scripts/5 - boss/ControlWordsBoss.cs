@@ -10,6 +10,7 @@ public class ControlWordsBoss : MonoBehaviour
     public int dadWritingIndex;
     public int milanWritingIndex;
     public int nextLevel;
+    public int objectQuery;
 
     public enum NextLevelIdentifiers
     {
@@ -24,12 +25,12 @@ public class ControlWordsBoss : MonoBehaviour
     }
 
 
-    public bool GetMilanWriting()
+    public bool GetMilanDoneWriting()
     {
         return milanDoneWriting;
     }
 
-    public bool GetDadWriting()
+    public bool GetDadDoneWriting()
     {
         return dadDoneWriting;
     }
