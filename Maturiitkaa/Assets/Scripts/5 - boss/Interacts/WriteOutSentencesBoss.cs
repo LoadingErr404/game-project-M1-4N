@@ -86,7 +86,7 @@ public class WriteOutSentencesBoss : MonoBehaviour
         yield return new WaitUntil(MyTime);
         yield return new WaitUntil(CheckIndexes);
         yield return new WaitUntil(screenController.controls.GetDadDoneWriting);
-        screenController.controls.milanDoneWriting = false;
+        //screenController.controls.milanDoneWriting = false;
 
         
         interactText.interactable = true;

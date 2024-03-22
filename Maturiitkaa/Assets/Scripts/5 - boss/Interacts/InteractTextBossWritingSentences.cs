@@ -10,14 +10,13 @@ public class InteractTextBossWritingSentences : MonoBehaviour
     [SerializeField] public string textForInteraction;
     [SerializeField] private WritingGameplayBoss writing;
     [SerializeField] private WriteOutSentencesBoss writeOutSentences;
-    [SerializeField] private TMP_Text textArea;
     public bool interactable;
     
     private enum ReturnMeanings {EmptyWord, NotMatchingLetter, MatchingLetter};
 
-    private const float SmallBubble = 2.3f;
-    private const float MediumBubble = 4.5f;
-    private const float BigBubble = 7f;
+    private const float SmallBubble = 2.2f;
+    private const float MediumBubble = 4.7f;
+    private const float BigBubble = 5.2f;
 
 
     private void Update()
@@ -35,6 +34,8 @@ public class InteractTextBossWritingSentences : MonoBehaviour
         }
         
         var result = CheckIndexes(writing.ReturnText());
+        writing.controlWordsBoss.milanDoneWriting = false;
+        writing.controlWordsBoss.showInteractInterface = false;
         
         switch (result)
         {
@@ -50,6 +51,9 @@ public class InteractTextBossWritingSentences : MonoBehaviour
             writeOutSentences.rowIndex++;
             interactable = false;
             writing.UseDefaultTextArea();
+            writing.controlWordsBoss.milanDoneWriting = true;
+            writing.controlWordsBoss.milanWritingIndex++;
+            writing.controlWordsBoss.objectQuery++;
             
             
             
@@ -78,9 +82,7 @@ public class InteractTextBossWritingSentences : MonoBehaviour
             } 
             
             writeOutSentences.screenController.MoveUp(scrollSize);
-            writing.controlWordsBoss.milanDoneWriting = true;
-            writing.controlWordsBoss.milanWritingIndex++;
-            writing.controlWordsBoss.objectQuery++;
+           
         }
         
     }

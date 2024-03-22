@@ -62,8 +62,8 @@ public class DadWriteOuts : MonoBehaviour
         
         yield return new WaitUntil(SameIndexesDad);
         yield return new WaitUntil(controls.GetMilanDoneWriting);
-        
-        
+
+        controls.showInteractInterface = false;
         foreach (var sentence in _sentenceList)
         {
             foreach (var t in sentence)
@@ -82,7 +82,7 @@ public class DadWriteOuts : MonoBehaviour
         
         
         controls.dadWritingIndex++;
-        moveScreen.MoveUp(2.3f);
+        moveScreen.MoveUp(2.1f);
         controls.dadDoneWriting = true;
         controls.objectQuery++;
 
@@ -103,6 +103,11 @@ public class DadWriteOuts : MonoBehaviour
     private bool MyTime()
     {
         return controls.objectQuery == orderInQuery;
+    }
+
+    public int NumOfSentences()
+    {
+        return _sentenceList.Count;
     }
     
 }

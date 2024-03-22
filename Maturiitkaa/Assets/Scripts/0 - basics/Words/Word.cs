@@ -1,23 +1,24 @@
 
 public class Word
 {
-    private readonly string _myWord;
-    private readonly int _damage;
+    public readonly string MyWord;
+    public readonly int Damage;
 
     public Word()
     {
-        _myWord = "";
-        _damage = 0;
+        MyWord = "";
+        Damage = 0;
     }
 
     public Word(string word, int damage)
     {
-        _myWord = word;
-        _damage = damage;
+        MyWord = word;
+        this.Damage = damage;
     }
+    
 
     public override string ToString()
     {
-        return _myWord + ":" + _damage + "\n";
+        return MyWord + ":" + Damage + "\n";
     }
 }

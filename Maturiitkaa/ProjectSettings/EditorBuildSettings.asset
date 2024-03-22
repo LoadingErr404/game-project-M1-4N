@@ -29,4 +29,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/6 - bedroom.unity
     guid: 6ac63f064f4119343a21b3a1d87d9d94
+  - enabled: 1
+    path: Assets/Levels/7 - boss.unity
+    guid: ebe43dd8f318ebd4c8524519b831b06a
+  - enabled: 1
+    path: Assets/Levels/8 - win.unity
+    guid: 525618f8cc06635479d028b579c36e0d
+  - enabled: 1
+    path: Assets/Levels/9 - lose.unity
+    guid: d9aadb34c4e3cc04696f49d5cfc00c82
+  - enabled: 1
+    path: Assets/Levels/10 - credits.unity
+    guid: 9c92faf92a3ad5942b80045619aea219
   m_configObjects: {}
