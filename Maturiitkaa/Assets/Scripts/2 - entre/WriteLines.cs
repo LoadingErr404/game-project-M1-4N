@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WriteLines : MonoBehaviour
 {
@@ -53,6 +55,12 @@ public class WriteLines : MonoBehaviour
             
             textArea.text = "";
 
+        }
+
+        if (loadNextLevel.IsUnityNull())
+        {
+            SceneManager.LoadScene("0 - main_menu");
+            yield break;
         }
         loadNextLevel.NextLevel();
         
