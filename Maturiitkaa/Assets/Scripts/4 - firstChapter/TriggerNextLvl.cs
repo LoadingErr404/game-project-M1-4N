@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerNextLvl : MonoBehaviour
 {
     [SerializeField] private ControlWordsProlog controls;
-    [SerializeField] private GameObject gameObject;
+    [SerializeField] private new GameObject gameObject;
     // Start is called before the first frame update
     private void Start()
     {

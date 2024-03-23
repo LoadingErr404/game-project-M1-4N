@@ -35,6 +35,7 @@ public class WriteTextProlog : MonoBehaviour
             _position = 0;
             return;
         }
+        Debug.Log(givenSentence);
         textArea.text += givenSentence[_position++];
         writeOutSentences.ableToWriteInto = false;    
         _writeCounter = 0f;

@@ -11,7 +11,7 @@ accident:10
 homicide:5
 nothing:1
 yes:1
-nonsence:10
+nonsense:10
 never:5
 she:1
 i:-5
