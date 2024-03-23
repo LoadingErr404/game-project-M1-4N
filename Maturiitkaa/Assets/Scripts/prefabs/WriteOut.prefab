@@ -184,7 +184,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5211823705680597293, guid: 84a0e72c66acbfa4191c3c368900c3b0, type: 3}
       propertyPath: m_Name
-      value: 1 Variant
+      value: WriteOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211823705680597293, guid: 84a0e72c66acbfa4191c3c368900c3b0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6188481074928902579, guid: 84a0e72c66acbfa4191c3c368900c3b0, type: 3}
       propertyPath: m_LocalScale.x
