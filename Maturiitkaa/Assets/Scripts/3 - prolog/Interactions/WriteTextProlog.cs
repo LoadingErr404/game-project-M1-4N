@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -11,9 +13,6 @@ public class WriteTextProlog : MonoBehaviour
     private int _position;
     [SerializeField] private WriteOutSentences writeOutSentences;
     
-    
-    
-
     protected void Update()
     {
         if (!writeOutSentences.writeNewSentence)
@@ -36,10 +35,11 @@ public class WriteTextProlog : MonoBehaviour
             _position = 0;
             return;
         }
-        
+        textArea.text += givenSentence[_position++];
         writeOutSentences.ableToWriteInto = false;    
         _writeCounter = 0f;
-        textArea.text += givenSentence[_position++];
+        
 
     }
+    
 }

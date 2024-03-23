@@ -26,6 +26,7 @@ public class WriteOutSentences : MonoBehaviour
     public int rowIndex;
     public bool writeNewSentence;
     public bool ableToWriteInto;
+    
 
 
     private void Start()
@@ -86,5 +87,10 @@ public class WriteOutSentences : MonoBehaviour
         writing.ChangeTextArea(ownTextField);
         writeNewSentence = true;
         interactText.interactable = true;
+    }
+
+    public int ReturnNumOfLines()
+    {
+        return _sentenceList.Count;
     }
 }

@@ -45,9 +45,10 @@ public class InteractTextPrologWritingSentences : MonoBehaviour
         if (writing.ReturnText().Equals(textForInteraction))
         {
             writing.ClearText();
+            textArea.text = "";
             writeOutSentences.writeNewSentence = true;
             writeOutSentences.rowIndex++;
-            textArea.text = "";
+            
         }
         
     }
