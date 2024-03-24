@@ -28,7 +28,7 @@ public class FadeInPicture : MonoBehaviour
             return;
         }
         
-        StartCoroutine("FadeIn");
+        StartCoroutine(FadeIn());
     }
     
     private IEnumerator FadeIn() //coroutine

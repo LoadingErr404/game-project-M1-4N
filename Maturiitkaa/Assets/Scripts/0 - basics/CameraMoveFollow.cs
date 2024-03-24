@@ -74,7 +74,6 @@ public class CameraMoveFollow : MonoBehaviour
         var targetX = target.position.x;
         var newCamSize = 0f;
         var distanceOut = targetX - _zoomOutPoint;
-        //var distanceIn = _zoomInPoint - targetX;
         var distanceOutIn = _zoomInPoint - _zoomOutPoint;
         
         newCamSize = Remap((distanceOut), 0, Math.Abs(distanceOutIn), maxZoomSize, minZoomSize);

@@ -13,7 +13,7 @@ public class WriteText : MonoBehaviour
     
     
 
-    protected void Update()
+    private void Update()
     {
         if (!writeOut)
         {

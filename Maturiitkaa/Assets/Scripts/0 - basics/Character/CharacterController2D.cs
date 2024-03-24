@@ -26,7 +26,7 @@ public class CharacterController2D : MonoBehaviour
     
     //for ground check
     public bool isGrounded;
-    [SerializeField] private Transform feetPosition; //possition of player's feet
+    [SerializeField] private Transform feetPosition; //position of player's feet
     [SerializeField] private float checkRadius;
     [SerializeField] private LayerMask layerOfGround; //will be checking for Tag "ground"
     
@@ -62,14 +62,10 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate() //for physics
     {
-        
-        
         if (moveLeft || moveRight)
         {
             _rigidbody2D.velocity = _moveDir; //moving left-right
         }
-        
-        
     }
 
     private void LoadInputs()
@@ -78,8 +74,8 @@ public class CharacterController2D : MonoBehaviour
         notMoveUp = Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W);
         moveLeft = Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift));
         moveRight = Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift));
-        _moveUpKeyDown = Input.GetKeyDown(KeyCode.UpArrow) || ((Input.GetKeyDown(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))); //shift needs to be GetKey because you press it down before W
-        
+        _moveUpKeyDown = Input.GetKeyDown(KeyCode.UpArrow) || ((Input.GetKeyDown(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))); 
+        //shift needs to be GetKey because you press it down before W
     }
 
     private void MovingAround()
@@ -94,9 +90,9 @@ public class CharacterController2D : MonoBehaviour
 
         isGrounded =
             Physics2D.OverlapCircle(feetPosition.position, checkRadius,
-                layerOfGround); //checks if the overlaped circle that is located at characters feet is touching "ground"
+                layerOfGround); //checks if the overlapped circle that is located at characters feet is touching "ground"
 
-        if (_doneJumping && CanJumpAgain())
+        if (_doneJumping && CantJumpAgain())
         {
             return;
         }
@@ -135,7 +131,7 @@ public class CharacterController2D : MonoBehaviour
     }
     
 
-    private bool CanJumpAgain()
+    private bool CantJumpAgain()
     { 
         var jump = !_moveUpKeyDown || notMoveUp;
         return jump;

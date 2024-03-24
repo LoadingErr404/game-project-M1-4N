@@ -2617,7 +2617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 088d38e58ebce9f44a29dab255d4dcce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.44
+      value: -14.53
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 088d38e58ebce9f44a29dab255d4dcce, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3056,7 +3056,7 @@ MonoBehaviour:
   moveLeft: 0
   moveRight: 0
   ableToJump: 0
-  isGrounded: 0
+  isGrounded: 1
   feetPosition: {fileID: 427341453}
   checkRadius: 0.5
   layerOfGround:
