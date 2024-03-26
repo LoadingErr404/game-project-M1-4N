@@ -12,8 +12,16 @@ public class WriteTextProlog : MonoBehaviour
     private float _writeCounter;
     private int _position;
     [SerializeField] private WriteOutSentences writeOutSentences;
-    
-    protected void Update()
+    private int _lastRowIndex;
+    private string _lastSentence;
+
+    private void Start()
+    {
+        _lastSentence = "";
+        _lastRowIndex = -1;
+    }
+
+    private void Update()
     {
         if (!writeOutSentences.writeNewSentence)
         {
@@ -26,16 +34,30 @@ public class WriteTextProlog : MonoBehaviour
             _writeCounter += Time.deltaTime;
             return;
         }
+
+        if (_lastRowIndex == writeOutSentences.rowIndex)
+        {
+            return;
+        }
+        
+        if (_lastSentence.Equals(givenSentence))
+        {
+            return;
+        }
         
         if (_position >= givenSentence.Length)
         {
+            _lastRowIndex = writeOutSentences.rowIndex;
+            _lastSentence = givenSentence;
             writeOutSentences.writeNewSentence = false;
             writeOutSentences.interactText.textForInteraction = givenSentence;
             writeOutSentences.ableToWriteInto = true;
             _position = 0;
+            
             return;
         }
-        Debug.Log(givenSentence);
+       
+        
         textArea.text += givenSentence[_position++];
         writeOutSentences.ableToWriteInto = false;    
         _writeCounter = 0f;

@@ -46,8 +46,9 @@ public class InteractTextPrologWritingSentences : MonoBehaviour
         {
             writing.ClearText();
             textArea.text = "";
-            writeOutSentences.writeNewSentence = true;
             writeOutSentences.rowIndex++;
+            writeOutSentences.writeNewSentence = true;
+            
             
         }
         

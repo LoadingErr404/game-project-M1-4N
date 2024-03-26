@@ -53,7 +53,7 @@ public class WriteOutSentences : MonoBehaviour
         if (rowIndex < _numberOfSentences)
         {
             writeText.givenSentence = _sentenceList[rowIndex];
-            Debug.Log(rowIndex - 1);
+            Debug.ClearDeveloperConsole();
         }
         else
         {
