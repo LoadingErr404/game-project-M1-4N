@@ -35,20 +35,10 @@ public class ManagingWords : MonoBehaviour
     {
         if (wordsList[0].Length > wordsList[1].Length)
         {
-            if (wordsList[0].Length > wordsList[2].Length)
-            {
-                return wordsList[0].Length;
-            }
-           
-            return wordsList[2].Length;
+            return wordsList[0].Length > wordsList[2].Length ? wordsList[0].Length : wordsList[2].Length;
         }
 
-        if (wordsList[1].Length > wordsList[2].Length)
-        {
-            return wordsList[1].Length;
-        }
-
-        return wordsList[2].Length;
+        return wordsList[1].Length > wordsList[2].Length ? wordsList[1].Length : wordsList[2].Length;
     }
     
     

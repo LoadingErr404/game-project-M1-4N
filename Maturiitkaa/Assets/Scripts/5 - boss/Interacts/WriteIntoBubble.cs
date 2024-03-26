@@ -64,8 +64,6 @@ public class WriteIntoBubble : MonoBehaviour
                 Move();
             }
         }
-        
-
     }
     
     private void LoadWords()

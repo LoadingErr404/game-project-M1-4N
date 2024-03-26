@@ -52,11 +52,11 @@ public class WriteLines : MonoBehaviour
             }
 
             yield return new WaitForSeconds(waitBetweenSentences);
-            
+
             textArea.text = "";
 
         }
-
+    
         if (loadNextLevel.IsUnityNull())
         {
             SceneManager.LoadScene("0 - main_menu");

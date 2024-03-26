@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 8556667554532000367}
   - component: {fileID: 3957380444051755775}
   - component: {fileID: 8495195429647344914}
-  m_Layer: 5
+  m_Layer: 17
   m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,8 +349,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1942.4401, y: -1066.765}
-  m_SizeDelta: {x: 1292.24, y: 638.01}
+  m_AnchoredPosition: {x: -1890, y: -1140}
+  m_SizeDelta: {x: 1268.9592, y: 670.021}
   m_Pivot: {x: -1, y: -1}
 --- !u!222 &6658744413365504708
 CanvasRenderer:
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 19a9377740509c24ea89599c1bff389b, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 6633346575260094838}
   - component: {fileID: 2564657253793698659}
   - component: {fileID: 589255712443380128}
-  m_Layer: 5
+  m_Layer: 17
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 500
   m_TargetDisplay: 0
 --- !u!114 &8935695837816268573
 MonoBehaviour:
@@ -973,9 +973,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -746711759
+  m_SortingLayer: 6
+  m_SortingOrder: 200
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.4392157}
   m_FlipX: 0
@@ -1185,7 +1185,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 500
   m_TargetDisplay: 0
 --- !u!114 &7053137767905774719
 MonoBehaviour:

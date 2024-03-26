@@ -13,7 +13,7 @@ public class Word
     public Word(string word, int damage)
     {
         MyWord = word;
-        this.Damage = damage;
+        Damage = damage;
     }
     
 

@@ -17,12 +17,12 @@ public class ControlWordsBoss : MonoBehaviour
 
     private void Start()
     {
-        dadHp = 40;
+        dadHp = 30;
     }
 
     private void Update()
     {
-        if (objectQuery < 24)
+        if (objectQuery < 24) //we reached the end of query
         {
             return;
         }
