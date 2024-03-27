@@ -61,6 +61,9 @@ public class CharacterController2DProlog : MonoBehaviour
         if (!controlWordsProlog.canMove)
         {
             _moveDir = new Vector3(0, 0, 0);
+            moveRight = false;
+            moveLeft = false;
+            moveUp = false;
             return;
         }
         

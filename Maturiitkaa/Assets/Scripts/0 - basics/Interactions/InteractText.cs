@@ -58,7 +58,6 @@ public class InteractText : MonoBehaviour
         _interactable = true;
         writing.controlWordsTutorial.stopWritingTimer = true;
         writing.ChangeTextArea(ownTextField);
-        
     }
 
     private void OnTriggerExit2D(Collider2D other)

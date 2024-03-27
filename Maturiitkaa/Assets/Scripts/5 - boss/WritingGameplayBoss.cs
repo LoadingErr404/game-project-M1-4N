@@ -34,10 +34,11 @@ public class WritingGameplayBoss : MonoBehaviour
     }
 
     private void BuffWord(char letter){ //buffers pressed characters
+        /*
         if (Input.GetKey(KeyCode.LeftShift))
         {
             return;
-        }
+        }*/
         
         if(letter >= 32 && letter <= 126 ){ //numbers representing ASCII characters from 'space' to '~'
             myTextArea.text += char.ToLower(letter);

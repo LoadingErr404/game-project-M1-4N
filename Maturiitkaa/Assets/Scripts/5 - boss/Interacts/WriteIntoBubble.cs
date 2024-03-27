@@ -85,6 +85,7 @@ public class WriteIntoBubble : MonoBehaviour
     private IEnumerator InitSetup()
     {
         yield return new WaitUntil(MyTurn);
+        Input.ResetInputAxes();
         managingWords.SetTexts(_wordsList);
         writing.ChangeTextArea(textArea);
         _interactable = true;
@@ -100,7 +101,7 @@ public class WriteIntoBubble : MonoBehaviour
     {
         if (nextObject.IsUnityNull()) // for if Milan text is next
         {
-            screenController.MoveUp(1.8f);
+            screenController.MoveUp(SmallBubble);
             return;
         }
             

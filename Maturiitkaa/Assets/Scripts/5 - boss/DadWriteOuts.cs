@@ -60,7 +60,7 @@ public class DadWriteOuts : MonoBehaviour
 
         
         
-        yield return new WaitUntil(SameIndexesDad);
+        //yield return new WaitUntil(SameIndexesDad);
         yield return new WaitUntil(controls.GetMilanDoneWriting);
 
         controls.showInteractInterface = false;
@@ -109,5 +109,4 @@ public class DadWriteOuts : MonoBehaviour
     {
         return _sentenceList.Count;
     }
-    
 }
