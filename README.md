@@ -1,20 +1,15 @@
 ## ! verze Unity editoru - 2022.3.7f1 !
 
+Jedná se o hru, kterou jsem tvořila v rámci maturitní práce.
+Hra byla tvořena v Unity pomocí jakzyku C#.
+Jednotlivé scripty lze najít v Assets -> Scripts.
 
-# maturitka-formalitka
+Jedná se pouze o Alpha verzi projektu, dále už pokračovat nebudu.
 
-odkaz na helpful playlist na YT
+Hra je postavena především na příběhu a mechanikách psaní. 
+Playtime by měl být zhruba 20 min.
+Hra obsahuje krvavé prvky a prvky nevhodné pro slabší povahy.
 
-https://youtube.com/playlist?list=PLeF8Gx2wuf5ARVIcjODldPUTyxR92iHuo
+Dokumentace a popis tvorby a rozbor jednotlivých částí kódu je popsán v souboru Dokumentace
 
-pro přidání videa nutno přidat se před odkaz: https://www.youtube.com/playlist?list=PLeF8Gx2wuf5ARVIcjODldPUTyxR92iHuo&jct=vVFlwwHewGEaO-oxW1Alpt8uzsbrrg
 
-## další odkazy 
-
-pohyb - WASD i šipky (implementovat obodvojí) kapitoly podle způsoby ochrany (https://cs.wikipedia.org/wiki/Frustrace)
-
-inspirace fighting systém (https://cs.wikipedia.org/wiki/Agrese)
-
-## do budoucna - switchování enginu
-na Godot
-https://www.reddit.com/r/Unity2D/comments/16keg2y/if_you_are_considering_a_switch_to_a_different_2d/
