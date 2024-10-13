@@ -2,7 +2,7 @@
 
 Jedná se o hru, kterou jsem tvořila v rámci maturitní práce.
 Hra byla tvořena v Unity pomocí jakzyku C#.
-Jednotlivé scripty lze najít v Assets -> Scripts.
+Jednotlivé scripty lze najít v Maturiitka -> Assets -> Scripts.
 
 Jedná se pouze o Alpha verzi projektu, dále už pokračovat nebudu.
 
